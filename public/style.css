@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	overflow-x: hidden;
+	font-family: "Readex Pro", sans-serif;
+	font-size: 16px;
+}
+
+.container {
+	@apply p-4 sm:px-5 sm:py-8 lg:p-0 max-w-6xl 2xl:max-w-7xl mx-auto;
+}
+
+.header {
+	animation-duration: 0.2s;
+	position: relative;
+	z-index: 1;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: opacity 1s ease-in-out;
+
+	/* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+@media screen and (max-width: 640px) {
+	.header.sticky .header-logo-wrapper {
+		display: none;
+	}
+
+	.header.sticky,
+	.header.sticky .container {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.mega-menu {
+		max-height: calc(100vh - 300px);
+		overflow-y: auto;
+		@apply border-b border-dashed border-gray-200;
+	}
+
+	.header.sticky .mega-menu {
+		min-height: 70vh;
+		max-height: calc(100vh - 250px);
+	}
+}
+
+.header.sticky + .page-body {
+	padding-top: 102px;
+}
+
+.page-body {
+	min-height: 100vh;
+	@apply text-gray-800 font-light;
+}
+
+.section {
+	@apply py-16;
+}
+
+.section-0 {
+	@apply py-0;
+}
+
+.overflow-section {
+	@apply pt-8 pb-0;
+}
+
+.heading {
+	@apply font-medium text-3xl sm:text-4xl mb-3;
+}
+
+.support-text {
+	@apply text-lg;
+}
+
+.arrow-btn {
+	@apply text-base inline-block;
+}
+
+.arrow-btn:hover:after {
+	padding-left: 10px;
+}
+
+.arrow-btn:after {
+	content: "\2192";
+	font-size: 30px;
+	padding-left: 6px;
+	position: relative;
+	/* top: -1px; */
+	vertical-align: sub;
+	z-index: 0;
+}
+
+/* #Mega Menu Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.mega-menu {
+	/* @apply border-b border-dashed border-gray-200; */
+	margin-top: 4.4rem;
+	display: none;
+	left: 0;
+	position: absolute;
+	text-align: left;
+	width: 100%;
+}
+
+/* #hoverable Class Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hoverable {
+	position: static;
+}
+
+.hoverable > .wrapper > a:after,
+.hoverable > .wrapper > label:after {
+	content: "\25BC";
+	font-size: 10px;
+	padding-left: 6px;
+	position: relative;
+	top: -1px;
+}
+
+.hoverable:hover .mega-menu {
+	display: block;
+}
+
+/* #toggle Class Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.toggleable > .wrapper > label:after {
+	content: "\25BC";
+	font-size: 10px;
+	padding-left: 6px;
+	position: relative;
+	top: -1px;
+}
+`` .toggle-input {
+	display: none;
+}
+.toggle-input:not(checked) ~ .mega-menu {
+	display: none;
+}
+
+.toggle-input:checked ~ .mega-menu {
+	display: block;
+}
+
+.toggle-input:checked + label {
+	color: white;
+	background: #2c5282; /*@apply bg-blue-800 */
+}
+
+.toggle-input:checked ~ label:after {
+	content: "\25B2";
+	font-size: 10px;
+	padding-left: 6px;
+	position: relative;
+	top: -1px;
+}
+
+.main-menu ul.menu-items {
+}
+
+.main-menu ul.menu-items > li {
+	@apply py-8 table text-left;
+	height: 60px;
+}
+
+.main-menu ul.menu-items > li > .wrapper {
+	@apply table-cell break-words border-l border-dashed border-primary;
+	vertical-align: middle;
+}
+
+.main-menu ul.menu-items > li > .wrapper > a,
+.main-menu ul.menu-items > li > .wrapper > label {
+	line-height: 1.2;
+}
+
+.main-menu ul.menu-items > li:first-child > .wrapper {
+	@apply border-l-0;
+}
+
+.bg-section {
+	background-size: 100% auto;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.fixed-bg {
+	background-size: 80% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 640px) {
+	.bg-section {
+		background-size: 80% auto;
+	}
+}
+
+.animate__delay-250ms {
+	--animation-delay: 250ms;
+}
+
+.animate__delay-500ms {
+	--animation-delay: 500ms;
+}
+
+.animate__delay-750ms {
+	--animation-delay: 750ms;
+}
+
+.animate__delay-1500ms {
+	--animation-delay: 1500ms;
+}
