@@ -19,9 +19,10 @@ export default function Layout({ pageTitle, pageBody, children }) {
                     href="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/css/animations.min.css" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link href="https://fonts.googleapis.com/css2?family=Re adex+Pro:wght@200;300;400;700&display=swap /"
-                    rel="stylesheet" />
+
                 <meta />
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Sākār Foundation | {pageTitle}</title>
             </Head>

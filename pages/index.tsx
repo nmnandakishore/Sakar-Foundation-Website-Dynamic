@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default () => {
+const homePage = () => {
     return (
         <>
 
@@ -136,4 +136,9 @@ export default () => {
         // {/* <pageBody></pageBody> */ }
 
     )
+
 }
+
+
+homePage.displayName = "Home Page";
+export default homePage;

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 
-export default () => {
+const aboutPage = () => {
     return (
         <>
 
@@ -14,7 +14,7 @@ export default () => {
                                 At Sākār Foundation, we believe, we can solve problems only by solving the root cause. We encourage
                                 children to actively involve
                                 in activities for betterment of the society. We also make them learn Not only humans but even all living
-                                beings including animals and plants are the part of <b>Nature's fabric</b> as we call it.
+                                beings including animals and plants are the part of <b>Nature&#39;s fabric</b> as we call it.
                             </p>
                         </div>
                         <div className="text-4xl my-auto text-white col-span-2 sm:col-span-1 animatedParent" data--sequence="300">
@@ -29,7 +29,7 @@ export default () => {
                     <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Who we are</p>
                     <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
                         Keithan and Keisha born in and Indian American family and have been volunteering for different causes from the age of 6.
-                        As their family keeps visiting their friends and relatives around the world, got a chance to visit many economically backward and growing countries.
+                        As their family keeps visiting their friends and relatives around the world, they got a chance to visit many economically backward and growing countries.
                         At such a young age, they could see the differance between their society and others. This made them to realize the desparate need of help
                         at various levels of backwardand growing societies.
 
@@ -51,10 +51,7 @@ export default () => {
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
                             <p className="heading text-primary mb-8 animated animateOnce fadeInRightShort" data-id="1">What we do</p>
                             <p className="text-justify animated animateOnce fadeInRightShort" data-id="2">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porta iaculis mi et convallis. Quisque
-                                blandit viverra nulla, ut rutrum dolor auctor eu. Fusce maximus porta dolor, nec posuere tortor luctus
-                                ac. Sed quis leo non nibh suscipit fringilla nec euismod diam. Quisque eget ante ligula. Sed ornare,
-                                metus at sollicitudin gravida, quam lorem bibendum justo, in aliquam est arcu at dui.
+                                Sakar foundation works in two different
                             </p>
                         </div>
                     </div>
@@ -88,3 +85,7 @@ export default () => {
 
     )
 }
+
+aboutPage.displayName = "ABout Page"
+
+export default aboutPage;

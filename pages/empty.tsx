@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default () => {
+const emptyComponent = () => {
     return (
         <>
 
@@ -8,3 +8,6 @@ export default () => {
 
     )
 }
+
+emptyComponent.displayName = "Empty Component";
+export default emptyComponent;

@@ -191,11 +191,11 @@ export const MainMenu: React.FC = () => {
                                 <h3 className="font-bold text-xl text-white text-bold mb-2">Start a
                                     fundraiser</h3>
                             </div>
-                            <p className="text-gray-100 text-sm text-justify">If you're a student, you can
+                            <p className="text-gray-100 text-sm text-justify">If you&#39;re a student, you can
                                 start fundraising in
                                 our platform
                                 for your cause.
-                                We'll help you to raise money through our Sākār Spark program.
+                                We&#39;ll help you to raise money through our Sākār Spark program.
                             </p>
                             <div className="flex items-center py-3">
                                 <a href="sakar-spark"
@@ -234,7 +234,7 @@ export const MainMenu: React.FC = () => {
                             <p className="text-gray-100 text-sm text-justify">You can donate us directly or
                                 to individual
                                 projects.
-                                Either way, your donations help us reach those who're in need across the
+                                Either way, your donations help us reach those who&#39;re in need across the
                                 globe.</p>
                             <div className="py-3">
                                 <a href="#"

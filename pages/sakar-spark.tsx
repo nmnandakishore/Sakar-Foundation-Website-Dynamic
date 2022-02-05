@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default () => {
+const sparkPage = () => {
     return (
         <>
             <div style={{ backgroundImage: "url(/public/img/spark-hero.jpg)" }}
@@ -108,3 +108,6 @@ export default () => {
 
     )
 }
+
+sparkPage.displayName = "Spark Page";
+export default sparkPage;

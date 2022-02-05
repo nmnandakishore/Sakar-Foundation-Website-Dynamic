@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { MainMenu } from "./main-menu";
 
@@ -8,10 +9,10 @@ export const Header: React.FC = () => {
                 <nav className="relative text-primary">
                     <div className="container p-0 mx-auto flex flex-col sm:flex-row sm:justify-between">
                         <div className="header-logo-wrapper relative block p-2  text-center sm:text-left">
-                            <a href="/">
+                            <Link href="/">
                                 <img src="/img/sakar_logo.svg" className="header-logo h-16 w-auto sm:my-[10px] mx-auto"
                                     alt="Sakar Foundation" />
-                            </a>
+                            </Link>
                         </div>
                         <MainMenu></MainMenu>
                     </div>
