@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export const MainMenu: React.FC = () => {
     return (
@@ -49,104 +49,35 @@ export const MainMenu: React.FC = () => {
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-humans animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
                             <h3 className="font-bold text-xl text-white text-bold mb-2">For Humans</h3>
-                            <li>
+                            {/* <li>
                                 <a href="#"
                                     className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
                                     One
                                     Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
+                            </li> */}
+
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-animals animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "150ms" }}>
                             <h3 className="font-bold text-xl text-white text-bold mb-2">For Animals</h3>
-                            <li>
+                            {/* <li>
                                 <a href="#"
                                     className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
                                     One
                                     Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
+                            </li> */}
+
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3 bg-plants animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "300ms" }}>
                             <h3 className="font-bold text-xl text-white text-bold">For Plants</h3>
-                            <li>
+                            {/* <li>
                                 <a href="#"
                                     className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
                                     One
                                     Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li>
+                            </li> */}
+
                         </ul>
                     </div>
                 </div>
@@ -212,11 +143,8 @@ export const MainMenu: React.FC = () => {
                                 <h3 className="font-bold text-xl text-white text-bold mb-2">Partner with us
                                 </h3>
                             </div>
-                            <p className="text-gray-100 text-sm text-justify">If you are an educational
-                                institution, you can
-                                partner with us
-                                and provide an opportunity to your students start campaigns for their
-                                cause.</p>
+                            <p className="text-gray-100 text-sm text-justify">If you are a business, govt or an organization, you can
+                                partner with us to collaborate and work on causes you care about.</p>
                             <div className="flex items-center py-3">
                                 <a href="#"
                                     className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
