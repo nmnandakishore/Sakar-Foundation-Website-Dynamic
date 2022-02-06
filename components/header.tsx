@@ -3,6 +3,8 @@ import React from "react";
 import { MainMenu } from "./main-menu";
 
 export const Header: React.FC = () => {
+
+
     return (
         <div id="header" className="header animate__animated animate__faster bg-gray-200">
             <div className="main-menu">
@@ -21,3 +23,5 @@ export const Header: React.FC = () => {
         </div>
     );
 }
+
+
