@@ -119,7 +119,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects, stats }) => {
                     <br />
                     <a href="/projects"
                         className="p-2 bg-color-white arrow-btn h-10 text-white font-bold animated animateOnce fadeInDownShort" data-id="3"
-                        data-id="3">View all</a>
+                    >View all</a>
                 </div>
             </div>
             <div className="section bg-white">
