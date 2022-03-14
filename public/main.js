@@ -1,6 +1,6 @@
 // import Typed from "typed.js";
 
-// var tickerElem = document.querySelector("#news-ticker");
+var tickerElem = document.querySelector("#news-ticker");
 
 var options = {
 	backDelay: 3500,
@@ -12,14 +12,11 @@ var options = {
 	typeSpeed: 40,
 };
 
-var typed = new Typed("#news-ticker", options);
+// var typed = new Typed("#news-ticker", options);
 
 window.onscroll = function () {
-
-
-	console.log("stickyTop:", stickyTop)
-	console.log("pageYOffset:", window.pageYOffset)
-
+	// console.log("stickyTop:", stickyTop)
+	// console.log("pageYOffset:", window.pageYOffset)
 	toggleSticky();
 };
 

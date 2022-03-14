@@ -1,20 +1,22 @@
 import * as React from 'react'
 
-const sparkPage = () => {
+const sparkPage: React.FC = () => {
     return (
         <>
-            <div style={{ backgroundImage: "url(/public/img/spark-hero.jpg)" }}
-                className="page-header px-8 bg-gradient-to-b from-transparent via-primary to-primaryDark bg-fixed bg-center bg-cover bg-blend-color-burn h-80 ">
-                <div className="container">
-                    <div className="grid grid-cols-2 sm:gap-10">
-                        <div className="my-auto text-white col-span-2 sm:col-span-1">
-                            <div className="bg-gradient-to-b from-primary to-primaryDark mt-32 -mb-32 p-14">
-                                <p className="text-4xl">Sākār Spark</p>
-                                <p className="mt-6 text-justify">
-                                    Sākār Spark lets highschool students start their own fundraiser for their own cause.
-                                    The intent behind this program is to make the youth practically learn importance of giving back
-                                    the community and keeping a healthy relation with the society.
-                                </p>
+            <div style={{ backgroundImage: "url(/img/spark.png)" }}
+                className="page-header bg-fixed bg-center bg-cover bg-blend-color-burn h-80 ">
+                <div className='px-8 w-full h-full bg-gradient-to-b from-transparent via-primary/85 to-primary/100'>
+                    <div className="container">
+                        <div className="grid grid-cols-2 sm:gap-10">
+                            <div className="my-auto text-white col-span-2 sm:col-span-1">
+                                <div className="bg-gradient-to-b from-primary to-primaryDark mt-32 -mb-32 p-14">
+                                    <p className="text-4xl">Sākār Spark</p>
+                                    <p className="mt-6 text-justify">
+                                        Sākār Spark lets highschool students start their own fundraiser for their own cause.
+                                        The intent behind this program is to make the youth practically learn importance of giving back
+                                        the community and keeping a healthy relation with the society.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -30,13 +32,7 @@ const sparkPage = () => {
                         <div className="col col-span-2 sm:col-span-1">
                             <div className="heading text-primary">Who can participate</div>
                             <p className="mt-5 text-justify">
-                                Maecenas rutrum tellus dui, at pulvinar augue blandit lacinia. Etiam in fringilla augue, non laoreet ex.
-                                Nunc
-                                velit augue, hendrerit venenatis orci eu, hendrerit dignissim lorem. Morbi ultrices et felis nec
-                                gravida.
-                                Suspendisse venenatis magna metus, non malesuada justo dapibus vitae. Morbi scelerisque eget velit vitae
-                                feugiat. Donec in volutpat erat. Praesent semper non nulla quis maximus. Pellentesque mollis placerat
-                                aliquam.
+                                Anyone committed to the cause of the charity he/she wants to work on can participate in this program.
                             </p>
                             <ol className="list-decimal mt-10 list-inside">
                                 <li className="list-item p-1">Donec in volutpat erat. Praesent semper non nulla quis maximus.</li>
@@ -98,12 +94,10 @@ const sparkPage = () => {
                         </div>
                     </div>
                     <div className="text-center pt-6">
-                        <a href="" className="arrow-btn text-primary font-bold">Register now</a>
+                        <a href="/new-fundraiser" className="arrow-btn text-primary font-bold">Register now</a>
                     </div>
                 </div>
             </div>
-
-
         </>
 
     )

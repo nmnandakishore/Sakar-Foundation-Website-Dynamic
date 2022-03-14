@@ -11,7 +11,7 @@ export default function Layout({ pageTitle, pageBody, children }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                 <link rel="stylesheet" href="/style.css" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" />
@@ -42,7 +42,7 @@ export default function Layout({ pageTitle, pageBody, children }) {
             <script type="module" src="/js/jquery.flexisel.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.min.js"
             ></script>
-            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
 
         </>
     );

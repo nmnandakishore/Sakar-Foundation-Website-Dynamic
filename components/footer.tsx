@@ -3,23 +3,23 @@
 export const Footer: React.FC = () => (
 
     <>
-        <footer>
+        <footer className="">
             <div className="footer-top bg-gray-200 sm:pt-8  text-primary text-center sm:text-left">
                 <div className="container">
                     <div className="grid grid-cols-3 py-0 sm:py-8">
                         <div
                             className="col-span-3 py-5 sm:py-0 sm:col-auto border-b border-dashed border-primary sm:border-none">
-                            <a className="block py-2 hover:underline" href="">About us</a>
+                            <a className="block py-2 hover:underline" href="/about">About us</a>
                             <a className="block py-2 hover:underline" href="">How How Sākār helps</a>
                             <a className="block py-2 hover:underline" href="">Sākār News</a>
-                            <a className="block py-2 hover:underline" href="">Contact Us</a>
+                            <a className="block py-2 hover:underline" href="/contact">Contact Us</a>
                         </div>
                         <div
                             className="col-span-3 py-5 sm:py-0 sm:col-auto border-b border-dashed border-primary sm:border-none">
-                            <a className="block py-2 hover:underline" href="">Our Partners</a>
-                            <a className="block py-2 hover:underline" href="leadership.html">Leadership</a>
-                            <a className="block py-2 hover:underline" href="">Privacy policy</a>
-                            <a className="block py-2 hover:underline" href="">Terms and condition</a>
+                            <a className="block py-2 hover:underline" href="/partners">Our Partners</a>
+                            <a className="block py-2 hover:underline" href="/leadership">Leadership</a>
+                            <a className="block py-2 hover:underline" href="/privacy">Privacy policy</a>
+                            <a className="block py-2 hover:underline" href="/tos">Terms and condition</a>
                         </div>
                         <div className="col-span-3 sm:col-auto py-5 sm:py-0">
                             <div className="table text-center">

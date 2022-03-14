@@ -90,12 +90,14 @@ body {
 
 .arrow-btn:hover:after {
 	padding-left: 10px;
+	padding-right: 0;
 }
 
 .arrow-btn:after {
 	content: "\2192";
 	font-size: 30px;
 	padding-left: 6px;
+	padding-right: 4px;
 	position: relative;
 	/* top: -1px; */
 	vertical-align: sub;
@@ -222,4 +224,8 @@ body {
 
 .animate__delay-1500ms {
 	--animation-delay: 1500ms;
+}
+
+input {
+	/* @apply h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline; */
 }

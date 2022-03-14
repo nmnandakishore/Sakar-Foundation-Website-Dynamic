@@ -1,10 +1,17 @@
-import * as React from 'react'
+import ProjectSlider from '../components/projects-slider';
+import { client } from '../helpers/data-fetcher';
 
-const homePage = () => {
+interface IHomePageProps {
+    projects: any,
+    stats: any
+}
+
+const HomePage: React.FC<IHomePageProps> = ({ projects, stats }) => {
+    stats = stats.items[0].fields;
+    console.log({ stats });
+
     return (
         <>
-
-
             <div className="section bg-section" style={{ backgroundImage: "url(/img/logo-gradient-inverse.svg)" }}>
                 <div className="container">
                     <div className="grid grid-cols-3">
@@ -39,9 +46,9 @@ const homePage = () => {
                                 Highschool students can raise <br /> funds for their cause and help <br /> those in need
                                 worldwide
                             </p>
-                            <a href="" className="arrow-btn text-white font-bold animated animateOnce fadeInDownShort"
+                            {/* <a href="" className="arrow-btn text-white font-bold animated animateOnce fadeInDownShort"
                                 data-id="3">Learn
-                                more</a>
+                                more</a> */}
                         </div>
                     </div>
                 </div>
@@ -68,7 +75,7 @@ const homePage = () => {
                                 <div className="p-6 table-cell w-28"><img className="w-20 h-auto" src="/img/icons/1.png" alt="" />
                                 </div>
                                 <div className="table-cell align-middle text-left p-2 pr-6 font-bold">
-                                    250 Students raised funds for their cause
+                                    {stats.projectLeadCount} youths raised funds for their cause
                                 </div>
                             </div>
                             <div className="bg-white border-b border-dashed border-gray-400 bg-opacity-95 table w-full animated animateOnce fadeInDownShort"
@@ -76,7 +83,7 @@ const homePage = () => {
                                 <div className="p-6 table-cell w-28"><img className="w-20 h-auto" src="/img/icons/2.png" alt="" />
                                 </div>
                                 <div className="table-cell align-middle p-2 pr-6 font-bold">
-                                    150 projects across 25 causes
+                                    {stats.totalProjects} projects across {stats.totalCauses} causes
                                 </div>
                             </div>
                             <div className="bg-white border-gray-200 bg-opacity-95 table w-full animated animateOnce fadeInDownShort"
@@ -84,7 +91,7 @@ const homePage = () => {
                                 <div className="p-6 table-cell w-28"><img className="w-20 h-auto" src="/img/icons/3.png" alt="" />
                                 </div>
                                 <div className="table-cell align-middle p-2 pr-6 font-bold">
-                                    Making a difference in 10 countries across the globe
+                                    Making a difference in {stats.globalPresence} countries across the globe
                                 </div>
                             </div>
                         </div>
@@ -94,6 +101,25 @@ const homePage = () => {
                             className="arrow-btn text-primary font-bold animated animateOnce fadeInUpShort">More about
                             us</a>
                     </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+            <div className="section bg-primary text-white">
+                <div className="container text-center animatedParent">
+                    <div className="heading text-center text-white animated animateOnce fadeInDownShort" data-id="1">
+                        Projects
+                    </div>
+                    <div className="animated animateOnce fadeInUpShort" data-id="2">
+
+                        <ProjectSlider projects={projects.items}></ProjectSlider>
+                    </div>
+                    <br />
+                    <a href="/projects"
+                        className="p-2 bg-color-white arrow-btn h-10 text-white font-bold animated animateOnce fadeInDownShort" data-id="3"
+                        data-id="3">View all</a>
                 </div>
             </div>
             <div className="section bg-white">
@@ -119,12 +145,11 @@ const homePage = () => {
                             <span className="text-6xl text-primary table-cell p-2 animated animateOnce fadeIn"
                                 data-id="5">3</span>
                             <span className="table-cell align-middle text-xl animated animateOnce fadeInDownShort"
-                                data-id="6">Start raising funds <br /> with our Tax
-                                ID</span>
+                                data-id="6">Start raising funds <br /> with our Tax ID</span>
                         </div>
                     </div>
                     <div className="text-center pt-6 animated animateOnce fadeInUpShort" data-id="6">
-                        <a href="" className="arrow-btn text-primary font-bold inline-block">Register now</a>
+                        <a href="new-fundraiser" className="arrow-btn text-primary font-bold inline-block">Register now</a>
                     </div>
                 </div>
             </div>
@@ -139,6 +164,34 @@ const homePage = () => {
 
 }
 
+HomePage.displayName = "Home Page";
+export default HomePage;
 
-homePage.displayName = "Home Page";
-export default homePage;
+
+
+export async function getServerSideProps() {
+    // Fetch data from external API
+
+    let clientObj = client();
+
+    // const res: any = await clientObj.getAssets();
+    const projects: any = await clientObj.getEntries({
+        content_type: 'projects'
+    });
+    const stats: any = await clientObj.getEntries({
+        content_type: 'stats'
+    });
+
+
+    // const res1: any = await clientObj.getEntries({
+    //     content_type: 'projects',
+    //     'fields.slug': 'example-project-4'
+    // })
+
+    // res.slug = res1;
+
+    return {
+        props: { projects, stats }
+    }
+
+}

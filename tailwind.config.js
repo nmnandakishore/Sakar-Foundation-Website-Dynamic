@@ -11,7 +11,7 @@ module.exports = {
 		"./public/js/*.js",
 		"./css/*.css",
 		"./js/*.js",
-		'./pages/**/*.{js,ts,jsx,tsx}', 
+		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}'
 	],
 	theme: {
@@ -25,6 +25,9 @@ module.exports = {
 			indigo: colors.indigo,
 			red: colors.rose,
 			yellow: colors.amber,
+			sky: colors.sky,
+			slate: colors.slate,
+			stone: colors.stone,
 			// primary: "#001856",
 			primary: "#000248",
 			primaryDark: "#010233",

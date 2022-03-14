@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 
-const aboutPage = () => {
+const aboutPage: React.FC = () => {
     return (
         <>
 
@@ -46,12 +46,13 @@ const aboutPage = () => {
                     <div className="grid grid-cols-2 sm:gap-10 mt-8">
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
                             <img className="-mb-20 an animated animateOnce fadeInLeftShort" data-id="1"
-                                src="/img/sudents-helping-people.jpg" alt="" />
+                                src="/img/what-we-do-sakar.png" alt="" />
                         </div>
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
                             <p className="heading text-primary mb-8 animated animateOnce fadeInRightShort" data-id="1">What we do</p>
                             <p className="text-justify animated animateOnce fadeInRightShort" data-id="2">
-                                Sakar foundation works in two different
+                                Sākār foundation works in two different ways. One is to reach out the needy through projects caried out under
+                                Sākār Spark. And the other is, we aften takeup many initiatives ourselves for causes which need more attention to be given.
                             </p>
                         </div>
                     </div>
@@ -59,7 +60,11 @@ const aboutPage = () => {
             </div>
 
 
-            <div className="section mt-32 p-8 mb-20">
+            <div className="section mt-32 p-8 ">
+                <div className="container"></div>
+            </div>
+
+            {/* <div className="section mt-32 p-8 mb-20">
                 <div className="container">
                     <div className="grid grid-cols-2 sm:gap-10">
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
@@ -77,7 +82,7 @@ const aboutPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
 
         //     {/* <div className='bg-yellow-600 p-5 w-full'></div> */ }

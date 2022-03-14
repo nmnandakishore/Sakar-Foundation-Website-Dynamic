@@ -1,21 +1,24 @@
 
 
 export const MainMenu: React.FC = () => {
+
+
+
     return (
 
         <ul className="menu-items flex overflow-x-auto border-none">
             {/* <!--Regular Link--> */}
             <li className="hover:bg-primary hover:text-white border-none">
                 <div className="wrapper">
-                    <a href="about" className="relative block px-2 lg:px-4 text-sm lg:text-base">About
+                    <a href="/about" className="relative block px-2 lg:px-4 text-sm lg:text-base">About
                         <br />
                         Us</a>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <a href="#" className="relative block px-2 lg:px-4 text-sm lg:text-base">How Sākār <br />
-                        Helps</a>
+                    <a href="/projects" className="relative block px-2 lg:px-4 text-sm lg:text-base">Sākār <br />
+                        Projects</a>
                 </div>
             </li>
             <li className="hoverable hover:bg-primary hover:text-white">
@@ -45,38 +48,62 @@ export const MainMenu: React.FC = () => {
                             <div>
                                 <h2 className="font-light text-3xl">Alike</h2>
                             </div>
+                            <br />
                         </div>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-humans animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
-                            <h3 className="font-bold text-xl text-white text-bold mb-2">For Humans</h3>
-                            {/* <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li> */}
+                            <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                For Humans
+                            </h3>
+                            <li>
+                                <a href="/sakar-spark"
+                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                    Sakar Spark
+                                </a>
+                            </li>
+                            <li><a href="#"
+                                className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                Food for slums
+                            </a>
+                            </li>
+                            <li><a href="#"
+                                className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                Ambulance
+                            </a>
+                            </li>
+                            <li>
+                                <a href="/sakar-spark"
+                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                    Hearing aid distribution
+                                </a>
+                            </li>
+
 
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-animals animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "150ms" }}>
                             <h3 className="font-bold text-xl text-white text-bold mb-2">For Animals</h3>
-                            {/* <li>
+                            <li>
                                 <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li> */}
+                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                    Volunteering at animal shelters
+                                </a>
+                                <a href="#"
+                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                    Adoption camps for rescued animals
+                                </a>
+                                <a href="#"
+                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                    Feeding stray dogs
+                                </a>
+                            </li>
 
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3 bg-plants animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "300ms" }}>
                             <h3 className="font-bold text-xl text-white text-bold">For Plants</h3>
-                            {/* <li>
-                                <a href="#"
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Category
-                                    One
-                                    Sublink</a>
-                            </li> */}
+                            <li><a href="#"
+                                className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Recycling awareness program</a></li>
 
                         </ul>
                     </div>
@@ -100,7 +127,8 @@ export const MainMenu: React.FC = () => {
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
                                     src="/img/get_involved/volunteer.svg" alt="" />
-                                <h3 className="font-bold text-xl text-white text-bold mb-2">Be a volunteer
+                                <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                    Be a volunteer
                                 </h3>
                             </div>
                             <p className="text-gray-100 text-sm text-justify">Sign u p as a volunteer and
@@ -108,7 +136,7 @@ export const MainMenu: React.FC = () => {
                                 campaigns, conduct workshops etc.
                                 This is an opportunity for you to work for the community. </p>
                             <div className="flex items-center py-3">
-                                <a href="#"
+                                <a href="/volunteer-registration"
                                     className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
                                     out
                                     more</a>
@@ -129,7 +157,7 @@ export const MainMenu: React.FC = () => {
                                 We&#39;ll help you to raise money through our Sākār Spark program.
                             </p>
                             <div className="flex items-center py-3">
-                                <a href="sakar-spark"
+                                <a href="/new-fundraiser"
                                     className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
                                     out
                                     more</a>
@@ -146,7 +174,7 @@ export const MainMenu: React.FC = () => {
                             <p className="text-gray-100 text-sm text-justify">If you are a business, govt or an organization, you can
                                 partner with us to collaborate and work on causes you care about.</p>
                             <div className="flex items-center py-3">
-                                <a href="#"
+                                <a href="/partner-registration"
                                     className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
                                     out
                                     more</a>
@@ -182,7 +210,7 @@ export const MainMenu: React.FC = () => {
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <a href="#" className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact <br />
+                    <a href="/contact" className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact <br />
                         Us</a>
                 </div>
             </li>
