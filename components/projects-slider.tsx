@@ -3,7 +3,7 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import ProjectCard from "./project-card";
 
 interface IProjectSlider {
-    projects: string
+    projects: any
 }
 
 const ProjectSlider: React.FC<IProjectSlider> = ({ projects }) => {
