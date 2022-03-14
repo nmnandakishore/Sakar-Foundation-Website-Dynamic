@@ -8,8 +8,8 @@ interface IProjectsPageProps {
 }
 
 
-const projectsPage: React.FC<IProjectsPageProps> = ({ projects }) => {
-    let projectItems = projects.items;
+const projectsPage: React.FC<IProjectsPageProps> = ({ projects = null }) => {
+    let projectItems = projects?.items ?? [];
     return (
         <>
 
@@ -45,7 +45,7 @@ const projectsPage: React.FC<IProjectsPageProps> = ({ projects }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-8 pb-20 animatedParent" data--sequence="100">
                         {projectItems.map((projectItem, index) => {
                             return (
-                                <div className="animated animateOnce fadeInUpShort" data-id={index}>
+                                <div className="animated animateOnce fadeInUpShort" key={projectItem.sys.id} data-id={index}>
                                     <ProjectCard projectItem={projectItem}></ProjectCard>
                                 </div>
                             )

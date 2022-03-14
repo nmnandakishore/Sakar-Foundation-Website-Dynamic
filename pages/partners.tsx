@@ -7,9 +7,9 @@ interface IpartnersPage {
 
 
 
-const partnersPage: React.FC<IpartnersPage> = ({ partners }) => {
+const partnersPage: React.FC<IpartnersPage> = ({ partners = null }) => {
 
-    let partnersArr: Array<any> = partners.items
+    let partnersArr: Array<any> = partners?.items ?? [];
     console.log(partnersArr);
 
     return (
@@ -22,7 +22,7 @@ const partnersPage: React.FC<IpartnersPage> = ({ partners }) => {
                             <div className="bg-gradient-to-b from-primary to-primaryDark mt-32 -mb-32 p-14">
                                 <p className="text-4xl">Our Partners</p>
                                 <p className="mt-6 text-justify">
-                                    Sākār is the outcome of a vision based on experience of it's founders, Keithan Pai and Keisha Pai.
+                                    Sākār is the outcome of a vision based on experience of it&#39;s founders, Keithan Pai and Keisha Pai.
                                     The Sākār leasership always strives to thrive through raising the global society without any barriors.
                                 </p>
                             </div>

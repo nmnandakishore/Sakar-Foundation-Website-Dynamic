@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ProjectSlider from '../components/projects-slider';
 import { client } from '../helpers/data-fetcher';
 
@@ -6,9 +7,9 @@ interface IHomePageProps {
     stats: any
 }
 
-const HomePage: React.FC<IHomePageProps> = ({ projects, stats }) => {
-    stats = stats.items[0].fields;
-    console.log({ stats });
+const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) => {
+    stats = stats?.items[0]?.fields ?? {};
+    // console.log({ stats });
 
     return (
         <>
@@ -113,13 +114,14 @@ const HomePage: React.FC<IHomePageProps> = ({ projects, stats }) => {
                         Projects
                     </div>
                     <div className="animated animateOnce fadeInUpShort" data-id="2">
-
-                        <ProjectSlider projects={projects.items}></ProjectSlider>
+                        <ProjectSlider projects={projects?.items ?? []}></ProjectSlider>
                     </div>
                     <br />
-                    <a href="/projects"
-                        className="p-2 bg-color-white arrow-btn h-10 text-white font-bold animated animateOnce fadeInDownShort" data-id="3"
-                    >View all</a>
+                    <Link href="/projects">
+                        <a
+                            className="p-2 bg-color-white arrow-btn h-10 text-white font-bold animated animateOnce fadeInDownShort" data-id="3"
+                        >View all</a>
+                    </Link>
                 </div>
             </div>
             <div className="section bg-white">
@@ -149,7 +151,9 @@ const HomePage: React.FC<IHomePageProps> = ({ projects, stats }) => {
                         </div>
                     </div>
                     <div className="text-center pt-6 animated animateOnce fadeInUpShort" data-id="6">
-                        <a href="new-fundraiser" className="arrow-btn text-primary font-bold inline-block">Register now</a>
+                        <Link href="/new-fundraiser" >
+                            <a className="arrow-btn text-primary font-bold">Register now</a>
+                        </Link>
                     </div>
                 </div>
             </div>

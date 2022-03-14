@@ -1,24 +1,25 @@
+import Link from 'next/link';
 import * as React from 'react'
 
 
 const partnerRegistrationPage: React.FC = () => {
-    React.useEffect(() => {
-        // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
+    // React.useEffect(() => {
+    // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
 
-        // const script = document.createElement('script');
-        // script.src = "https://www.cognitoforms.com/f/seamless.js";
-        // script.async = true;
-        // script.dataset.key = "WAaQ1CDJxkWEnADzJmGNbw"
-        // script.dataset.form = "1"
-        // // script.onload = () => this.scriptLoaded();
+    // const script = document.createElement('script');
+    // script.src = "https://www.cognitoforms.com/f/seamless.js";
+    // script.async = true;
+    // script.dataset.key = "WAaQ1CDJxkWEnADzJmGNbw"
+    // script.dataset.form = "1"
+    // // script.onload = () => this.scriptLoaded();
 
 
-        // document.querySelector('#formScript').appendChild(script);
+    // document.querySelector('#formScript').appendChild(script);
 
-        // return () => {
-        //     document.querySelector('#formScript').removeChild(script);
-        // }
-    }, []);
+    // return () => {
+    //     document.querySelector('#formScript').removeChild(script);
+    // }
+    // }, []);
 
 
     return (
@@ -164,7 +165,9 @@ const partnerRegistrationPage: React.FC = () => {
                         </div>
                     </div>
                     <div className="block text-center pt-6 animated animateOnce fadeInUpShort w-100" data-id="6">
-                        <a href="/partners" className="arrow-btn text-primary font-bold inline-block">Our partners</a>
+                        <Link href="/partners">
+                            <a className="arrow-btn text-primary font-bold inline-block">Our partners</a>
+                        </Link>
                     </div>
 
                 </div>
@@ -178,7 +181,7 @@ const partnerRegistrationPage: React.FC = () => {
                         By volunteering with us, you will become a vital part of our organization and you will make a real difference to the lives
                         of many living beings. An opportunity that will not only develop your inter-personal skills, allow you to meet
                         like-minded people; but will also be the most fulfilling and gratifying phase in your life that will echo with
-                        someone's happiness for years to come.
+                        someone&#39;s happiness for years to come.
                     </p>
                 </div>
             </div>

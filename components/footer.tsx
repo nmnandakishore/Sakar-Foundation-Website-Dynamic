@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export const Footer: React.FC = () => (
@@ -9,17 +10,17 @@ export const Footer: React.FC = () => (
                     <div className="grid grid-cols-3 py-0 sm:py-8">
                         <div
                             className="col-span-3 py-5 sm:py-0 sm:col-auto border-b border-dashed border-primary sm:border-none">
-                            <a className="block py-2 hover:underline" href="/about">About us</a>
-                            <a className="block py-2 hover:underline" href="">How How Sākār helps</a>
-                            <a className="block py-2 hover:underline" href="">Sākār News</a>
-                            <a className="block py-2 hover:underline" href="/contact">Contact Us</a>
+                            <Link href="/about"><a className="block py-2 hover:underline" >About us</a></Link>
+                            <Link href=""><a className="block py-2 hover:underline">How How Sākār helps</a></Link>
+                            <Link href=""><a className="block py-2 hover:underline">Sākār News</a></Link>
+                            <Link href="/contact"><a className="block py-2 hover:underline" >Contact Us</a></Link>
                         </div>
                         <div
                             className="col-span-3 py-5 sm:py-0 sm:col-auto border-b border-dashed border-primary sm:border-none">
-                            <a className="block py-2 hover:underline" href="/partners">Our Partners</a>
-                            <a className="block py-2 hover:underline" href="/leadership">Leadership</a>
-                            <a className="block py-2 hover:underline" href="/privacy">Privacy policy</a>
-                            <a className="block py-2 hover:underline" href="/tos">Terms and condition</a>
+                            <Link href="/partners"><a className="block py-2 hover:underline" href="">Our Partners</a></Link>
+                            <Link href="/leadership"><a className="block py-2 hover:underline" href="">Leadership</a></Link>
+                            <Link href="/privacy"><a className="block py-2 hover:underline" href="">Privacy policy</a></Link>
+                            <Link href="/tos"><a className="block py-2 hover:underline" href="">Terms and condition</a></Link>
                         </div>
                         <div className="col-span-3 sm:col-auto py-5 sm:py-0">
                             <div className="table text-center">

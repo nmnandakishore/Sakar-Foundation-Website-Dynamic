@@ -9,10 +9,10 @@ interface ISingleProjectPage {
     // context: any
 }
 
-const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
+const singleProjectPage: React.FC<ISingleProjectPage> = ({ project = null }) => {
     // const router = useRouter()
     // const { slug } = router.query
-    let fields = project.fields;
+    let fields = project?.fields ?? {};
     let raisedPercent: number = (fields.raisedAmount / fields.targetAmount) * 100;
 
 

@@ -51,7 +51,8 @@ const aboutPage: React.FC = () => {
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
                             <p className="heading text-primary mb-8 animated animateOnce fadeInRightShort" data-id="1">What we do</p>
                             <p className="text-justify animated animateOnce fadeInRightShort" data-id="2">
-                                Sākār foundation works in two different ways. One is to reach out the needy through projects caried out under
+                                Sākār foundation works in two different ways. One is to reach out the needy thr
+                                ough projects caried out under
                                 Sākār Spark. And the other is, we aften takeup many initiatives ourselves for causes which need more attention to be given.
                             </p>
                         </div>

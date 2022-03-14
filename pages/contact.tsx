@@ -2,23 +2,23 @@ import * as React from 'react'
 
 
 const newFundraiserPage: React.FC = () => {
-    React.useEffect(() => {
-        // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
+    // React.useEffect(() => {
+    // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
 
-        // const script = document.createElement('script');
-        // script.src = "https://www.cognitoforms.com/f/seamless.js";
-        // script.async = true;
-        // script.dataset.key = "WAaQ1CDJxkWEnADzJmGNbw"
-        // script.dataset.form = "1"
-        // // script.onload = () => this.scriptLoaded();
+    // const script = document.createElement('script');
+    // script.src = "https://www.cognitoforms.com/f/seamless.js";
+    // script.async = true;
+    // script.dataset.key = "WAaQ1CDJxkWEnADzJmGNbw"
+    // script.dataset.form = "1"
+    // // script.onload = () => this.scriptLoaded();
 
 
-        // document.querySelector('#formScript').appendChild(script);
+    // document.querySelector('#formScript').appendChild(script);
 
-        // return () => {
-        //     document.querySelector('#formScript').removeChild(script);
-        // }
-    }, []);
+    // return () => {
+    //     document.querySelector('#formScript').removeChild(script);
+    // }
+    // }, []);
 
 
     return (

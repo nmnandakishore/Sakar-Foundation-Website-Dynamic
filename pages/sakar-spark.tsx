@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as React from 'react'
 
 const sparkPage: React.FC = () => {
@@ -94,7 +95,9 @@ const sparkPage: React.FC = () => {
                         </div>
                     </div>
                     <div className="text-center pt-6">
-                        <a href="/new-fundraiser" className="arrow-btn text-primary font-bold">Register now</a>
+                        <Link href="/new-fundraiser" >
+                            <a className="arrow-btn text-primary font-bold">Register now</a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -7,9 +7,9 @@ interface IleadershipPage {
 
 
 
-const leadershipPage: React.FC<IleadershipPage> = ({ leaders }) => {
+const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
 
-    let leadersArr: Array<any> = leaders.items
+    let leadersArr: Array<any> = leaders?.items ?? [];
     console.log(leadersArr);
 
     return (
@@ -22,7 +22,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders }) => {
                             <div className="bg-gradient-to-b from-primary to-primaryDark mt-32 -mb-32 p-14">
                                 <p className="text-4xl">Leadership</p>
                                 <p className="mt-6 text-justify">
-                                    Sākār is the outcome of a vision based on experience of it's founders, Keithan Pai and Keisha Pai.
+                                    Sākār is the outcome of a vision based on experience of it&#39;s founders, Keithan Pai and Keisha Pai.
                                     The Sākār leasership always strives to thrive through raising the global society without any barriors.
                                 </p>
                             </div>
