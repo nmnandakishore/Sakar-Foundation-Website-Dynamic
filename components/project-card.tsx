@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 interface IProjectCard {
-    projectItem: object
+    projectItem: Object
 }
 
 const ProjectCard: React.FC<IProjectCard> = ({ projectItem }) => {
-    let fields: object = projectItem.fields;
+    let fields: Object = projectItem.fields;
     let raisedPercent: number = (fields.raisedAmount / fields.targetAmount) * 100;
     return (
         <div className="project col-span-1 mt-0 pt-0 bg-white text-left ">
