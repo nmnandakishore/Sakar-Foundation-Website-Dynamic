@@ -30,13 +30,19 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
 
 
 
-        [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
-            // find the asset in the assetMap by ID
-            const asset = assetMap.get(node.data.target.sys.id);
+        // [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+        //     // find the asset in the assetMap by ID
+        //     const asset = assetMap.get(node.data.target.sys.id);
 
-            // render the asset accordingly
+        //     // render the asset accordingly
+        //     return (
+        //         <img src={asset.url} alt="My image alt text" />
+        //     );
+        // }
+
+        [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
             return (
-                <img src={asset.url} alt="My image alt text" />
+                <img src={node.data.target.fixed.src} alt="My image alt text" />
             );
         }
 
