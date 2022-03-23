@@ -102,7 +102,9 @@ export async function getServerSideProps() {
     let clientObj = client();
 
     // const res: any = await clientObj.getAssets();
-    const res: any = await clientObj.getEntries('projects');
+    const res: any = await clientObj.getEntries({
+        content_type: 'projects'
+    });
 
     return {
         props: {

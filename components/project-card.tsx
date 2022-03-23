@@ -9,7 +9,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ projectItem }) => {
     let raisedPercent: number = (fields.raisedAmount / fields.targetAmount) * 100;
     return (
         <div className="project col-span-1 mt-0 pt-0 bg-white text-left ">
-            <div className="w-full h-52" style={{ backgroundImage: `url(${fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'})`, backgroundSize: "cover", overflow: "none" }}>
+            <div className="w-full h-52" style={{ backgroundImage: `url(${fields?.photograph?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                 <div className="w-full h-52 p-4 bg-gradient-to-t from-primary " >
                     <div className="title w-full h-36"></div>
                     <a href="" className="title w-full min-h-max text-lg text-white">{fields.title}</a>
@@ -47,7 +47,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ projectItem }) => {
                         query: { slug: fields.slug },
                     }}
                 >
-                    <a className="w-1/2 arrow-btn inline-block h-10 bg-primaryDark text-center text-white py-2 bg-plants/95 hover:opacity-95 transition-all font-bold  px-4" data-id="3">Donate</a>
+                    <a className="w-1/2 arrow-btn inline-block h-10 bg-primaryDark text-center text-white py-2 bg-plants/95 hover:opacity-95 transition-all px-4" data-id="3">Donate</a>
                 </Link>
             </div>
         </div>

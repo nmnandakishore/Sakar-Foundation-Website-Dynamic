@@ -11,7 +11,7 @@ const PartnerRegistrationPage: React.FC = () => {
   const onSubmit = async data => {
     try {
       setLoading(true);
-      await fetch("https://submit-form.com/UF099rJl", {
+      await fetch("https://submit-form.com/qChKe0C3", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -223,7 +223,7 @@ const PartnerRegistrationPage: React.FC = () => {
               <input required type="text" placeholder="Company Name" {...register("Company Name", { required: true })} />
               <input type="url" placeholder="Website" {...register("Website")} />
               <input required type="tel" placeholder="Phone Number" {...register("Phone Number", { required: true })} />
-              
+
               <input required type="email" placeholder="Work Email" {...register("Work Email", {})} />
               <div className="grid col-span-2 grid-cols-2 gap-4">
                 <input required type="text" placeholder="Office Address Line 1" {...register("Address Line 1", { required: true })} />

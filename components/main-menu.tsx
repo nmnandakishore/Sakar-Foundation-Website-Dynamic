@@ -215,8 +215,10 @@ export const MainMenu: React.FC = () => {
             </li >
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <a href="#" className="relative block px-2 lg:px-4 text-sm lg:text-base ">Sākār <br />
-                        News</a>
+                    <Link href="/news">
+                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Sākār <br />
+                            News</a>
+                    </Link>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">

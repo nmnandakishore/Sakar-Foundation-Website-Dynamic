@@ -10,7 +10,7 @@ const VolunteerRegistrationPage: React.FC = () => {
   const onSubmit = async data => {
     try {
       setLoading(true);
-      await fetch("https://submit-form.com/UF099rJl", {
+      await fetch("https://submit-form.com/OGJtewCw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const VolunteerRegistrationPage: React.FC = () => {
       setLoading(false);
     }
   }
-  
+
   // React.useEffect(() => {
   // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
 
@@ -107,7 +107,7 @@ const VolunteerRegistrationPage: React.FC = () => {
                 <input required type="text" placeholder="City" {...register("City", { required: true })} />
                 <input required type="text" placeholder="State / Province / Region" {...register("State / Province / Region", { required: true })} />
                 <select placeholder="Country" required {...register("Country", { required: true })}>
-                  { COUNTRIES.map(country => <option key={country} value={country}>{country}</option>)}
+                  {COUNTRIES.map(country => <option key={country} value={country}>{country}</option>)}
                 </select>
               </div>
               <div className="col-span-full grid justify-items-center">
@@ -116,9 +116,9 @@ const VolunteerRegistrationPage: React.FC = () => {
             </form>
             {msg ? (
               <div className="py-3 px-5 mb-4 bg-gray-100 text-gray-900 rounded-md text-sm border border-gray-200" role="alert">
-                  {msg}
+                {msg}
               </div>
-            ): null}
+            ) : null}
           </div>
         </div>
       </div>

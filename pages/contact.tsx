@@ -1,4 +1,5 @@
-import * as React from 'react'
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 
 const newFundraiserPage: React.FC = () => {
@@ -19,6 +20,31 @@ const newFundraiserPage: React.FC = () => {
     //     document.querySelector('#formScript').removeChild(script);
     // }
     // }, []);
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const [loading, setLoading] = useState(false);
+    const [msg, setMsg] = useState<string | null>(null);
+    const onSubmit = async data => {
+        try {
+            setLoading(true);
+            await fetch("https://submit-form.com/YAX5WVOQ", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            setLoading(false);
+            setMsg('Your submission has been recieved')
+            reset();
+        } catch (err) {
+            console.error(err);
+            setMsg('Oops! Could not submit details. Check your internet connection')
+        } finally {
+            setLoading(false);
+        }
+    }
 
 
     return (
@@ -59,11 +85,25 @@ const newFundraiserPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="section overflow-section  mt-8 -mb-20">
+            <div className="section overflow-section  mt-8 mb-20">
                 <div className="container">
                     <div id="formScript">
-                        {/* <iframe src="https://www.cognitoforms.com/f/WAaQ1CDJxkWEnADzJmGNbw/1" height="810"></iframe>
-                        <script src="https://www.cognitoforms.com/f/iframe.js"></script> */}
+                        <div id="formScript">
+                            <form className="grid grid-cols-2 gap-4 my-3" onSubmit={handleSubmit(onSubmit)}>
+                                <input required type="text" placeholder="Name" {...register("First Name", { required: true })} />
+                                <input required type="tel" placeholder="Phone Number" {...register("Phone Number", { required: true })} />
+                                <input required type="email" placeholder="Email" {...register("Email", {})} />
+                                <textarea required placeholder="Your message" {...register("Cause", { required: true })} />
+                                <div className="col-span-full grid justify-items-center">
+                                    <button disabled={loading} className={`${loading ? 'animate-pulse' : ''} w-full md:w-1/2 bg-primary hover:bg-primaryDark text-white font-bold content-center py-2 px-4 rounded`} type="submit">Submit</button>
+                                </div>
+                            </form>
+                            {msg ? (
+                                <div className="py-3 px-5 mb-4 bg-gray-100 text-gray-900 rounded-md text-sm border border-gray-200" role="alert">
+                                    {msg}
+                                </div>
+                            ) : null}
+                        </div>
                     </div>
 
                 </div>
