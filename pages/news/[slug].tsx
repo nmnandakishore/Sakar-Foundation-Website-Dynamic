@@ -28,22 +28,24 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
         //     <img src={node.data.target.fixed.src} alt="" /> // You can decide what alt you want to put in
         // ),
 
+        renderNode: {
+
+            // [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+            //     // find the asset in the assetMap by ID
+            //     const asset = assetMap.get(node.data.target.sys.id);
+
+            //     // render the asset accordingly
+            //     return (
+            //         <img src={asset.url} alt="My image alt text" />
+            //     );
+            // }
 
 
-        // [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
-        //     // find the asset in the assetMap by ID
-        //     const asset = assetMap.get(node.data.target.sys.id);
-
-        //     // render the asset accordingly
-        //     return (
-        //         <img src={asset.url} alt="My image alt text" />
-        //     );
-        // }
-
-        [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
-            return (
-                <img src={node.data.target.fixed.src} alt="My image alt text" />
-            );
+            [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+                return (
+                    <img src={node.data.target.fixed.src} alt="" />
+                );
+            }
         }
 
 
@@ -90,13 +92,12 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
                         </div>
 
                         <div className="col-span-1  animated animateOnce fadeInUpShort" data-id="3">
-                            {documentToReactComponents(fields.body, options)}
+                            {documentToReactComponents(fields.body,)}
                             {/* {fields.} */}
                         </div>
 
 
                     </div>
-                    {/* {fields.details.content[0].content[0].value} */}
                 </div>
             </div>
 
