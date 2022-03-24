@@ -68,7 +68,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pb-20 animatedParent" data--sequence="100">
                         {newsItems.map((newsItem, index) => {
                             return (
-                                <div className="bg-gray-200 mt-10 mb-4">
+                                <div className="bg-gray-200 mt-10 mb-4" key={newsItem.sys.id}>
                                     <div className="w-full h-60" style={{ backgroundImage: `url(${newsItem.fields.featuredImage.fields.file.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                         <div className="w-full h-56 p-14 " >
                                             {/* <div className="title w-full h-44"></div> */}

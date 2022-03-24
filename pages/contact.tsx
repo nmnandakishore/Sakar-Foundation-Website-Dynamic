@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 
-const newFundraiserPage: React.FC = () => {
+const PontactPage: React.FC = () => {
     // React.useEffect(() => {
     // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
 
@@ -116,6 +116,6 @@ const newFundraiserPage: React.FC = () => {
     )
 }
 
-newFundraiserPage.displayName = "New Fundraiser"
+PontactPage.displayName = "New Fundraiser"
 
-export default newFundraiserPage;
+export default PontactPage;

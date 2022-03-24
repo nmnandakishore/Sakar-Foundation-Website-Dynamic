@@ -93,6 +93,9 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
 
                         <div className="col-span-1  animated animateOnce fadeInUpShort" data-id="3">
                             {documentToReactComponents(fields.body,)}
+
+
+
                             {/* {fields.} */}
                         </div>
 
