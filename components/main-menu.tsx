@@ -59,10 +59,10 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                               {programs
                                 .filter(program => program?.fields?.category === 'Humans')
                                 .map(program => (
-                                  <li key={program.slug}>
-                                      <Link  href={program.slug}><a
+                                  <li key={program?.fields?.slug}>
+                                      <Link  href={program?.fields?.slug}><a
                                           className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program.programName }
+                                          { program?.fields?.programName }
                                       </a></Link>
                                   </li>
                               ))}
@@ -99,10 +99,10 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             {programs
                                 .filter(program => program?.fields?.category === 'Animals')
                                 .map(program => (
-                                  <li key={program.slug}>
-                                      <Link  href={program.slug}><a
+                                  <li key={program?.fields?.slug}>
+                                      <Link  href={program?.fields?.slug}><a
                                           className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program.programName }
+                                          { program?.fields?.programName }
                                       </a></Link>
                                   </li>
                               ))}
@@ -132,10 +132,10 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             {programs
                                 .filter(program => program?.fields?.category === 'Plants')
                                 .map(program => (
-                                  <li key={program.slug}>
-                                      <Link  href={program.slug}><a
+                                  <li key={program?.fields?.slug}>
+                                      <Link  href={program?.fields?.slug}><a
                                           className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program.programName }
+                                          { program?.fields?.programName }
                                       </a></Link>
                                   </li>
                               ))}
