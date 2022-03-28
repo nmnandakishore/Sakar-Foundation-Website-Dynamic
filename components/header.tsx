@@ -1,9 +1,8 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { MainMenu } from "./main-menu";
-import Typed from "typed.js";
 
-export const Header: React.FC = () => {
+export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) => {
 
     // useEffect(() => {
 
@@ -72,7 +71,7 @@ export const Header: React.FC = () => {
                                 </a>
                             </Link>
                         </div>
-                        <MainMenu></MainMenu>
+                        <MainMenu programs={programs}></MainMenu>
                     </div>
                 </nav>
             </div>

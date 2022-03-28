@@ -2,12 +2,12 @@
 
 // import Navbar from './navbar'
 // import Footer from './footer'
-import Head from "next/head"
-import { TopMenu } from "../components/top-menu";
+import Head from "next/head";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
+import { TopMenu } from "../components/top-menu";
 
-export default function Layout({ pageTitle, pageBody, children }) {
+export default function Layout({ pageTitle = undefined, pageBody = undefined, children = undefined, programs = [] }) {
     return (
         <>
             <Head>
@@ -21,14 +21,14 @@ export default function Layout({ pageTitle, pageBody, children }) {
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
 
                 <meta />
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Sākār Foundation | {pageTitle}</title>
             </Head>
 
             <TopMenu message={[]}></TopMenu>
-            <Header></Header>
+            <Header programs={programs}></Header>
             <div className="page-body">
                 {children}
                 {pageBody}
