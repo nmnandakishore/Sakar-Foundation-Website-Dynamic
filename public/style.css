@@ -149,7 +149,8 @@ b{
 	position: relative;
 	top: -1px;
 }
-`` .toggle-input {
+
+.toggle-input {
 	display: none;
 }
 .toggle-input:not(checked) ~ .mega-menu {

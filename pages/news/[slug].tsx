@@ -42,8 +42,9 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
 
 
             [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+                console.log({ node });
                 return (
-                    <img src={node.data.target.fixed.src} alt="" />
+                    <img src={node.data.target.fields.file.url} alt={node.data.target.fields.title} />
                 );
             }
         }
@@ -91,10 +92,8 @@ const singlenewsPage: React.FC<ISinglenewsPage> = ({ news }) => {
                             {fields.excerpt}
                         </div>
 
-                        <div className="col-span-1  animated animateOnce fadeInUpShort" data-id="3">
-                            {documentToReactComponents(fields.body,)}
-
-
+                        <div className="prose prose-slate col-span-1  animated animateOnce fadeInUpShort" data-id="3">
+                            {documentToReactComponents(fields.body, options)}
 
                             {/* {fields.} */}
                         </div>

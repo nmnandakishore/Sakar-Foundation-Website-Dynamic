@@ -9,6 +9,15 @@ body {
 	font-size: 16px;
 }
 
+
+b {
+	@apply font-bold;
+}
+
+.prose {
+	@apply max-w-full
+}
+
 .container {
 	@apply p-4 sm:px-5 sm:py-8 lg:p-0 max-w-6xl 2xl:max-w-7xl mx-auto;
 }
@@ -61,7 +70,7 @@ body {
 
 .page-body {
 	min-height: 100vh;
-	@apply text-gray-800 font-light;
+	@apply text-slate-800;
 }
 
 .section {
