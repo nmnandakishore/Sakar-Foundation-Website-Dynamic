@@ -7,7 +7,14 @@ import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { TopMenu } from "../components/top-menu";
 
-export default function Layout({ pageTitle = undefined, pageBody = undefined, children = undefined, programs = [] }) {
+export default function Layout({ pageTitle = undefined, pageBody = undefined, children = undefined, programs = [], siteInfo = [] }) {
+
+    let socoalLinks = {
+        youtube: siteInfo[0].fields.youTubeLink,
+        twitter: siteInfo[0].fields.twitterLink,
+        facebook: siteInfo[0].fields.facebookLink,
+        instagram: siteInfo[0].fields.instagramLink
+    }
     return (
         <>
             <Head>
@@ -27,13 +34,27 @@ export default function Layout({ pageTitle = undefined, pageBody = undefined, ch
                 <title>Sākār Foundation | {pageTitle}</title>
             </Head>
 
-            <TopMenu message={[]}></TopMenu>
+            <TopMenu
+                message={[]}
+                facebookLink={socoalLinks.facebook}
+                instagramLink={socoalLinks.instagram}
+                twitterLink={socoalLinks.twitter}
+                youtubeLink={socoalLinks.youtube}></TopMenu>
+
+
             <Header programs={programs}></Header>
             <div className="page-body">
                 {children}
                 {pageBody}
             </div>
-            <Footer></Footer>
+            <Footer
+                address={siteInfo[0].fields.address}
+                phone={siteInfo[0].fields.telephoneNumber}
+                facebookLink={socoalLinks.facebook}
+                instagramLink={socoalLinks.instagram}
+                twitterLink={socoalLinks.twitter}
+                youtubeLink={socoalLinks.youtube}
+            ></Footer>
 
 
 

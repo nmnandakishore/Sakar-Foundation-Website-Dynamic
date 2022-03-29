@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { client } from '../helpers/data-fetcher';
 
 
-const PontactPage: React.FC = () => {
+const ContactPage: React.FC<{ siteInfo: any }> = ({ siteInfo = null }) => {
     // React.useEffect(() => {
     // <script src="https://www.cognitoforms.com/f/seamless.js" data-key="WAaQ1CDJxkWEnADzJmGNbw" data-form="1"></script>
 
@@ -46,6 +47,7 @@ const PontactPage: React.FC = () => {
         }
     }
 
+    console.log({ siteInfo })
 
     return (
         <>
@@ -70,7 +72,9 @@ const PontactPage: React.FC = () => {
                 <div className="container animatedParent" data--sequence="300">
                     <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Reach us at</p>
                     <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-                        2775 TAPO ST SUITE 204, SIMI VALLEY, CA, 93065,+1 (805) 583-6700
+                        {siteInfo.items[0].fields.address}
+                        <br />
+                        {siteInfo.items[0].fields.telephoneNumber}
                     </p>
                 </div>
             </div>
@@ -85,7 +89,7 @@ const PontactPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="section overflow-section  mt-8 mb-20">
+            <div className="section overflow-section mb-20">
                 <div className="container">
                     <div id="formScript">
                         <div id="formScript">
@@ -116,6 +120,22 @@ const PontactPage: React.FC = () => {
     )
 }
 
-PontactPage.displayName = "New Fundraiser"
+ContactPage.displayName = "Contact Us"
 
-export default PontactPage;
+export default ContactPage;
+
+export async function getServerSideProps() {
+    // Fetch data from external API
+
+    let clientObj = client();
+
+    // const res: any = await clientObj.getAssets();
+    const siteInfo: any = await clientObj.getEntries({
+        content_type: 'siteInfo'
+    });
+
+    return {
+        props: { siteInfo }
+    }
+
+}

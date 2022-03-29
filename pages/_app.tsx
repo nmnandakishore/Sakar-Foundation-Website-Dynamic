@@ -4,12 +4,12 @@ import { client } from '../helpers/data-fetcher';
 import Layout from '../layouts/primary-layout';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps, programs }: AppProps & { programs: any }) {
-  console.log({ programs })
+function MyApp({ Component, pageProps, programs, siteInfo }: AppProps & { programs: any, siteInfo: any }) {
+  console.log({ siteInfo })
   return (
-    <Layout programs={programs}>
+    <Layout programs={programs} siteInfo={siteInfo} >
       <Component {...pageProps} />
-    </Layout>
+    </Layout >
   )
 }
 
@@ -18,12 +18,17 @@ MyApp.getInitialProps = async (context) => {
   let clientObj = client();
 
   const res: any = await clientObj.getEntries({
-      content_type: 'programs'
+    content_type: 'programs'
+  });
+
+  const res2: any = await clientObj.getEntries({
+    content_type: 'siteInfo'
   });
 
   return {
     ...appProps,
-    programs: res?.items ?? []
+    programs: res?.items ?? [],
+    siteInfo: res2?.items ?? {}
   }
 
   // console.log({ "slugAtServerProps": context.params });

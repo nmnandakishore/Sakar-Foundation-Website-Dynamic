@@ -56,16 +56,16 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             <h3 className="font-bold text-xl text-white text-bold mb-2">
                                 For Humans
                             </h3>
-                              {programs
+                            {programs
                                 .filter(program => program?.fields?.category === 'Humans')
                                 .map(program => (
-                                  <li key={program?.fields?.slug}>
-                                      <Link  href={program?.fields?.slug}><a
-                                          className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program?.fields?.programName }
-                                      </a></Link>
-                                  </li>
-                              ))}
+                                    <li key={program?.fields?.slug}>
+                                        <Link href={`/program/${program?.fields?.slug}`}><a
+                                            className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                            {program?.fields?.programName}
+                                        </a></Link>
+                                    </li>
+                                ))}
                             {/* <li>
                                 <Link href='/sakar-spark'><a
                                     className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
@@ -99,13 +99,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             {programs
                                 .filter(program => program?.fields?.category === 'Animals')
                                 .map(program => (
-                                  <li key={program?.fields?.slug}>
-                                      <Link  href={program?.fields?.slug}><a
-                                          className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program?.fields?.programName }
-                                      </a></Link>
-                                  </li>
-                              ))}
+                                    <li key={program?.fields?.slug}>
+                                        <Link href={`/program/${program?.fields?.slug}`}><a
+                                            className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                            {program?.fields?.programName}
+                                        </a></Link>
+                                    </li>
+                                ))}
                             {/* <li>
                                 <Link href='#'>
                                     <a className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
@@ -132,13 +132,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             {programs
                                 .filter(program => program?.fields?.category === 'Plants')
                                 .map(program => (
-                                  <li key={program?.fields?.slug}>
-                                      <Link  href={program?.fields?.slug}><a
-                                          className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                          { program?.fields?.programName }
-                                      </a></Link>
-                                  </li>
-                              ))}
+                                    <li key={program?.fields?.slug}>
+                                        <Link href={`/program/${program?.fields?.slug}`}><a
+                                            className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
+                                            {program?.fields?.programName}
+                                        </a></Link>
+                                    </li>
+                                ))}
                             {/* <li><a href="#"
                                 className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Recycling awareness program</a></li> */}
 
