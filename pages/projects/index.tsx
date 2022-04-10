@@ -81,7 +81,7 @@ const projectsPage: React.FC<IProjectsPageProps> = ({ projects = null }) => {
                         </div>
                     </div>
                     <div className="text-center pt-6 animated animateOnce fadeInUpShort" data-id="6">
-                        <a href="" className="arrow-btn text-primary font-bold inline-block">Register now</a>
+                        <a href="" className="arrow-btn text-primary  inline-block">Register now</a>
                     </div>
                 </div>
             </div>

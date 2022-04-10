@@ -192,7 +192,7 @@ const PartnerRegistrationPage: React.FC = () => {
           </div>
           <div className="block text-center pt-6 animated animateOnce fadeInUpShort w-100" data-id="6">
             <Link href="/partners">
-              <a className="arrow-btn text-primary font-bold inline-block">Our partners</a>
+              <a className="arrow-btn text-primary  inline-block">Our partners</a>
             </Link>
           </div>
 

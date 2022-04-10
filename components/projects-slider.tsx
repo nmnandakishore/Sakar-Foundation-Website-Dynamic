@@ -21,7 +21,7 @@ const ProjectSlider: React.FC<IProjectSlider> = ({ projects }) => {
                     start: 1,
                     autoplay: true,
                     height: '450px',
-                    gap: '20px'
+                    gap: '30px'
                 }}
 
                 className="mt-12">

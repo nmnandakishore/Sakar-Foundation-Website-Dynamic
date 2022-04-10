@@ -11,51 +11,50 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             {/* <!--Regular Link--> */}
             <li className="hover:bg-primary hover:text-white border-none">
                 <div className="wrapper">
-                    <Link href="/about"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">About
-                        <br />
-                        Us</a></Link>
+                    <Link href="/about"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">About</a></Link>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/projects"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Sākār <br />
-                        Projects</a></Link>
+                    <Link href="/projects"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Projects</a></Link>
                 </div>
             </li>
             <li className="hoverable hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <label
-                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Our
-                        <br />
-                        Programs</label>
+                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
                 </div>
                 <div role="toggle" className="p-6 pb-0 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary">
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 animate__animated animate__faster animate__fadeInLeft"
                             style={{ animationDelay: ":250ms" }}>
                             <div>
-                                <h2 className="font-light text-3xl">We care about</h2>
+                                {/* <h2 className="font-light text-3xl">We care about</h2> */}
                             </div>
                             <div>
-                                <h1 className="text-humans font-bold text-5xl">Humans</h1>
+                                <h1 className="text-humans font-bold text-6xl">Humans</h1>
                             </div>
                             <div>
-                                <h1 className="text-animals font-bold text-5xl inline-block">Animals</h1>
-                                <span className="text-white font-light text-3xl">&</span>
+                                <h1 className="text-animals font-bold text-6xl inline-block">Animals</h1>
+                                {/* <span className="text-white font-light text-3xl">&</span> */}
                             </div>
                             <div>
-                                <h1 className="text-plants font-bold text-5xl">Plants</h1>
+                                <h1 className="text-plants font-bold text-6xl">Plants</h1>
                             </div>
                             <div>
-                                <h2 className="font-light text-3xl">Alike</h2>
+                                {/* <h2 className="font-light text-3xl">Alike</h2> */}
                             </div>
                             <br />
                         </div>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-humans animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
-                            <h3 className="font-bold text-xl text-white text-bold mb-2">
-                                For Humans
-                            </h3>
+                            <div className="flex items-center">
+                                <img className="h-8 mb-3 mr-3 fill-current text-white"
+                                    src="/img/programs/humans.svg" alt="" />
+                                <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                    Humans
+                                </h3>
+                            </div>
                             {programs
                                 .filter(program => program?.fields?.category === 'Humans')
                                 .map(program => (
@@ -95,7 +94,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-animals animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "150ms" }}>
-                            <h3 className="font-bold text-xl text-white text-bold mb-2">For Animals</h3>
+                            <div className="flex items-center">
+                                <img className="h-8 mb-3 mr-3 fill-current text-white"
+                                    src="/img/programs/animals.svg" alt="" />
+                                <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                    Animals
+                                </h3>
+                            </div>
                             {programs
                                 .filter(program => program?.fields?.category === 'Animals')
                                 .map(program => (
@@ -128,7 +133,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3 bg-plants animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "300ms" }}>
-                            <h3 className="font-bold text-xl text-white text-bold">For Plants</h3>
+                            <div className="flex items-center">
+                                <img className="h-8 mb-3 mr-3 fill-current text-white"
+                                    src="/img/programs/plants.svg" alt="" />
+                                <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                    Plants
+                                </h3>
+                            </div>
                             {programs
                                 .filter(program => program?.fields?.category === 'Plants')
                                 .map(program => (
@@ -149,8 +160,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             <li className="hoverable hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <a href="#"
-                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get
-                        <br />Involved</a>
+                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
                 </div>
                 <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary">
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
@@ -246,16 +256,14 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <Link href="/news">
-                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Sākār <br />
-                            News</a>
+                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">News</a>
                     </Link>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <Link href="/contact">
-                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact <br />
-                            Us</a>
+                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact</a>
                     </Link>
                 </div>
             </li>
@@ -263,8 +271,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                 <div className="wrapper hover:text-white">
                     <a href="#"
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:text-white font-bold">Donate
-                        <br />
-                        Us</a>
+                    </a>
                 </div>
             </li>
         </ul >

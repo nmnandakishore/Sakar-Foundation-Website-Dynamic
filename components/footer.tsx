@@ -47,11 +47,14 @@ export const Footer: React.FC<{
                                     {/* <a className="text-gray-800 text-sm not-italic" href=`tel:${ }`>+1 (805)
                                 583-6700</a> */}
                                     <nav className="social text-center text-gray-800">
-                                        <a href={`${facebookLink ?? "#"}`}><i className="px-4 inline-block w-4 relative fab fa-facebook"></i></a>
-                                        <a href={`${twitterLink ?? "#"}`}><i className="px-4 inline-block w-4 relative fab fa-twitter"></i></a>
-                                        <a href={`${instagramLink ?? "#"}`}><i className="px-4 inline-block w-4 relative fab fa-instagram"></i></a>
-                                        <a href={`${youtubeLink ?? "#"}`}><i className="px-4 inline-block w-4 relative fab fa-youtube"></i></a>
+                                        <Link href={`${facebookLink ?? "#"}`}><a><i className="px-3 inline-block relative fab fa-facebook"></i></a></Link>
+                                        <Link href={`${twitterLink ?? "#"}`}><a><i className="px-3 inline-block relative fab fa-twitter"></i></a></Link>
+                                        <Link href={`${instagramLink ?? "#"}`}><a><i className="px-3 inline-block relative fab fa-instagram"></i></a></Link>
+                                        <Link href={`${youtubeLink ?? "#"}`}><a><i className="px-3 inline-block relative fab fa-youtube"></i></a></Link>
                                     </nav>
+                                    <div className="block text-center mt-2">
+                                        <span className="font-bold">Tax ID: </span>12-3456789
+                                    </div>
                                 </div>
                             </div>
                         </div>

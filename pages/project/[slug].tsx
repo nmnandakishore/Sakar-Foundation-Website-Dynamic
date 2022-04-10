@@ -40,16 +40,16 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
     return (
         <>
             <div style={{ backgroundImage: `url(${fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'})`, height: '400px' }}
-                className="page-header h-96 bg-fixed bg-center bg-cover bg-blend-color-burn">
-                <div className='px-8 w-full h-full bg-gradient-to-b from-transparent via-primary/75 to-primary/100'>
+                className="page-header h-96 bg-fixed bg-center bg-cover bg-blend-color-burn saturate-150">
+                <div className='px-8 w-full h-full bg-gradient-to-b from-transparent via-primary/20 to-primary/50'>
                     <div className="container">
-                        <div className="grid grid-cols-2 sm:gap-10 animatedParent" data-sequence="100">
-                            <div className="my-auto  col-span-2 sm:col-span-1 animated animateOnce fadeInUpShort" data-id="1">
-                                <p className="text-4xl mt-44 -mb-44 text-white">{fields.title}</p>
+                        <div className="grid grid-cols-2 sm:gap-10 animatedParent text-center sm:text-left" data-sequence="100">
+                            <div className="my-auto  col-span-2 sm:col-span-1 animated animateOnce fadeInUpShort -mb-10" data-id="1">
+                                <p className="text-4xl mt-44 -mb-44 text-white sm:text-primary">{fields.title}</p>
                             </div>
                             <div className="my-auto col-span-2 sm:col-span-1 animated animateOnce fadeInDownShort" data-id="1">
-                                <div className=" bg-gray-200 mt-60 -mb-60 animatedParent" data-sequence="100">
-                                    <div className="p-14 animated animateOnce fadeInUpShort" data-id="3">
+                                <div className=" bg-white shadow-lg mt-60 -mb-60 animatedParent" data-sequence="100">
+                                    <div className="p-10 animated animateOnce fadeInUpShort" data-id="3">
 
                                         <div className="w-100 overflow-hidden h-auto mt-2 mb-5 px-4 z-50" >
                                             <span className="font-bold"> Campeigner : </span> {fields.campaigner}
@@ -60,7 +60,7 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
                                                 <div className="col-span-1">$0</div>
                                                 <div className="col-span-1 text-right">${fields.targetAmount}</div>
                                             </div>
-                                            <div className="progress my-2 mx-2 block w-100 p-px bg-white animated animateOnce fadeInUpShort" data-id="2" style={{ borderRadius: '13px' }}>
+                                            <div className="progress my-2 mx-2 block w-100 bg-slate-100 border border-slate-200 animated animateOnce fadeInUpShort" data-id="2" style={{ borderRadius: '13px' }}>
                                                 <div className="progress-value bg-gradient-to-r from-primary to-sky-500 h-3"
                                                     style={{ width: `${raisedPercent}` + "%", borderRadius: '13px' }}
                                                 ></div>
@@ -73,7 +73,7 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
                                             query: { slug: fields.slug },
                                         }}
                                     >
-                                        <a className="w-full arrow-btn inline-block h-10 bg-primaryDark text-center text-white py-2 bg-plants/95 hover:opacity-95 transition-all font-bold  px-4 animated animateOnce fadeInUpShort" data-id="3" >Donate</a>
+                                        <a className="w-full arrow-btn inline-block h-10 bg-primaryDark text-center text-white py-2 bg-plants/95 hover:opacity-95 transition-all px-4 animated animateOnce fadeInUpShort" data-id="3" >Donate</a>
                                     </Link>
                                 </div>
                             </div>

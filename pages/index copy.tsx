@@ -14,35 +14,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
     return (
         <>
             <div className="section bg-section" style={{ backgroundImage: "url(/img/logo-gradient-inverse.svg)" }}>
-
-                <div className="container my-5">
-                    <h1 className="text-5xl">
-                        <div className='font-semibold text-slate-500'>We are a non-profit fighting for Everyone.</div>
-                        <div className='font-extralight block mt-9 text-primary'>
-                            <span className='text-humans'>Humans</span>
-                            ,&nbsp;
-                            <span className='text-animals'>Animals</span>
-                            &nbsp;and&nbsp;
-                            <span className='text-plants'>Plants</span>
-                            .</div>
-                    </h1>
-                </div>
-
-                <div className="videoWrapper">
-                    <div className='block, h-24 relative w-full bg-white'
-                        style={{
-                            zIndex: 1,
-                            backgroundImage: "url(/img/logo-gradient-inverse.svg)",
-                            backgroundSize: "80% auto",
-                            backgroundPosition: "center",
-                            backgroundAttachment: "fixed",
-                            backgroundRepeat: "no-repeat"
-                        }}>  </div>
-                    <iframe className='-mt-24 z-0' width="560" height="315" src="https://www.youtube.com/embed/E1xkXZs0cAQ?rel=0&version=3&autoplay=1&controls=0&&showinfo=0&loop=1&mute=1&modestbranding=1&autohide=1&playlist=E1xkXZs0cAQ" title="Sākār Foundation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" ></iframe>
-                    <div className='block, h-full absolute w-full'> </div>
-                </div>
-
-                {/* <div className="container">
+                <div className="container">
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 sm:col-span-1 py-10 sm:py-52 animatedParent" data-sequence="300">
                             <div className="heading text-primary animated animateOnce fadeInLeftShort" data-id="1">Sākār
@@ -51,14 +23,14 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                 initiatives led by youth through <br />
                                 our non-profit incubator</p>
                             <a href="sakar-spark"
-                                className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                className="arrow-btn text-primary font-bold animated animateOnce fadeInDownShort"
                                 data-id="3">Learn more</a>
                         </div>
                         <div className="col-span-3 sm:col-span-2 sm:py-5 animatedParent">
                             <img className="w-full h-auto animated animateOnce fadeInRightShort" src="/img/hero.png" alt="" />
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
             <div className="section-0 bg-primary text-white py-0 bg-section"
                 style={{ backgroundImage: "url('/img/logo-line-grey.svg')" }}>
@@ -75,7 +47,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                 Highschool students can raise <br /> funds for their cause and help <br /> those in need
                                 worldwide
                             </p>
-                            {/* <a href="" className="arrow-btn text-white animated animateOnce fadeInDownShort"
+                            {/* <a href="" className="arrow-btn text-white font-bold animated animateOnce fadeInDownShort"
                                 data-id="3">Learn
                                 more</a> */}
                         </div>
@@ -91,10 +63,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                 Everything is possible
                                 when
                                 <span className="text-white animated animateOnce fadeInUptShort inline-block"
-                                    data-id="2">&nbsp; AMBITION &nbsp;</span>
+                                    data-id="2">AMBITION</span>
                                 meets
                                 <span className="text-white animated animateOnce fadeInUpShort inline-block"
-                                    data-id="3">&nbsp; OPPORTUNITY</span>
+                                    data-id="3">OPPORTUNITY</span>
                             </div>
                         </div>
                         <div className="col-span-2 sm:col-span-1 pt-24 pb-6">
@@ -127,7 +99,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                     </div>
                     <div className="text-center pb-12 animatedParent">
                         <a href="about"
-                            className="arrow-btn text-primary animated animateOnce fadeInUpShort">More about
+                            className="arrow-btn text-primary font-bold animated animateOnce fadeInUpShort">More about
                             us</a>
                     </div>
                 </div>
@@ -147,7 +119,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                     <br />
                     <Link href="/projects">
                         <a
-                            className="p-2 bg-color-white arrow-btn h-10 text-white animated animateOnce fadeInDownShort" data-id="3"
+                            className="p-2 bg-color-white arrow-btn h-10 text-white font-bold animated animateOnce fadeInDownShort" data-id="3"
                         >View all</a>
                     </Link>
                 </div>
@@ -180,7 +152,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                     </div>
                     <div className="text-center pt-6 animated animateOnce fadeInUpShort" data-id="6">
                         <Link href="/new-fundraiser" >
-                            <a className="arrow-btn text-primary">Register now</a>
+                            <a className="arrow-btn text-primary font-bold">Register now</a>
                         </Link>
                     </div>
                 </div>

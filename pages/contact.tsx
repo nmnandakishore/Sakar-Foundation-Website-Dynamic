@@ -68,7 +68,7 @@ const ContactPage: React.FC<{ siteInfo: any }> = ({ siteInfo = null }) => {
                 </div>
             </div>
 
-            <div className="section">
+            <div className={`section ${(siteInfo.items[0].fields.address == " " && siteInfo.items[0].fields.telephoneNumber == " ") ? 'hidden' : ''}`}>
                 <div className="container animatedParent" data--sequence="300">
                     <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Reach us at</p>
                     <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">

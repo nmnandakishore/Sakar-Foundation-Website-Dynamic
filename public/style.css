@@ -9,12 +9,12 @@ body {
 	font-size: 16px;
 }
 
-b{
+b {
 	@apply font-bold;
 }
 
 .container {
-	@apply p-4 sm:px-5 sm:py-8 lg:p-0 max-w-6xl 2xl:max-w-7xl mx-auto;
+	@apply p-4 sm: px-5 sm:py-8 lg:p-0 max-w-6xl 2xl:max-w-7xl mx-auto;
 }
 
 .header {
@@ -59,7 +59,7 @@ b{
 	}
 }
 
-.header.sticky + .page-body {
+.header.sticky+.page-body {
 	padding-top: 102px;
 }
 
@@ -81,7 +81,7 @@ b{
 }
 
 .heading {
-	@apply font-medium text-3xl sm:text-4xl mb-3;
+	@apply font-medium text-3xl sm: text-4xl mb-3;
 }
 
 .support-text {
@@ -126,8 +126,8 @@ b{
 	position: static;
 }
 
-.hoverable > .wrapper > a:after,
-.hoverable > .wrapper > label:after {
+.hoverable>.wrapper>a:after,
+.hoverable>.wrapper>label:after {
 	content: "\25BC";
 	font-size: 10px;
 	padding-left: 6px;
@@ -142,7 +142,7 @@ b{
 /* #toggle Class Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.toggleable > .wrapper > label:after {
+.toggleable>.wrapper>label:after {
 	content: "\25BC";
 	font-size: 10px;
 	padding-left: 6px;
@@ -153,20 +153,22 @@ b{
 .toggle-input {
 	display: none;
 }
-.toggle-input:not(checked) ~ .mega-menu {
+
+.toggle-input:not(checked)~.mega-menu {
 	display: none;
 }
 
-.toggle-input:checked ~ .mega-menu {
+.toggle-input:checked~.mega-menu {
 	display: block;
 }
 
-.toggle-input:checked + label {
+.toggle-input:checked+label {
 	color: white;
-	background: #2c5282; /*@apply bg-blue-800 */
+	background: #2c5282;
+	/*@apply bg-blue-800 */
 }
 
-.toggle-input:checked ~ label:after {
+.toggle-input:checked~label:after {
 	content: "\25B2";
 	font-size: 10px;
 	padding-left: 6px;
@@ -174,25 +176,24 @@ b{
 	top: -1px;
 }
 
-.main-menu ul.menu-items {
-}
+.main-menu ul.menu-items {}
 
-.main-menu ul.menu-items > li {
-	@apply py-8 table text-left;
+.main-menu ul.menu-items>li {
+	@apply py-4 table text-left;
 	height: 60px;
 }
 
-.main-menu ul.menu-items > li > .wrapper {
+.main-menu ul.menu-items>li>.wrapper {
 	@apply table-cell break-words border-l border-dashed border-primary;
 	vertical-align: middle;
 }
 
-.main-menu ul.menu-items > li > .wrapper > a,
-.main-menu ul.menu-items > li > .wrapper > label {
+.main-menu ul.menu-items>li>.wrapper>a,
+.main-menu ul.menu-items>li>.wrapper>label {
 	line-height: 1.2;
 }
 
-.main-menu ul.menu-items > li:first-child > .wrapper {
+.main-menu ul.menu-items>li:first-child>.wrapper {
 	@apply border-l-0;
 }
 

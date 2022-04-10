@@ -90,7 +90,7 @@ const VolunteerRegistrationPage: React.FC = () => {
               <input required type="text" placeholder="First Name" {...register("First Name", { required: true })} />
               <input required type="text" placeholder="Last Name" {...register("Last Name", { required: true })} />
               <input required type="tel" placeholder="Phone Number" {...register("Phone Number", { required: true })} />
-              <select placeholder="Blood Group" required {...register("Blood Group", { required: true })}>
+              {/* <select placeholder="Blood Group" required {...register("Blood Group", { required: true })}>
                 <option value="A positive (A+)">A positive (A+)</option>
                 <option value="A negative (A-)">A negative (A-)</option>
                 <option value="B positive (B+)">B positive (B+)</option>
@@ -99,14 +99,14 @@ const VolunteerRegistrationPage: React.FC = () => {
                 <option value="O negative (O-)">O negative (O-)</option>
                 <option value="AB positive (AB+)">AB positive (AB+)</option>
                 <option value="AB negative (AB-)">AB negative (AB-)</option>
-              </select>
+              </select> */}
               <input required type="date" placeholder="Date Of Birth" {...register("Date Of Birth", { required: true })} />
               <div className="grid col-span-2 grid-cols-2 gap-4">
                 <input required type="text" placeholder="Address Line 1" {...register("Address Line 1", { required: true })} />
                 <input type="text" placeholder="Address Line 2" {...register("Address Line 2", {})} />
                 <input required type="text" placeholder="City" {...register("City", { required: true })} />
                 <input required type="text" placeholder="State / Province / Region" {...register("State / Province / Region", { required: true })} />
-                <select placeholder="Country" required {...register("Country", { required: true })}>
+                <select className='col-span-2' placeholder="Country" required {...register("Country", { required: true })}>
                   {COUNTRIES.map(country => <option key={country} value={country}>{country}</option>)}
                 </select>
               </div>

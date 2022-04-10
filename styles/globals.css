@@ -25,7 +25,7 @@ b {
 .header {
 	animation-duration: 0.2s;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 .sticky {
@@ -64,7 +64,7 @@ b {
 	}
 }
 
-.header.sticky + .page-body {
+.header.sticky+.page-body {
 	padding-top: 102px;
 }
 
@@ -115,7 +115,8 @@ b {
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .mega-menu {
 	/* @apply border-b border-dashed border-gray-200; */
-	margin-top: 4.4rem;
+	/* margin-top: 4.4rem;*/
+	margin-top: 3.1rem;
 	display: none;
 	left: 0;
 	position: absolute;
@@ -129,8 +130,8 @@ b {
 	position: static;
 }
 
-.hoverable > .wrapper > a:after,
-.hoverable > .wrapper > label:after {
+.hoverable>.wrapper>a:after,
+.hoverable>.wrapper>label:after {
 	content: "\25BC";
 	font-size: 10px;
 	padding-left: 6px;
@@ -145,7 +146,7 @@ b {
 /* #toggle Class Styles
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.toggleable > .wrapper > label:after {
+.toggleable>.wrapper>label:after {
 	content: "\25BC";
 	font-size: 10px;
 	padding-left: 6px;
@@ -156,20 +157,22 @@ b {
 .toggle-input {
 	display: none;
 }
-.toggle-input:not(checked) ~ .mega-menu {
+
+.toggle-input:not(checked)~.mega-menu {
 	display: none;
 }
 
-.toggle-input:checked ~ .mega-menu {
+.toggle-input:checked~.mega-menu {
 	display: block;
 }
 
-.toggle-input:checked + label {
+.toggle-input:checked+label {
 	color: white;
-	background: #2c5282; /*@apply bg-blue-800 */
+	background: #2c5282;
+	/*@apply bg-blue-800 */
 }
 
-.toggle-input:checked ~ label:after {
+.toggle-input:checked~label:after {
 	content: "\25B2";
 	font-size: 10px;
 	padding-left: 6px;
@@ -177,25 +180,24 @@ b {
 	top: -1px;
 }
 
-.main-menu ul.menu-items {
-}
+.main-menu ul.menu-items {}
 
-.main-menu ul.menu-items > li {
+.main-menu ul.menu-items>li {
 	@apply py-8 table text-left;
 	height: 60px;
 }
 
-.main-menu ul.menu-items > li > .wrapper {
+.main-menu ul.menu-items>li>.wrapper {
 	@apply table-cell break-words border-l border-dashed border-primary;
 	vertical-align: middle;
 }
 
-.main-menu ul.menu-items > li > .wrapper > a,
-.main-menu ul.menu-items > li > .wrapper > label {
+.main-menu ul.menu-items>li>.wrapper>a,
+.main-menu ul.menu-items>li>.wrapper>label {
 	line-height: 1.2;
 }
 
-.main-menu ul.menu-items > li:first-child > .wrapper {
+.main-menu ul.menu-items>li:first-child>.wrapper {
 	@apply border-l-0;
 }
 
@@ -232,4 +234,19 @@ b {
 
 .animate__delay-1500ms {
 	--animation-delay: 1500ms;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
