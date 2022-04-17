@@ -1,6 +1,9 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import * as React from 'react'
+import ReactPlayer from 'react-player';
 import ProjectSlider from '../../components/projects-slider';
 import { client } from '../../helpers/data-fetcher'
 
@@ -16,7 +19,7 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
     let raisedPercent: number = (fields.raisedAmount / fields.targetAmount) * 100;
 
 
-    console.log({ relatedProjects: fields });
+    console.log({ fields });
 
     let relatedProjects: any = '';
 
@@ -37,6 +40,40 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
     }
 
 
+    const options = {
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+                console.log({ node });
+                if (node?.data?.target?.fields?.file?.contentType.includes("video")) {
+                    return (
+                        <div className='bg-gray-100 text-center w-full p-0'>
+                            <ReactPlayer url={node?.data?.target?.fields?.file?.url} controls={true} pip={true} className="p-0 mx-auto my-10" />
+                        </div>
+
+                    );
+                }
+                return (
+                    <div className='bg-gray-100 text-center w-full'>
+                        <img src={node?.data?.target?.fields?.file?.url} alt={node?.data?.target?.fields?.title} className='my-10 mx-auto p-0' />
+                    </div>
+                );
+            },
+            [BLOCKS.UL_LIST]: (node, children) => (
+                <ul className='list-disc'>{children}</ul>
+            ),
+            [BLOCKS.OL_LIST]: (node, children) => (
+                <ol className='list-decimal'>{children}</ol>
+            ),
+            [BLOCKS.LIST_ITEM]: (node, children) => <li className='ml-10 py-5'>{children}</li>,
+            [BLOCKS.PARAGRAPH]: (node, children) => <p className=''>{children}</p>,
+
+            [BLOCKS.HEADING_1]: (node, children) => <h1 className='text-6x my-5'>{children}</h1>,
+            [BLOCKS.HEADING_2]: (node, children) => <h2 className='text-5x my-5'>{children}</h2>,
+            [BLOCKS.HEADING_3]: (node, children) => <h3 className='text-4x my-5'>{children}</h3>,
+
+        }
+    }
+
     return (
         <>
             <div style={{ backgroundImage: `url(${fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'})`, height: '400px' }}
@@ -45,7 +82,7 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
                     <div className="container">
                         <div className="grid grid-cols-2 sm:gap-10 animatedParent text-center sm:text-left" data-sequence="100">
                             <div className="my-auto  col-span-2 sm:col-span-1 animated animateOnce fadeInUpShort -mb-10" data-id="1">
-                                <p className="text-4xl mt-44 -mb-44 text-white sm:text-primary">{fields.title}</p>
+                                <p className="text-4xl mt-56 -mb-56 text-white sm:text-primary">{fields.title}</p>
                             </div>
                             <div className="my-auto col-span-2 sm:col-span-1 animated animateOnce fadeInDownShort" data-id="1">
                                 <div className=" bg-white shadow-lg mt-60 -mb-60 animatedParent" data-sequence="100">
@@ -84,7 +121,8 @@ const singleProjectPage: React.FC<ISingleProjectPage> = ({ project }) => {
 
             <div className="section mt-40">
                 <div className="container">
-                    {fields.details.content[0].content[0].value}
+                    {documentToReactComponents(fields.details, options)}
+                    {/* {fields.details.content[0].content[0].value} */}
                 </div>
             </div>
 

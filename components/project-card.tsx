@@ -17,7 +17,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ projectItem }) => {
             <div className="project col-span-1 mt-0 pt-0 bg-white text-left w-72 pb-8 cursor-pointer">
                 <div className="w-full h-52 saturate-150" style={{ backgroundImage: `url(${fields?.photograph?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none", backgroundPosition: "center" }}>
                     <div className="w-full h-52 p-4 p- bg-gradient-to-t from-primaryDark/60 " >
-                        <div className="title w-full h-36"></div>
+                        <div className="title w-full h-32"></div>
                         {/* <Link
                             href={{
                                 pathname: '/project/[slug]',

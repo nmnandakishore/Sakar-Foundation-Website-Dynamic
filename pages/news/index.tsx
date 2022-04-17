@@ -27,7 +27,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                         </div>
                         <div className="my-auto text-white col-span-2 sm:col-span-1">
                             <div className="bg-gradient-to-b from-primary to-primaryDark mt-20 -mb-32">
-                                <div className="w-full h-60" style={{ backgroundImage: `url(${highlightedNewsItem.fields.featuredImage.fields.file.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                <div className="w-full h-60" style={{ backgroundImage: `url(${highlightedNewsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                     <div className="w-full h-56 p-14 " >
                                         <div className="title w-full h-44"></div>
                                         {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}
@@ -67,9 +67,12 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pb-20 animatedParent" data--sequence="100">
                         {newsItems.map((newsItem, index) => {
+                            if (index === 0) {
+                                return
+                            }
                             return (
                                 <div className="bg-gray-200 mt-10 mb-4" key={newsItem.sys.id}>
-                                    <div className="w-full h-60" style={{ backgroundImage: `url(${newsItem.fields.featuredImage.fields.file.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                    <div className="w-full h-60" style={{ backgroundImage: `url(${newsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                         <div className="w-full h-56 p-14 " >
                                             {/* <div className="title w-full h-44"></div> */}
                                             {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}
