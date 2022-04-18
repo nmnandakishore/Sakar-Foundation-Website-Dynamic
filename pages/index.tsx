@@ -29,7 +29,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                 </div>
 
                 <div className="videoWrapper">
-                    <div className='block, h-24 relative w-full bg-white'
+                    <div className='block, h-18 relative w-full bg-white'
                         style={{
                             zIndex: 1,
                             backgroundImage: "url(/img/logo-gradient-inverse.svg)",
@@ -38,8 +38,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                             backgroundAttachment: "fixed",
                             backgroundRepeat: "no-repeat"
                         }}>  </div>
-                    <iframe className='-mt-24 z-0' width="560" height="315" src="https://www.youtube.com/embed/E1xkXZs0cAQ?rel=0&version=3&autoplay=1&controls=0&&showinfo=0&loop=1&mute=1&modestbranding=1&autohide=1&playlist=E1xkXZs0cAQ" title="Sākār Foundation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" ></iframe>
+                    <iframe className='-mt-24 z-0' src="https://www.youtube.com/embed/KT0A_VjGqKs?rel=0&version=3&autoplay=1&controls=0&&showinfo=0&loop=1&mute=1&modestbranding=1&autohide=1&playlist=KT0A_VjGqKs" title="Sākār Foundation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" ></iframe>
                     <div className='block, h-full absolute w-full'> </div>
+
+
                 </div>
 
                 {/* <div className="container">
