@@ -68,7 +68,8 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                     <div className="col-span-2 sm:col-span-1 bg-cover bg-center animated animateOnce fadeInLeftShort"
                         data-id="1" style={{ backgroundImage: "url('/img/kids3.jpg')" }}>
                     </div>
-                    <div className="col-span-2 sm:col-span-1 py-16 sm:py-32 pl-12">
+                    {/* <div className="col-span-2 sm:col-span-1 py-16 sm:py-32 pl-12"> */}
+                    <div className="col-span-2 sm:col-span-1 py-10 sm:py-32 pl-12">
                         <div className="container">
                             <div className="heading text-white animated animateOnce fadeInRightShort" data-id="1">Youth can
                                 LEAD, <br />
@@ -138,7 +139,8 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
             </div>
 
-            <div className="section bg-primary text-white">
+            {/* Project slider hidden */}
+            {/* <div className="section bg-primary text-white">
                 <div className="container text-center animatedParent">
                     <div className="heading text-center text-white animated animateOnce fadeInDownShort" data-id="1">
                         Projects
@@ -153,7 +155,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                         >View all</a>
                     </Link>
                 </div>
-            </div>
+            </div> */}
+
+
+
             <div className="section bg-white">
                 <div className="container animatedParent" data-sequence="100">
                     <div className="heading text-center text-primary animated animateOnce fadeInDownShort" data-id="1">
