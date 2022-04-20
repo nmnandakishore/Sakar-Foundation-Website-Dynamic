@@ -7,28 +7,32 @@ import React, { useEffect, useState } from "react";
 export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) => {
 
     const router = useRouter();
-    const [menuHover, setMenuHover] = useState(false);
+    const [involveMenuHover, setInvolveMenuHover] = useState(false);
+    const [programsMenuHover, setProgramsMenuHover] = useState(false);
 
     useEffect(() => {
-        setMenuHover(false);
+        setInvolveMenuHover(false);
     }, [router.asPath]);
 
-    interface ImenuToggleList {
+    useEffect(() => {
+        setProgramsMenuHover(false);
+    }, [router.asPath]);
+
+    /*interface ImenuToggleList {
         programs: boolean,
         involvement: boolean,
-    }
+    }*/
 
-    const dropDownValue: ImenuToggleList = {
+    /*const dropDownValue: ImenuToggleList = {
         programs: false,
         involvement: false,
-    }
+    }*/
 
-    const [dropDownState, setDropDownState] = React.useState(dropDownValue);
+    // const [dropDownState, setDropDownState] = React.useState(dropDownValue);
 
-    const toggleDropDown = (menuName) => {
+    /*const toggleDropDown = (menuName) => {
 
         let newDropDownValue: ImenuToggleList = dropDownValue;
-
 
         // Object.keys(dropDownState)
 
@@ -45,11 +49,9 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
         setDropDownState(newDropDownValue);
         console.log({ newDropDownValue })
         console.log({ menuName });
-    }
+    }*/
 
-
-
-    useEffect(() => console.log({ dropDownState }), [dropDownState])
+    // useEffect(() => console.log({ dropDownState }), [dropDownState])
 
 
 
@@ -67,15 +69,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     <Link href="/projects"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Projects</a></Link>
                 </div>
             </li>
-            <li className="hoverable hover:bg-primary hover:text-white">
+            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setProgramsMenuHover(true)} onMouseLeave={() => setProgramsMenuHover(false)}>
                 <div className="wrapper">
                     <label
+                        onClick={() => setProgramsMenuHover(true)}
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
                 </div>
-                <div role="toggle" className="px-6 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary" onTouchEnd={() => toggleDropDown("programs")} onBlur={() => setDropDownState({
-                    programs: false,
-                    involvement: false,
-                })}>
+                <div role="toggle" className="px-6 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary" style={programsMenuHover ? { display: 'block' } : {}}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 animate__animated animate__faster animate__fadeInLeft"
                             style={{ animationDelay: ":250ms" }}>
@@ -208,13 +208,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     </div>
                 </div>
             </li>
-            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setMenuHover(true)} onMouseLeave={() => setMenuHover(false)} >
+            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setInvolveMenuHover(true)} onMouseLeave={() => setInvolveMenuHover(false)}>
                 <div className="wrapper">
                     <a href="#"
-                        onClick={() => setMenuHover(true)}
+                        onClick={() => setInvolveMenuHover(true)}
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
                 </div>
-                <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={menuHover ? { display: 'block' } : {}}>
+                <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={involveMenuHover ? { display: 'block' } : {}}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <div className="w-full text-white mb-8  animate__animated animate__faster animate__fadeInDown"
                             style={{ animationDelay: "150ms" }}>
@@ -236,7 +236,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 This is an opportunity for you to work for the community. </p>
                             <div className="flex items-center py-3">
                                 <Link href="/volunteer-registration">
-                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
+                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
                                         out more</a>
                                 </Link>
                             </div>
@@ -257,7 +257,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             </p>
                             <div className="flex items-center py-3">
                                 <Link href="/new-fundraiser">
-                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
+                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
                                         out
                                         more</a>
                                 </Link>
@@ -275,7 +275,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 partner with us to collaborate and work on causes you care about.</p>
                             <div className="flex items-center py-3">
                                 <Link href="/partner-registration">
-                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn">Find
+                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
                                         out
                                         more</a>
                                 </Link>
