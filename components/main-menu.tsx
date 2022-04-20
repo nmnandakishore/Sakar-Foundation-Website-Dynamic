@@ -1,7 +1,55 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+
 
 
 export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) => {
+
+    const router = useRouter();
+    const [menuHover, setMenuHover] = useState(false);
+
+    useEffect(() => {
+        setMenuHover(false);
+    }, [router.asPath]);
+
+    interface ImenuToggleList {
+        programs: boolean,
+        involvement: boolean,
+    }
+
+    const dropDownValue: ImenuToggleList = {
+        programs: false,
+        involvement: false,
+    }
+
+    const [dropDownState, setDropDownState] = React.useState(dropDownValue);
+
+    const toggleDropDown = (menuName) => {
+
+        let newDropDownValue: ImenuToggleList = dropDownValue;
+
+
+        // Object.keys(dropDownState)
+
+        for (const key in dropDownState) {
+            if (dropDownState.hasOwnProperty(key)) {
+                if (key === menuName) {
+                    newDropDownValue[key] = !dropDownState[key];
+                } else {
+                    newDropDownValue[key] = false;
+                }
+            }
+        }
+
+        setDropDownState(newDropDownValue);
+        console.log({ newDropDownValue })
+        console.log({ menuName });
+    }
+
+
+
+    useEffect(() => console.log({ dropDownState }), [dropDownState])
 
 
 
@@ -24,7 +72,10 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     <label
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
                 </div>
-                <div role="toggle" className="p-6 pb-0 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary">
+                <div role="toggle" className="px-6 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary" onTouchEnd={() => toggleDropDown("programs")} onBlur={() => setDropDownState({
+                    programs: false,
+                    involvement: false,
+                })}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 animate__animated animate__faster animate__fadeInLeft"
                             style={{ animationDelay: ":250ms" }}>
@@ -157,12 +208,13 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     </div>
                 </div>
             </li>
-            <li className="hoverable hover:bg-primary hover:text-white">
+            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setMenuHover(true)} onMouseLeave={() => setMenuHover(false)} >
                 <div className="wrapper">
                     <a href="#"
+                        onClick={() => setMenuHover(true)}
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
                 </div>
-                <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary">
+                <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={menuHover ? { display: 'block' } : {}}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <div className="w-full text-white mb-8  animate__animated animate__faster animate__fadeInDown"
                             style={{ animationDelay: "150ms" }}>
