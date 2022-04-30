@@ -80,8 +80,8 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                             //     return
                             // }
                             return (
-                                <Link href={"/news/" + newsItem.fields.slug}>
-                                    <div className="bg-gray-100 mt-10 mb-4 cursor-pointer hover:bg-gray-50" key={newsItem.sys.id}>
+                                <Link href={"/news/" + newsItem.fields.slug} key={newsItem.sys.id}>
+                                    <div className="bg-gray-100 mt-10 mb-4 cursor-pointer hover:bg-gray-50">
                                         <div className="w-full h-40" style={{ backgroundImage: `url(${newsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                             <div className="w-full h-56 p-14 " >
                                                 {/* <div className="title w-full h-44"></div> */}
