@@ -18,7 +18,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
         <>
 
 
-            <div className="page-header px-8 bg-gradient-to-b from-primaryDark to-primaryDark bg-fixed bg-center bg-cover bg-blend-color-burn h-80 ">
+            {/* <div className="page-header px-8 bg-gradient-to-b from-primaryDark to-primaryDark bg-fixed bg-center bg-cover bg-blend-color-burn h-80 ">
                 <div className="container">
                     <div className="grid grid-cols-2 sm:gap-10">
 
@@ -31,7 +31,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                                     <div className="w-full h-56 p-14 " >
                                         <div className="title w-full h-44"></div>
                                         {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}
-                                    </div>
+            {/*</div>
                                 </div>
                                 <div className="p-14">
                                     <p className="text-2xl">{highlightedNewsItem.fields.title}</p>
@@ -50,48 +50,59 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                         </div>
                     </div>
                 </div>
+            </div> */}
+
+
+            <div
+                className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
+                <div className="container">
+                    <p className="text-4xl pb-5 text-slate-100">News</p>
+                    Updates about everything happened in Sākār world.
+                </div>
             </div>
 
 
-            <div className="section mt-36">
 
-            </div>
+
 
             <div className="section bg-section">
                 <div className="container">
-                    <div className="container animatedParent" data--sequence="300">
+                    {/* <div className="container animatedParent" data--sequence="300">
                         <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">More news</p>
                         <div className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
 
                         </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pb-20 animatedParent" data--sequence="100">
-                        {newsItems.map((newsItem, index) => {
-                            if (index === 0) {
-                                return
-                            }
-                            return (
-                                <div className="bg-gray-200 mt-10 mb-4" key={newsItem.sys.id}>
-                                    <div className="w-full h-60" style={{ backgroundImage: `url(${newsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
-                                        <div className="w-full h-56 p-14 " >
-                                            {/* <div className="title w-full h-44"></div> */}
-                                            {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}
-                                        </div>
-                                    </div>
-                                    <div className="p-6">
-                                        <p className="text-2xl text-primary">{newsItem.fields.title}</p>
-                                        <p className="text-xs text-slate-600">{newsItem.fields.category}</p>
-                                        <p className="mt-6 text-justify">
-                                            {newsItem.fields.excerpt}
-                                        </p>
+                    </div> */}
 
-                                        <div className='block text-right text-primaryDark'>
-                                            <Link href={"/news/" + newsItem.fields.slug}>
-                                                <a className='mt-8 mr-0 ml-auto arrow-btn inline-block h-10'>Read More</a>
-                                            </Link>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 pb-20 animatedParent" data--sequence="100">
+                        {newsItems.map((newsItem, index) => {
+                            // if (index === 0) {
+                            //     return
+                            // }
+                            return (
+                                <Link href={"/news/" + newsItem.fields.slug}>
+                                    <div className="bg-gray-100 mt-10 mb-4 cursor-pointer hover:bg-gray-50" key={newsItem.sys.id}>
+                                        <div className="w-full h-40" style={{ backgroundImage: `url(${newsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                            <div className="w-full h-56 p-14 " >
+                                                {/* <div className="title w-full h-44"></div> */}
+                                                {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}
+                                            </div>
+                                        </div>
+                                        <div className="p-6">
+                                            <p className="text-lg text-primary">{newsItem.fields.title}</p>
+                                            <p className="text-xs text-slate-100  bg-slate-500 p px-2 inline-block">{newsItem.fields.category}</p>
+                                            <p className="mt-4 text-base text-left h-24 whitespace-pre-line overflow-hidden line-clamp-4">
+                                                {newsItem.fields.excerpt}
+                                            </p>
+
+                                            {/* <div className='block text-right text-primaryDark'>
+                                                <Link href={"/news/" + newsItem.fields.slug}>
+                                                    <a className='mt-8 mr-0 ml-auto arrow-btn inline-block h-10'>Read More</a>
+                                                </Link>
+                                            </div> */}
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })}
                     </div>

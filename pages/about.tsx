@@ -5,24 +5,44 @@ const aboutPage: React.FC = () => {
     return (
         <>
 
-            <div className="page-header px-8 bg-primaryDark">
+            <div
+                className="page-header pt-14 pb-0 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <div className="grid grid-cols-2 sm:gap-10">
-                        <div className="my-auto text-white col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
-                            <p className="heading animated animateOnce fadeInDownShort" data-id="1">About Us</p>
-                            <p className="mt-6 text-justify animated animateOnce fadeInLeftShort" data-id="2">
+                        <div className=" col-span-2 sm:col-span-1 animatedParent">
+                            <p className="text-4xl pb-5 text-slate-100">About Us</p>
+                            <p className="mt-6 text-justify">
                                 At Sākār Foundation, we believe, we can solve problems only by solving the root cause. We encourage
                                 children to actively involve
                                 in activities for betterment of the society. We also make them learn Not only humans but even all living
                                 beings including animals and plants are the part of <b>Nature&#39;s fabric</b> as we call it.
                             </p>
                         </div>
-                        <div className="text-4xl my-auto text-white col-span-2 sm:col-span-1 animatedParent" data--sequence="300">
-                            <img className="mt-16 -mb-24 animated animateOnce fadeInRightShort" data-id="1" src="/img/about.png" alt="" />
+                        <div className="text-4xl col-span-2 sm:col-span-1 animatedParent" >
+                            <img className="mt-0 -mb-24" src="/img/about.png" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* <div className="page-header px-8 bg-primaryDark">
+                <div className="container">
+                    <div className="grid grid-cols-2 sm:gap-10">
+                        <div className="my-auto text-white col-span-2 sm:col-span-1 animatedParent">
+                            <p className="heading" >About Us</p>
+                            <p className="mt-6 text-justify">
+                                At Sākār Foundation, we believe, we can solve problems only by solving the root cause. We encourage
+                                children to actively involve
+                                in activities for betterment of the society. We also make them learn Not only humans but even all living
+                                beings including animals and plants are the part of <b>Nature&#39;s fabric</b> as we call it.
+                            </p>
+                        </div>
+                        <div className="text-4xl my-auto text-white col-span-2 sm:col-span-1 animatedParent" >
+                            <img className="mt-16 -mb-24" src="/img/about.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div> */}
 
             <div className="section mt-16">
                 <div className="container animatedParent" data--sequence="300">
@@ -92,6 +112,6 @@ const aboutPage: React.FC = () => {
     )
 }
 
-aboutPage.displayName = "ABout Page"
+aboutPage.displayName = "About Page"
 
 export default aboutPage;

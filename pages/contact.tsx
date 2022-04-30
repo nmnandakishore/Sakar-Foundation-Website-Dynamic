@@ -52,7 +52,7 @@ const ContactPage: React.FC<{ siteInfo: any }> = ({ siteInfo = null }) => {
     return (
         <>
 
-            <div className="page-header px-8 bg-primaryDark">
+            {/* <div className="page-header px-8 bg-primaryDark">
                 <div className="container">
                     <div className="grid grid-cols-2 sm:gap-10">
                         <div className="my-auto text-white col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
@@ -66,52 +66,63 @@ const ContactPage: React.FC<{ siteInfo: any }> = ({ siteInfo = null }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className={`section ${(siteInfo.items[0].fields.address == " " && siteInfo.items[0].fields.telephoneNumber == " ") ? 'hidden' : ''}`}>
-                <div className="container animatedParent" data--sequence="300">
-                    <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Reach us at</p>
-                    <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-                        {siteInfo.items[0].fields.address}
-                        <br />
-                        {siteInfo.items[0].fields.telephoneNumber}
-                    </p>
-                </div>
-            </div>
-
-
-            <div className="section">
-                <div className="container animatedParent" data--sequence="300">
-                    <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Write to us</p>
-                    <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-
-                    </p>
-                </div>
-            </div>
-
-            <div className="section overflow-section mb-20">
+            <div
+                className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
-                    <div id="formScript">
-                        <div id="formScript">
-                            <form className="grid grid-cols-2 gap-4 my-3" onSubmit={handleSubmit(onSubmit)}>
-                                <input required type="text" placeholder="Name" {...register("First Name", { required: true })} />
-                                <input required type="tel" placeholder="Phone Number" {...register("Phone Number", { required: true })} />
-                                <input required type="email" placeholder="Email" {...register("Email", {})} />
-                                <textarea required placeholder="Your message" {...register("Cause", { required: true })} />
-                                <div className="col-span-full grid justify-items-center">
-                                    <button disabled={loading} className={`${loading ? 'animate-pulse' : ''} w-full md:w-1/2 bg-primary hover:bg-primaryDark text-white font-bold content-center py-2 px-4 rounded`} type="submit">Submit</button>
+                    <p className="text-4xl pb-5 text-slate-100">Contact Us</p>
+                    Your feedback and support is important to us.
+                </div>
+            </div>
+
+            <div className='section'>
+                <div className="container grid grid-cols-2 sm:gap-10">
+                    <div className="col-span-1 sm:col-span-1">
+                        <div className={`container animatedParent section ${(siteInfo.items[0].fields.address == " " && siteInfo.items[0].fields.telephoneNumber == " ") ? 'hidden' : ''}`}
+                            data--sequence="300">
+                            <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Reach us at</p>
+                            <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
+                                {siteInfo.items[0].fields.address}
+                                <br />
+                                {siteInfo.items[0].fields.telephoneNumber}
+                            </p>
+                        </div>
+
+                        <div className="container animatedParent" data--sequence="300">
+                            <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Write to us</p>
+                            <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
+
+                            </p>
+
+                            <div id="formScript">
+                                <div id="formScript">
+                                    <form className="grid grid-cols-1 gap-4 my-3" onSubmit={handleSubmit(onSubmit)}>
+                                        <input required type="text" placeholder="Name" {...register("First Name", { required: true })} />
+                                        <input required type="tel" placeholder="Phone Number" {...register("Phone Number", { required: true })} />
+                                        <input required type="email" placeholder="Email" {...register("Email", {})} />
+                                        <textarea required placeholder="Your message" {...register("Cause", { required: true })} />
+                                        <div className="col-span-full grid justify-items-center">
+                                            <button disabled={loading} className={`${loading ? 'animate-pulse' : ''} w-full bg-primary hover:bg-primaryDark text-white font-bold content-center py-2 px-4 rounded`} type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                    {msg ? (
+                                        <div className="py-3 px-5 mb-4 bg-gray-100 text-gray-900 rounded-md text-sm border border-gray-200" role="alert">
+                                            {msg}
+                                        </div>
+                                    ) : null}
                                 </div>
-                            </form>
-                            {msg ? (
-                                <div className="py-3 px-5 mb-4 bg-gray-100 text-gray-900 rounded-md text-sm border border-gray-200" role="alert">
-                                    {msg}
-                                </div>
-                            ) : null}
+                            </div>
+
                         </div>
                     </div>
-
+                    <div className="col-span-2 sm:col-span-1 hidden sm:inline animatedParent max-h-screen overflow-hidden">
+                        <img className="h-auto w-full block' animated animateOnce fadeInRightShort " data-id="1" src="/img/contact.png" alt="" />
+                    </div>
                 </div>
             </div>
+
+
         </>
 
         //     {/* <div className='bg-yellow-600 p-5 w-full'></div> */ }

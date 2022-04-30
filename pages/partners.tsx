@@ -14,7 +14,7 @@ const partnersPage: React.FC<IpartnersPage> = ({ partners = null }) => {
 
     return (
         <>
-            <div
+            {/* <div
                 className="page-header px-8 bg-gradient-to-b from-primaryDark to-primaryDark bg-fixed bg-center bg-cover bg-blend-color-burn h-80 ">
                 <div className="container">
                     <div className="grid grid-cols-2 sm:gap-10">
@@ -28,6 +28,15 @@ const partnersPage: React.FC<IpartnersPage> = ({ partners = null }) => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div> */}
+
+            <div
+                className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
+                <div className="container">
+                    <p className="text-4xl pb-5 text-slate-100">Our Partners</p>
+                    Sākār is the outcome of a vision based on experience of it&#39;s founders, Keithan Pai and Keisha Pai.
+                    The Sākār leasership always strives to thrive through raising the global society without any barriors.
                 </div>
             </div>
 

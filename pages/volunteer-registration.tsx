@@ -51,7 +51,7 @@ const VolunteerRegistrationPage: React.FC = () => {
   return (
     <>
 
-      <div className="page-header px-8 bg-primaryDark">
+      {/* <div className="page-header px-8 bg-primaryDark">
         <div className="container">
           <div className="grid grid-cols-2 sm:gap-10">
             <div className="my-auto text-white col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
@@ -66,6 +66,16 @@ const VolunteerRegistrationPage: React.FC = () => {
               <img className="mx-auto mt-16 -mb-2 h-72 w-auto block ' animated animateOnce fadeInRightShort" data-id="1" src="/img/volunteering.png" alt="" />
             </div>
           </div>
+        </div>
+      </div> */}
+
+      <div
+        className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
+        <div className="container">
+          <p className="text-4xl pb-5 text-slate-100">Volunteer With Us</p>
+          You can be a volunteer for Sākār Foundation and help us by being part of events we organize, or helping us
+          with raising donations etc. We find our strength through our volunteers representing us globally and enabling
+          us to carry out our operations with responsibility and sensibility.
         </div>
       </div>
 
@@ -82,7 +92,7 @@ const VolunteerRegistrationPage: React.FC = () => {
       </div>
 
       <div className="">
-        <div className="container">
+        <div className="container mb-20">
           <div id="formScript">
             {/* <iframe src="https://www.cognitoforms.com/f/WAaQ1CDJxkWEnADzJmGNbw/1" height="810"></iframe>
                         <script src="https://www.cognitoforms.com/f/iframe.js"></script> */}

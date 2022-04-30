@@ -13,7 +13,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
     return (
         <>
-            <div className="section bg-section" style={{ backgroundImage: "url(/img/logo-gradient-inverse.svg)" }}>
+            {/* <div className="section bg-section" style={{ backgroundImage: "url(/img/logo-gradient-inverse.svg)" }}>
 
                 <div className="container my-5">
                     <h1 className="text-5xl">
@@ -43,8 +43,12 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
 
                 </div>
+            </div> */}
 
-                {/* <div className="container">
+
+            {/*<div className="section bg-section" style={{ backgroundImage: "url(/img/logo-gradient-inverse.svg)" }}>
+
+                 <div className="container">
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 sm:col-span-1 py-10 sm:py-52 animatedParent" data-sequence="300">
                             <div className="heading text-primary animated animateOnce fadeInLeftShort" data-id="1">Sākār
@@ -60,32 +64,74 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                             <img className="w-full h-auto animated animateOnce fadeInRightShort" src="/img/hero.png" alt="" />
                         </div>
                     </div>
-                </div> */}
-            </div>
-            <div className="section-0 bg-primary text-white py-0 bg-section"
-                style={{ backgroundImage: "url('/img/logo-line-grey.svg')" }}>
+                </div> 
+            </div>*/}
+
+
+
+            <div className="hero-img" style={{ backgroundImage: "url('/img/home-hero.jpg')" }}>
+                <div className="hero-text text-white container pt-52 pb-4">
+                    <div className="text-5xl">We're a Non Profit</div>
+                    <div className="text-2xl mt-4">Fighting for Everyone.</div>
+                </div>
+                <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
+                </div>
+                <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
+                    <Link href="/programs#vision"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
+                    <Link href="/programs#mission"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
+                    <Link href="/programs#values"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                </div >
+            </div >
+
+            <div className="section-0 bg-gray-200 py-0">
+                {/* <div className="section-0 bg-primary text-white py-0 bg-section"
+                style={{ backgroundImage: "url('/img/logo-line-grey.svg')" }}> */}
                 <div className="grid grid-cols-2 animatedParent" data-sequence="300">
                     <div className="col-span-2 sm:col-span-1 bg-cover bg-center animated animateOnce fadeInLeftShort"
-                        data-id="1" style={{ backgroundImage: "url('/img/kids3.jpg')" }}>
+                        data-id="1" style={{ backgroundImage: "url('/img/home-youth.jpg')" }}>
+
                     </div>
-                    {/* <div className="col-span-2 sm:col-span-1 py-16 sm:py-32 pl-12"> */}
-                    <div className="col-span-2 sm:col-span-1 py-10 sm:py-32 pl-12">
-                        <div className="container">
-                            <div className="heading text-white animated animateOnce fadeInRightShort" data-id="1">Youth can
-                                LEAD, <br />
-                                Youth can CARE.</div>
-                            <p className="support-text text-white animated animateOnce fadeInRightShort" data-id="2">
-                                Highschool students can raise <br /> funds for their cause and help <br /> those in need
-                                worldwide
-                            </p>
-                            {/* <a href="" className="arrow-btn text-white animated animateOnce fadeInDownShort"
-                                data-id="3">Learn
-                                more</a> */}
+                    <div className="col-span-2 sm:col-span-1 pl-12">
+                        <div className="col-span-2 sm:col-span-1 py-16 sm:py-24 pl-12">
+                            <div className="container">
+                                <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">Youth can
+                                    LEAD, <br />
+                                    Youth can CARE.</div>
+                                <p className="animated animateOnce fadeInRightShort my-5" data-id="2">
+                                    Young leadership at Sākār Foundation is an example in itself.
+                                </p>
+                                <a href="" className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                    data-id="3">Learn
+                                    more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="section-0 bg-section" style={{ backgroundImage: "url('/img/logo-grey.svg')" }}>
+
+            <div className="section-0 bg-section">
+                <div className="container">
+
+                    <div className="grid grid-cols-2 animatedParent" data-sequence="300">
+                        <div className="col-span-2 sm:col-span-1 py-10 sm:py-16 ">
+                            <div className="heading text-primary animated animateOnce fadeInLeftShort" data-id="2">Global Presence
+                            </div>
+                            <p className="animated animateOnce fadeInLeftShort my-5" data-id="2">
+                                We work across the gloab without any political, social or racial boundaries. Currently we are mainly
+                                working in United States, Africa and India
+                            </p>
+                            <a href="" className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                data-id="3">More about us</a>
+                        </div>
+
+                        <div className="col-span-2 sm:col-span-1 py-10 sm:py-16" data-id="1">
+                            <img src="/img/global-presence.svg" className="w-full h-auto" data-id="1" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* <div className="section-0 bg-section" style={{ backgroundImage: "url('/img/logo-grey.svg')" }}>
                 <div className="container">
                     <div className="grid grid-cols-2 animatedParent" data-sequence="300">
                         <div className="col-span-2 sm:col-span-1 pt-16 pb-6">
@@ -100,9 +146,9 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                     data-id="3">&nbsp; OPPORTUNITY</span>
                             </div>
                         </div>
-                        <div className="col-span-2 sm:col-span-1 pt-24 pb-6">
-                            {/* <!-- <div className="bg-white border border-gray-200 shadow-2xl drop-shadow-2xl bg-opacity-80 table mb-8 w-full animated animateOnce fadeInDownShort" --> */}
-                            <div className="bg-white border-b border-dashed border-gray-400 bg-opacity-95 table w-full animated animateOnce fadeInDownShort"
+                        <div className="col-span-2 sm:col-span-1 pt-24 pb-6"> */}
+            {/* <!-- <div className="bg-white border border-gray-200 shadow-2xl drop-shadow-2xl bg-opacity-80 table mb-8 w-full animated animateOnce fadeInDownShort" --> */}
+            {/* <div className="bg-white border-b border-dashed border-gray-400 bg-opacity-95 table w-full animated animateOnce fadeInDownShort"
                                 data-id="1">
                                 <div className="p-6 table-cell w-28"><img className="w-20 h-auto" src="/img/icons/1.png" alt="" />
                                 </div>
@@ -134,10 +180,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                             us</a>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
 
-            </div>
+            </div> */}
 
             {/* Project slider hidden */}
             {/* <div className="section bg-primary text-white">
@@ -159,7 +205,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
 
 
-            <div className="section bg-white">
+            {/* <div className="section bg-white">
                 <div className="container animatedParent" data-sequence="100">
                     <div className="heading text-center text-primary animated animateOnce fadeInDownShort" data-id="1">
                         Start your own fundraiser
@@ -191,13 +237,13 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
         </>
 
 
-        //     {/* <div className='bg-yellow-600 p-5 w-full'></div> */ }
-        // {/* <pageBody></pageBody> */ }
+        //     {/* <div className='bg-yellow-600 p-5 w-full'></div> */}
+        // {/* <pageBody></pageBody> */}
 
     )
 

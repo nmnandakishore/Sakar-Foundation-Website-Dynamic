@@ -66,38 +66,45 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/projects"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Projects</a></Link>
+                    <Link href="/leadership"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Leadership</a></Link>
                 </div>
             </li>
-            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setProgramsMenuHover(true)} onMouseLeave={() => setProgramsMenuHover(false)}>
+
+            <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
+                    <Link href="/programs"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Programs</a></Link>
+                </div>
+            </li>
+
+            {/* Programs Mega Menu */}
+            {/* <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setProgramsMenuHover(true)} onMouseLeave={() => setProgramsMenuHover(false)}> */}
+            {/* <div className="wrapper">
                     <label
                         onClick={() => setProgramsMenuHover(true)}
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
-                </div>
-                <div role="toggle" className="px-6 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary" style={programsMenuHover ? { display: 'block' } : {}}>
-                    <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
-                        <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 animate__animated animate__faster animate__fadeInLeft"
+                </div> */}
+
+
+            {/* <div role="toggle" className="px-6 mega-menu mb-20 sm:mb-0 shadow-xl bg-primary" style={programsMenuHover ? { display: 'block' } : {}}>
+                    <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">*/}
+            {/* <div className="w-full sm:w-1/2 lg:w-1/4 pt-8 animate__animated animate__faster animate__fadeInLeft"
                             style={{ animationDelay: ":250ms" }}>
                             <div>
-                                {/* <h2 className="font-light text-3xl">We care about</h2> */}
                             </div>
                             <div>
                                 <h1 className="text-humans font-bold text-6xl">Humans</h1>
                             </div>
                             <div>
                                 <h1 className="text-animals font-bold text-6xl inline-block">Animals</h1>
-                                {/* <span className="text-white font-light text-3xl">&</span> */}
                             </div>
                             <div>
                                 <h1 className="text-plants font-bold text-6xl">Plants</h1>
                             </div>
                             <div>
-                                {/* <h2 className="font-light text-3xl">Alike</h2> */}
                             </div>
                             <br />
-                        </div>
-                        <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-humans animate__animated animate__faster animate__fadeIn"
+                        </div> */}
+            {/* <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-humans animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
@@ -115,33 +122,8 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                             {program?.fields?.programName}
                                         </a></Link>
                                     </li>
-                                ))}
-                            {/* <li>
-                                <Link href='/sakar-spark'><a
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                    Sakar Spark
-                                </a></Link>
-                            </li>
-                            <li>
-                                <Link href='#'><a
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                    Food for slums
-                                </a></Link>
-                            </li>
-                            <li>
-                                <Link href=''><a
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                    Ambulance
-                                </a></Link>
-                            </li>
-                            <li>
-                                <Link href='/sakar-spark'><a
-                                    className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                    Hearing aid distribution
-                                </a></Link>
-                            </li> */}
-
-
+                                ))
+                            }
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 pb-6 pt-6 lg:pt-3 bg-animals animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "150ms" }}>
@@ -161,26 +143,8 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                             {program?.fields?.programName}
                                         </a></Link>
                                     </li>
-                                ))}
-                            {/* <li>
-                                <Link href='#'>
-                                    <a className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                        Volunteering at animal shelters
-                                    </a>
-                                </Link>
-                                <Link href='#'>
-                                    <a className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                        Adoption camps for rescued animals
-                                    </a>
-                                </Link>
-                                <Link href='#'>
-                                    <a
-                                        className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">
-                                        Feeding stray dogs
-                                    </a>
-                                </Link>
-                            </li> */}
-
+                                ))
+                            }
                         </ul>
                         <ul className="px-4 w-full sm:w-1/2 lg:w-1/4  pb-6 pt-6 lg:pt-3 bg-plants animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "300ms" }}>
@@ -200,14 +164,12 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                             {program?.fields?.programName}
                                         </a></Link>
                                     </li>
-                                ))}
-                            {/* <li><a href="#"
-                                className="block p-3 hover:bg-blue-600 text-gray-100 hover:underline">Recycling awareness program</a></li> */}
-
-                        </ul>
-                    </div>
-                </div>
-            </li>
+                                ))
+                            }
+                        </ul> */}
+            {/*</div>
+                </div> */}
+            {/* </li> */}
             <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setInvolveMenuHover(true)} onMouseLeave={() => setInvolveMenuHover(false)}>
                 <div className="wrapper">
                     <a href="#"
@@ -221,7 +183,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             <h2 className="font-bold text-2xl">Work with us for a change</h2>
                             <p>The change you always wanted.</p>
                         </div>
-                        <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-400 border-dashed border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
+                        <ul className="px-4 w-full lg:w-1/3 border-gray-400 border-dashed border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
@@ -241,7 +203,8 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 </Link>
                             </div>
                         </ul>
-                        <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-400 border-dashed border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
+                        {/* Start a funraiser menu */}
+                        {/* <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-400 border-dashed border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "100ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
@@ -262,8 +225,8 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                         more</a>
                                 </Link>
                             </div>
-                        </ul>
-                        <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-400 border-dashed border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
+                        </ul> */}
+                        <ul className="px-4 w-full lg:w-1/3 border-gray-400 border-dashed border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "200ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
@@ -281,7 +244,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 </Link>
                             </div>
                         </ul>
-                        <ul className="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-400 border-dashed pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
+                        <ul className="px-4 w-full lg:w-1/3 border-gray-400 border-dashed pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "300ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"

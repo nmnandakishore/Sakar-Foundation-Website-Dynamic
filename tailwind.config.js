@@ -29,8 +29,16 @@ module.exports = {
 			slate: colors.slate,
 			stone: colors.stone,
 			// primary: "#001856",
-			primary: "#000248",
-			primaryDark: "#010233",
+			primary: "#000248", //original
+			// primary: "#082159", //primary-2
+			// primary: "#000f36",
+			// primary: "#000920",
+			// primary: "#010a21", //good
+
+			// primaryDark: "#00021e", //good
+			primaryDark: "#010233", //original
+			// primaryDark: "#021744", //secondary-2
+
 			humans: "#71008c",
 			animals: "#8e8b00",
 			plants: "#0b6c00",
@@ -42,5 +50,7 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography'),
+		require('@tailwindcss/line-clamp'),
 	],
+
 };

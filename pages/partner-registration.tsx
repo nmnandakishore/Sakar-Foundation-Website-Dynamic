@@ -51,7 +51,7 @@ const PartnerRegistrationPage: React.FC = () => {
   return (
     <>
 
-      <div className="page-header px-8 bg-primaryDark">
+      {/* <div className="page-header px-8 bg-primaryDark">
         <div className="container">
           <div className="grid grid-cols-2 sm:gap-10">
             <div className="my-auto text-white col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
@@ -66,6 +66,16 @@ const PartnerRegistrationPage: React.FC = () => {
               <img className="mx-auto mt-16 -mb-2 h-72 w-auto block ' animated animateOnce fadeInRightShort" data-id="1" src="/img/partnership.png" alt="" />
             </div>
           </div>
+        </div>
+      </div> */}
+
+      <div
+        className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
+        <div className="container">
+          <p className="text-4xl pb-5 text-slate-100">Partner With Us</p>
+          Corporate support can take many forms, some of which are listed below.
+          If you’ve got an idea about how your organisation can work with us, please fill in the form at the bottom of the page.
+          We look forward to working with you!
         </div>
       </div>
 
