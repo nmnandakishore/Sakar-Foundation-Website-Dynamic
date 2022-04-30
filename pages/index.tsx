@@ -71,7 +71,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
             <div className="hero-img" style={{ backgroundImage: "url('/img/home-hero.jpg')" }}>
                 <div className="hero-text text-white container pt-52 pb-4">
-                    <div className="text-5xl">We're a Non Profit</div>
+                    <div className="text-5xl">We&apos;re a Non Profit</div>
                     <div className="text-2xl mt-4">Fighting for Everyone.</div>
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
