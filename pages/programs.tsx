@@ -5,12 +5,12 @@ import * as React from 'react'
 import { client } from '../helpers/data-fetcher';
 
 
-interface IprogramsPageProps {
+interface IProgramsPageProps {
     programs: any
 }
 
 
-const programsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
+const programsPage: React.FC<IProgramsPageProps> = ({ programs = null }) => {
     let programsItems = programs?.items ?? [];
 
     console.log({ programsItems });
