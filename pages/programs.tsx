@@ -13,7 +13,7 @@ interface IprogramsPageProps {
 }
 
 
-const programsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
+const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
     let programsItems = programs?.items ?? [];
 
     let getCategoryCode = (categoryStr) => {
@@ -257,9 +257,9 @@ const programsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
     )
 }
 
-programsPage.displayName = "Programs"
+ProgramsPage.displayName = "Programs"
 
-export default programsPage;
+export default ProgramsPage;
 
 
 export async function getServerSideProps() {
