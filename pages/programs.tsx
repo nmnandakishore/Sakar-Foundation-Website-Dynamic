@@ -1,20 +1,28 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { useRouter } from 'next/router'
+
+
 import { BLOCKS } from '@contentful/rich-text-types';
 import Link from 'next/link';
-import * as React from 'react'
+import React, { useEffect, useState } from 'react'
 import { client } from '../helpers/data-fetcher';
 
 
-interface IProgramsPageProps {
+interface IprogramsPageProps {
     programs: any
 }
 
 
-const programsPage: React.FC<IProgramsPageProps> = ({ programs = null }) => {
+const programsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
     let programsItems = programs?.items ?? [];
 
-    console.log({ programsItems });
-
+    let getCategoryCode = (categoryStr) => {
+        return {
+            'humans': 1,
+            'animals': 2,
+            'plants': 3,
+        }[categoryStr]
+    }
 
     let programsForHumans, programsForAnimals, programsForPlants = [];
 
@@ -33,10 +41,14 @@ const programsPage: React.FC<IProgramsPageProps> = ({ programs = null }) => {
         return program.fields.category === 'Plants'
     })
 
+    const [openTab, setOpenTab] = useState(1);
 
-    const [openTab, setOpenTab] = React.useState(1);
+    const router = useRouter()
 
-
+    useEffect(() => {
+        setOpenTab(getCategoryCode(router.query.category) || getCategoryCode('humans'))
+        // const [openTab, setOpenTab] = React.useState(1);
+    }, [])
 
 
     const options = {
@@ -54,9 +66,6 @@ const programsPage: React.FC<IProgramsPageProps> = ({ programs = null }) => {
 
     return (
         <>
-
-
-
             <div
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
@@ -64,9 +73,6 @@ const programsPage: React.FC<IProgramsPageProps> = ({ programs = null }) => {
                     Updates about everything happened in Sākār world.
                 </div>
             </div>
-
-
-
 
 
             <div className="section bg-section">

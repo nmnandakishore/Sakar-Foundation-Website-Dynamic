@@ -77,9 +77,9 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
                 </div>
                 <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
-                    <Link href="/programs#vision"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
-                    <Link href="/programs#mission"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
-                    <Link href="/programs#values"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                    <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
+                    <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
+                    <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
                 </div >
             </div >
 
@@ -100,9 +100,11 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                 <p className="animated animateOnce fadeInRightShort my-5" data-id="2">
                                     Young leadership at Sākār Foundation is an example in itself.
                                 </p>
-                                <a href="" className="arrow-btn text-primary animated animateOnce fadeInDownShort"
-                                    data-id="3">Learn
-                                    more</a>
+                                <Link href="/leadership">
+                                    <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                        data-id="3">Learn
+                                        more</a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -120,8 +122,11 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                                 We work across the gloab without any political, social or racial boundaries. Currently we are mainly
                                 working in United States, Africa and India
                             </p>
-                            <a href="" className="arrow-btn text-primary animated animateOnce fadeInDownShort"
-                                data-id="3">More about us</a>
+                            <Link href="/about">
+                                <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                    data-id="3">More about us</a>
+                            </Link>
+
                         </div>
 
                         <div className="col-span-2 sm:col-span-1 py-10 sm:py-16" data-id="1">
