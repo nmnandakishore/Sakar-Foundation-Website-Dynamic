@@ -171,6 +171,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                             </div>
                                                             <div className="col-span-12 sm:col-span-8 p-6">
                                                                 <p className="text-lg text-primary">{programsItem.fields.programName}</p>
+                                                                <p className="text-xs text-slate-100  bg-slate-500 p px-2 inline-block">{programsItem.fields.country}</p>
                                                                 <p className={`text-slate-500`}>{programsItem.fields.description}</p>
                                                                 <p className="mt-4 text-sm text-base text-left h-24 whitespace-pre-line overflow-hidden line-clamp-4">
                                                                     {documentToReactComponents(programsItem.fields.content, options)}
@@ -200,6 +201,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                             </div>
                                                             <div className="col-span-12 sm:col-span-8 p-6">
                                                                 <p className="text-lg text-primary">{programsItem.fields.programName}</p>
+                                                                <p className="text-xs text-slate-100  bg-slate-500 p px-2 inline-block">{programsItem.fields.country}</p>
                                                                 <p className={`text-slate-500`}>{programsItem.fields.description}</p>
                                                                 <p className="mt-4 text-sm text-base text-left h-24 whitespace-pre-line overflow-hidden line-clamp-4">
                                                                     {documentToReactComponents(programsItem.fields.content, options)}
@@ -229,6 +231,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                             </div>
                                                             <div className="col-span-12 sm:col-span-8 p-6">
                                                                 <p className="text-lg text-primary">{programsItem.fields.programName}</p>
+                                                                <p className="text-xs text-slate-100  bg-slate-500 p px-2 inline-block">{programsItem.fields.country}</p>
                                                                 <p className={`text-slate-500`}>{programsItem.fields.description}</p>
                                                                 <p className="mt-4 text-sm text-base text-left h-24 whitespace-pre-line overflow-hidden line-clamp-4">
                                                                     {documentToReactComponents(programsItem.fields.content, options)}

@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
 import { COUNTRIES } from '../helpers/countries';
+import { STATES } from '../helpers/states';
 
 
 const VolunteerRegistrationPage: React.FC = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { control, register, handleSubmit, setValue, reset, formState: { errors } } = useForm<any>({
+    defaultValues: {
+      'Country': 'United States',
+      'State / Province / Region': undefined
+    }
+  });
+
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+
+  const selectedCountry = useWatch({
+    name: 'Country',
+    control
+  });
+
+  useEffect(() => {
+    if (selectedCountry !== 'United States') {
+      setValue('State / Province / Region', undefined);
+    }
+  }, [selectedCountry])
+
+
   const onSubmit = async data => {
     try {
       setLoading(true);
@@ -110,16 +130,30 @@ const VolunteerRegistrationPage: React.FC = () => {
                 <option value="AB positive (AB+)">AB positive (AB+)</option>
                 <option value="AB negative (AB-)">AB negative (AB-)</option>
               </select> */}
-              <input required type="date" placeholder="Date Of Birth" {...register("Date Of Birth", { required: true })} />
-              <div className="grid col-span-2 grid-cols-2 gap-4">
-                <input required type="text" placeholder="Address Line 1" {...register("Address Line 1", { required: true })} />
-                <input type="text" placeholder="Address Line 2" {...register("Address Line 2", {})} />
-                <input required type="text" placeholder="City" {...register("City", { required: true })} />
+              {/* <input required type="date" placeholder="Date Of Birth" {...register("Date Of Birth", { required: true })} /> */}
+              {/* <div className="grid col-span-2 grid-cols-2 gap-4"> */}
+              <input required type="text" placeholder="Address Line 1" {...register("Address Line 1", { required: true })} />
+              <input type="text" placeholder="Address Line 2" {...register("Address Line 2", {})} />
+              <input required type="text" placeholder="City" {...register("City", { required: true })} />
+              <select placeholder="Country" required {...register("Country", { required: true })}>
+                {COUNTRIES.map(country => <option key={country} value={country}>{country}</option>)}
+              </select>
+
+              {(selectedCountry !== 'United States') ? (
                 <input required type="text" placeholder="State / Province / Region" {...register("State / Province / Region", { required: true })} />
-                <select className='col-span-2' placeholder="Country" required {...register("Country", { required: true })}>
-                  {COUNTRIES.map(country => <option key={country} value={country}>{country}</option>)}
+              ) : null}
+
+
+              {(selectedCountry === 'United States') ? (
+                <select placeholder="State / Province / Region" required {...register("State / Province / Region", { required: true })}>
+                  {STATES.map(state => <option key={state} value={state}>{state}</option>)}
                 </select>
-              </div>
+              ) : null}
+
+              <textarea className='col-span-2' required placeholder="Your interests" {...register("Interests", { required: true })} />
+
+
+              {/* </div> */}
               <div className="col-span-full grid justify-items-center">
                 <button disabled={loading} className={`${loading ? 'animate-pulse' : ''} w-full md:w-1/2 bg-primary hover:bg-primaryDark text-white font-bold content-center py-2 px-4 rounded`} type="submit">Submit</button>
               </div>
