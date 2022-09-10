@@ -284,9 +284,11 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             </li>
             <li className="hover:bg-humans text-humans hover:text-white">
                 <div className="wrapper hover:text-white">
-                    <a href="/donate"
-                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:text-white font-bold">Donate
-                    </a>
+                    <Link href="/donate">
+                        <a
+                            className="relative block px-2 lg:px-4 text-sm lg:text-base hover:text-white font-bold">Donate
+                        </a>
+                    </Link>
                 </div>
             </li>
         </ul>

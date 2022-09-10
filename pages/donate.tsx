@@ -61,6 +61,7 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
 
     useEffect(() => {
 
+        var PayPal;
         const script = document.createElement('script');
         script.src = 'https://www.paypalobjects.com/donate/sdk/donate-sdk.js';
         script.async = true;
@@ -76,6 +77,7 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
                     title: "PayPal - The safer, easier way to pay online!",
                 }
             }).render('#donate-button');
+
         }
     })
 
