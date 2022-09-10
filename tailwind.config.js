@@ -28,6 +28,7 @@ module.exports = {
 			sky: colors.sky,
 			slate: colors.slate,
 			stone: colors.stone,
+			green: colors.green,
 			// primary: "#001856",
 			primary: "#000248", //original
 			// primary: "#082159", //primary-2

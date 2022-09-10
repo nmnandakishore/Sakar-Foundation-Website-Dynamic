@@ -14,6 +14,7 @@ const VolunteerRegistrationPage: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [msgType, setMsgType] = useState<string | null>(null);
 
   const selectedCountry = useWatch({
     name: 'Country',
@@ -30,16 +31,31 @@ const VolunteerRegistrationPage: React.FC = () => {
   const onSubmit = async data => {
     try {
       setLoading(true);
-      await fetch("https://submit-form.com/OGJtewCw", {
+      // await fetch("https://submit-form.com/OGJtewCw", {
+      await fetch("api/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          formName: "Volunteer Registration Form",
+          data: data
+        }),
+      }).then((res) => {
+        if (!res.ok) {
+          setMsg('Oops! something went wrong. Please retry later.')
+        } else {
+          res.json().then((response) => {
+            setMsgType(response.type)
+            setMsg(JSON.stringify(response.message))
+            setLoading(false);
+          });
+          // setMsg(JSON.stringify(response));
+        }
       });
-      setLoading(false);
-      setMsg('Your submission has been recieved')
+      // setLoading(false);
+      // setMsg('Your submission has been recieved')
       reset();
     } catch (err) {
       console.error(err);
@@ -159,7 +175,7 @@ const VolunteerRegistrationPage: React.FC = () => {
               </div>
             </form>
             {msg ? (
-              <div className="py-3 px-5 mb-4 bg-gray-100 text-gray-900 rounded-md text-sm border border-gray-200" role="alert">
+              <div className={`${(msgType == 'success') ? 'bg-green-300 text-green-900 border-green-700' : ''} ${(msgType == 'error') ? 'bg-red-300 text-red-900 border-red-700' : ''} py-3 px-5 mb-4 rounded-md text-sm border`} role="alert">
                 {msg}
               </div>
             ) : null}

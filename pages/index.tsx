@@ -69,17 +69,28 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
 
 
 
-            <div className="hero-img" style={{ backgroundImage: "url('/img/home-hero.jpg')" }}>
+            <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
                 <div className="hero-text text-white container pt-52 pb-4">
                     <div className="text-5xl">We&apos;re a Non Profit</div>
                     <div className="text-2xl mt-4">Fighting for Everyone.</div>
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
                 </div>
-                <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
+                {/* <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
                     <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
                     <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
                     <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                </div > */}
+
+                <div className="container grid grid-cols-2 md:gap-3 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
+                    <div className="col-span-2 lg:col-span-1">
+                        <div className='grid grid-cols-3 md:gap-3'>
+                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
+                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
+                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                        </div>
+                    </div>
+                    <div className="col-span-2 lg:col-span-1"></div>
                 </div >
             </div >
 

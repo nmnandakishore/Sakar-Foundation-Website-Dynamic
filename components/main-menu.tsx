@@ -57,7 +57,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
 
     return (
 
-        <ul className="menu-items flex overflow-x-auto border-none">
+        <ul className="menu-items flex overflow-x-auto border-none text-lg">
             {/* <!--Regular Link--> */}
             <li className="hover:bg-primary hover:text-white border-none">
                 <div className="wrapper">
@@ -178,21 +178,21 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                 </div>
                 <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={involveMenuHover ? { display: 'block' } : {}}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
-                        <div className="w-full text-white mb-8  animate__animated animate__faster animate__fadeInDown"
+                        <div className="w-full text-gray-300 mb-4  animate__animated animate__faster animate__fadeInDown"
                             style={{ animationDelay: "150ms" }}>
-                            <h2 className="font-bold text-2xl">Work with us for a change</h2>
-                            <p>The change you always wanted.</p>
+                            <h2 className="font-bold text-xl">Work with us for a change</h2>
+                            <p className="text-sm">The change you always wanted.</p>
                         </div>
                         <ul className="px-4 w-full lg:w-1/3 border-gray-400 border-dashed border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3 animate__animated animate__faster animate__fadeIn"
                             style={{ animationDelay: "0ms" }}>
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
                                     src="/img/get_involved/volunteer.svg" alt="" />
-                                <h3 className="font-bold text-xl text-white text-bold mb-2">
+                                <h3 className="text-xl text-white mb-2">
                                     Be a volunteer
                                 </h3>
                             </div>
-                            <p className="text-gray-100 text-sm text-justify">Sign u p as a volunteer and
+                            <p className="text-gray-400 text-sm lg:text-base">Sign u p as a volunteer and
                                 help us run fundraiser
                                 campaigns, conduct workshops etc.
                                 This is an opportunity for you to work for the community. </p>
@@ -231,10 +231,10 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
                                     src="/img/get_involved/partner.svg" alt="" />
-                                <h3 className="font-bold text-xl text-white text-bold mb-2">Partner with us
+                                <h3 className="text-xl text-white mb-2">Partner with us
                                 </h3>
                             </div>
-                            <p className="text-gray-100 text-sm text-justify">If you are a business, govt or an organization, you can
+                            <p className="text-gray-400 text-sm lg:text-base">If you are a business, govt or an organization, you can
                                 partner with us to collaborate and work on causes you care about.</p>
                             <div className="flex items-center py-3">
                                 <Link href="/partner-registration">
@@ -249,9 +249,9 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                             <div className="flex items-center">
                                 <img className="h-8 mb-3 mr-3 fill-current text-white"
                                     src="/img/get_involved/donate.svg" alt="" />
-                                <h3 className="font-bold text-xl text-white text-bold mb-2">Donate</h3>
+                                <h3 className="text-xl text-white mb-2">Donate</h3>
                             </div>
-                            <p className="text-gray-100 text-sm text-justify">You can donate us directly or
+                            <p className="text-gray-400 text-sm lg:text-base">You can donate us directly or
                                 to individual
                                 projects.
                                 Either way, your donations help us reach those who&#39;re in need across the
@@ -284,12 +284,12 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             </li>
             <li className="hover:bg-humans text-humans hover:text-white">
                 <div className="wrapper hover:text-white">
-                    <a href="#"
+                    <a href="/donate"
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:text-white font-bold">Donate
                     </a>
                 </div>
             </li>
-        </ul >
+        </ul>
 
     );
 }

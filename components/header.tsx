@@ -59,14 +59,14 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
     })
 
     return (
-        <div id="header" className="header animate__animated animate__faster bg-gray-200">
+        <div id="header" className="header animate__animated animate__faster bg-white">
             <div className="main-menu">
                 <nav className="relative text-primary">
                     <div className="container p-0 mx-auto flex flex-col sm:flex-row sm:justify-between">
                         <div className="header-logo-wrapper relative block text-center sm:text-left">
                             <Link href="/">
                                 <a>
-                                    <img src="/img/sakar_logo.svg" className="header-logo h-14 w-auto sm:my-[13px] mx-auto"
+                                    <img src="/img/sakar_logo.svg" className="header-logo h-20 w-auto sm:my-[13px] mx-auto"
                                         alt="Sakar Foundation" />
                                 </a>
                             </Link>
