@@ -1,4 +1,4 @@
-export const template = (formName: string, data: object, cidLogo: string) => {
+export const template = (formName: string, data: any, cidLogo: string) => {
     console.log({ data });
 
     let name = 'Someone';
