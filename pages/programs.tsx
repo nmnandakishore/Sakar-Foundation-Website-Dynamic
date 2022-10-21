@@ -158,7 +158,6 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                             {/* Human Tabs */}
                             <div className="flex-auto">
                                 <div className="tab-content tab-space">
-                                    asdfg
                                     <div className={openTab === 1 ? "block" : "hidden"} id="tab-humans">
                                         <div className="pb-20 animatedParent" data--sequence="100">
                                             {programsForHumans.map((programsItem, index) => {

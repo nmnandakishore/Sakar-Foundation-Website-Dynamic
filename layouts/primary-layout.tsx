@@ -27,6 +27,7 @@ export default function Layout({ pageTitle = undefined, pageBody = undefined, ch
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
 
+
                 <meta />
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -64,6 +65,7 @@ export default function Layout({ pageTitle = undefined, pageBody = undefined, ch
             <script src="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/js/css3-animate-it.min.js"
             ></script>
             <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" async></script>
 
         </>
     );

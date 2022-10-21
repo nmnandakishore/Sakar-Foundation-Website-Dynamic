@@ -61,14 +61,19 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
 
     useEffect(() => {
 
-        var PayPal;
-        const script = document.createElement('script');
-        script.src = 'https://www.paypalobjects.com/donate/sdk/donate-sdk.js';
-        script.async = true;
-        document.body.appendChild(script);
+        // var PayPal;
+        // const script = document.createElement('script');
+        // script.src = 'https://www.paypalobjects.com/donate/sdk/donate-sdk.js';
+        // script.async = true;
+        // document.body.appendChild(script);
+
+
+
         // return script;
-        script.onload = () => {
-            PayPal.Donation.Button({
+        // window.onload = () => {
+        if ((window as any).PayPal !== undefined) {
+
+            (window as any).PayPal.Donation.Button({
                 env: "sandbox",
                 hosted_button_id: "K4WTF6ACC2PHU",
                 image: {
@@ -77,9 +82,10 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
                     title: "PayPal - The safer, easier way to pay online!",
                 }
             }).render('#donate-button');
-
         }
-    })
+
+        // }
+    }, [])
 
 
 
@@ -101,6 +107,8 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
                     </div>
                 </div>
             </div> */}
+
+            {/* <script src=""> */}
 
             <div
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
