@@ -58,6 +58,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
 
             <div className="section bg-white">
                 <div className="container">
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
 
                         {
@@ -107,6 +108,8 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
 
             <div className="section bg-gray-200 my-20">
                 <div className="container">
+                    <p className="text-4xl pb-5 text-primary">Mentors</p>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 py-10">
                         {
                             nonElevatedLeaders.map((leader, index) => {
