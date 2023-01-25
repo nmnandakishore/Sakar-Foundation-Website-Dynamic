@@ -1,14 +1,21 @@
 import Link from 'next/link';
 import ProjectSlider from '../components/projects-slider';
 import { client } from '../helpers/data-fetcher';
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import '@splidejs/splide/dist/css/splide.min.css';
+import Carousel from 're-carousel'
+
+
 
 interface IHomePageProps {
     projects: any,
-    stats: any
+    stats: any,
+    programs: any
 }
 
-const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) => {
-    stats = stats?.items[0]?.fields ?? {};
+const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, programs = null }) => {
+    stats = stats ?.items[0] ?.fields ?? {};
+    let programItems = programs ?.items ?? [];
     // console.log({ stats });
 
     return (
@@ -68,6 +75,94 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
             </div>*/}
 
 
+            {/* <div className="lg:pl-5 xl:pl-0 h-52">
+                <Carousel className="w-full h-52" auto loop>
+                    <div className="w-full h-52 bg-blue" style={{}}>Frame 1</div>
+                    <div className="w-full h-52 bg-black " style={{}}>Frame 2</div>
+                    <div className="w-full h-52" style={{}}>Frame 3</div>
+                </Carousel>
+            </div> */}
+
+
+
+            <Splide
+                options={{
+                    type: 'fade',
+                    focus: 'center',
+                    autoWidth: false,
+                    perPage: 1,
+                    start: 1,
+                    autoplay: true,
+                    height: '500px',
+                    gap: '0px',
+                    rewind: true, //only for type:fade    
+                    speed: 2000
+                }}
+            >
+
+                {programItems.map((programItem) => {
+                    // let lowerCaseCat = 
+                    return (
+
+                        <SplideSlide className="homeslider" key={programItem.sys.id}>
+                            <div className={"w-full absolute h-[500px] bg-" + programItem.fields.category.toLowerCase()}>
+                                <div className="grid sm:grid-cols-1 md:grid-cols-5">
+                                    <div className="w-full h-full sm:hidden md:block"></div>
+                                    {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
+                                    <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-4"
+                                        style={{
+                                            backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
+                                            // boxShadow: "0 0 100px 100px #303247 inset",
+                                            border: 0
+                                        }}
+                                    > </div>
+                                </div>
+                            </div>
+                            <div className={"gradient-overlay-" + programItem.fields.category + "-h w-full h-full absolute hidden sm:block"}></div>
+                            <div className={"gradient-overlay-" + programItem.fields.category + "-v w-full h-full absolute"}></div>
+                            <div className="gradient-overlay-flare w-full h-full absolute"></div>
+                            <div className="b-gray-400 w-full h-full absolute"></div>
+                            <div className="w-full h-full absolute p-24 pt-[250px] animatedParent" data-sequence="300">
+                                <h2 className="h2 text-white heading md:w-2/5 md:whitespace-pre-wrap md:pb-10 pb-5 animated fadeInDownShort" data-id="1">{programItem.fields.programName}</h2>
+                                <p className="text-white md:w-2/5 md:whitespace-pre-wrap animated animateOnce fadeInleftShort" data-id="2">{programItem.fields.description}</p>
+                            </div>
+                            {console.log(programItem.fields)}
+                        </SplideSlide>
+                    )
+                })}
+            </Splide>
+
+
+
+
+
+            <div className="section-0 bg-gray-200 py-0">
+                {/* <div className="section-0 bg-primary text-white py-0 bg-section"
+                style={{ backgroundImage: "url('/img/logo-line-grey.svg')" }}> */}
+                <div className="grid grid-cols-2 animatedParent" data-sequence="300">
+                    <div className="col-span-2 sm:col-span-1 bg-cover bg-center animated animateOnce fadeInLeftShort"
+                        data-id="1" style={{ backgroundImage: "url('/img/home-youth.jpg')" }}>
+
+                    </div>
+                    <div className="col-span-2 sm:col-span-1 pl-12">
+                        <div className="col-span-2 sm:col-span-1 py-16 sm:py-24 pl-12">
+                            <div className="container">
+                                <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">Youth can
+                                    LEAD, <br />
+                                    Youth can CARE.</div>
+                                <p className="animated animateOnce fadeInRightShort my-5 mt-10" data-id="2">
+                                    Young leadership at Sākār Foundation is an example in itself.
+                                </p>
+                                <Link href="/leadership">
+                                    <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"
+                                        data-id="3">Learn
+                                        more</a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
                 <div className="hero-text text-white container pt-52 pb-4">
@@ -93,34 +188,6 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null }) =
                     <div className="col-span-2 lg:col-span-1"></div>
                 </div >
             </div >
-
-            <div className="section-0 bg-gray-200 py-0">
-                {/* <div className="section-0 bg-primary text-white py-0 bg-section"
-                style={{ backgroundImage: "url('/img/logo-line-grey.svg')" }}> */}
-                <div className="grid grid-cols-2 animatedParent" data-sequence="300">
-                    <div className="col-span-2 sm:col-span-1 bg-cover bg-center animated animateOnce fadeInLeftShort"
-                        data-id="1" style={{ backgroundImage: "url('/img/home-youth.jpg')" }}>
-
-                    </div>
-                    <div className="col-span-2 sm:col-span-1 pl-12">
-                        <div className="col-span-2 sm:col-span-1 py-16 sm:py-24 pl-12">
-                            <div className="container">
-                                <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">Youth can
-                                    LEAD, <br />
-                                    Youth can CARE.</div>
-                                <p className="animated animateOnce fadeInRightShort my-5" data-id="2">
-                                    Young leadership at Sākār Foundation is an example in itself.
-                                </p>
-                                <Link href="/leadership">
-                                    <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"
-                                        data-id="3">Learn
-                                        more</a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div className="section-0 bg-section">
                 <div className="container">
@@ -279,6 +346,9 @@ export async function getServerSideProps() {
     const projects: any = await clientObj.getEntries({
         content_type: 'projects'
     });
+    const programs: any = await clientObj.getEntries({
+        content_type: 'programs'
+    });
     const stats: any = await clientObj.getEntries({
         content_type: 'stats'
     });
@@ -292,7 +362,7 @@ export async function getServerSideProps() {
     // res.slug = res1;
 
     return {
-        props: { projects, stats }
+        props: { projects, stats, programs }
     }
 
 }
