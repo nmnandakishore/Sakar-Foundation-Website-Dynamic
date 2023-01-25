@@ -3,9 +3,6 @@ import ProjectSlider from '../components/projects-slider';
 import { client } from '../helpers/data-fetcher';
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import '@splidejs/splide/dist/css/splide.min.css';
-import Carousel from 're-carousel'
-
-
 
 interface IHomePageProps {
     projects: any,
@@ -165,9 +162,9 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
             </div>
 
             <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
-                <div className="hero-text text-white container pt-52 pb-4">
-                    <div className="text-5xl">We&apos;re a Non Profit</div>
-                    <div className="text-2xl mt-4">Fighting for Everyone.</div>
+                <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
+                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div>
+                    <div className="text-2xl mt-4 animated animateOnce fadeInLeftShort" data-id="2">Fighting for Everyone.</div>
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
                 </div>
@@ -179,10 +176,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
 
                 <div className="container grid grid-cols-2 md:gap-3 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
                     <div className="col-span-2 lg:col-span-1">
-                        <div className='grid grid-cols-3 md:gap-3'>
-                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
-                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
-                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                        <div className='grid grid-cols-3 md:gap-3 animatedParent' data-sequence="300">
+                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80 animated animateOnce fadeInUpShort" data-id="1" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="4">Humans</span></a></Link>
+                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80 animated animateOnce fadeInUpShort" data-id="2" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="5">Animals</span></a></Link>
+                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80 animated animateOnce fadeInUpShort" data-id="3" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="6">Plants</span></a></Link>
                         </div>
                     </div>
                     <div className="col-span-2 lg:col-span-1"></div>
