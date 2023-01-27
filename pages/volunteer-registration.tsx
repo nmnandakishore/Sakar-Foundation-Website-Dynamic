@@ -119,10 +119,7 @@ const VolunteerRegistrationPage: React.FC = () => {
         <div className="container animatedParent" data--sequence="300">
           <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Register</p>
           <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-            By volunteering with us, you will become a vital part of our organization and you will make a real difference to the lives
-            of many living beings. An opportunity that will not only develop your inter-personal skills, allow you to meet
-            like-minded people; but will also be the most fulfilling and gratifying phase in your life that will echo with
-            someone&#39;s happiness for years to come.
+            Every majestic structure needs the right kind of pillars of support. Volunteers are our much-needed support system to keep our organisation running and revolutionising. Not every hero wears a cape, some work as volunteers for social causes! One would feel like a hero after seeing the expression of joy and gratification from the people we help. As a volunteer, you can assist us in our fundraising programs, rescue programs and other charitable activities.
           </p>
         </div>
       </div>

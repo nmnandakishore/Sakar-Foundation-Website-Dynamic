@@ -114,7 +114,7 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">Donate Us</p>
-                    Together, we can make the world a better place.
+                    Support in any form can make a huge difference! Be that support to us, as we plan out ideas to bring a difference!
                 </div>
             </div>
 
@@ -170,7 +170,7 @@ export async function getServerSideProps({ req }) {
     const { data } = await axios.get('https://ipapi.co/' + ip + '/json/');
 
     let region = 'USA';
-    if (data?.country_code_iso3 && data?.country_code_iso3 === 'IND') {
+    if (data ?.country_code_iso3 && data ?.country_code_iso3 === 'IND') {
         region = data.country_code_iso3;
     }
 

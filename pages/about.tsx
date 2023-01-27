@@ -12,10 +12,7 @@ const aboutPage: React.FC = () => {
                         <div className=" col-span-2 sm:col-span-1 animatedParent">
                             <p className="text-4xl pb-5 text-slate-100">About Us</p>
                             <p className="mt-6 text-justify">
-                                At Sākār Foundation, we believe, we can solve problems only by solving the root cause. We encourage
-                                children to actively involve
-                                in activities for betterment of the society. We also make them learn Not only humans but even all living
-                                beings including animals and plants are the part of <b>Nature&#39;s fabric</b> as we call it.
+                                Sakar, a word in Sanskrit for anything away from abstract. Owing rightly to the parent word, the Sakar Foundation – restores hope in humanity. Housed and registered, in Simi Valley, California, USA, yet rolls out diverse outreach programs across the globe.
                             </p>
                         </div>
                         <div className="text-4xl col-span-2 sm:col-span-1 animatedParent" >
@@ -48,13 +45,8 @@ const aboutPage: React.FC = () => {
                 <div className="container animatedParent" data--sequence="300">
                     <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Who we are</p>
                     <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-                        Keithan and Keisha born in and Indian American family and have been volunteering for different causes from the age of 6.
-                        As their family keeps visiting their friends and relatives around the world, they got a chance to visit many economically backward and growing countries.
-                        At such a young age, they could see the differance between their society and others. This made them to realize the desparate need of help
-                        at various levels of backwardand growing societies.
+                        Sākār Foundation is a brainchild of the founders, Keithan Pai and Keisha Pai, and extends out programs and projects to instil a sense of help, charity and belief in different strata of the society. As the quote goes, “Travel makes you view the world through another’s perspective”; Keithan and Keisha, grew a new lens to the worldly challenges as they kept visiting or were visited by relatives and friends across the world. This led them to experience and observe the socio-economic plight of many parts of society and was deeply moved to bring about a change. Coming from a place of volunteering, young minds set out to build a platform to help the world in need.
 
-                        This made them think, to have a platform wherein they could help all the stakeholder of echosystem. i.e, Humans, Animals and Plants.
-                        Sākār Foundation is the outcome of that
                     </p>
 
 
@@ -71,9 +63,7 @@ const aboutPage: React.FC = () => {
                         <div className="col-span-2 sm:col-span-1 animatedParent" data-sequence="300">
                             <p className="heading text-primary mb-8 animated animateOnce fadeInRightShort" data-id="1">What we do</p>
                             <p className="text-justify animated animateOnce fadeInRightShort" data-id="2">
-                                Sākār foundation works in two different ways. One is to reach out the needy thr
-                                ough projects caried out under
-                                Sākār Spark. And the other is, we aften takeup many initiatives ourselves for causes which need more attention to be given.
+                                With a belief that every organism stands equal alongside us, we help make the world a better place to live by taking up two approaches. We primarily reach out to the ones in need through various structured projects called Sākār Spark. Secondly, we also design and initiate programs to tackle areas that we believe need the utmost focus and help.
                             </p>
                         </div>
                     </div>
