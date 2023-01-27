@@ -9,7 +9,7 @@ interface IleadershipPage {
 
 const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
 
-    let leadersArr: Array<any> = leaders?.items ?? [];
+    let leadersArr: Array<any> = leaders ?.items ?? [];
 
 
     let elevatedLeaders, nonElevatedLeaders = [];
@@ -59,20 +59,20 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
             <div className="section bg-white">
                 <div className="container">
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-10">
 
                         {
                             elevatedLeaders.map((leader, index) => {
                                 let fields: any = leader.fields
                                 return (
-                                    <div className="grid sm:grid-cols-3 bg-primary text-white" key={leader.sys.id}>
-                                        <div className="relative w-full h-48 max-h-full shadow sm:h-56">
-                                            <img className="absolute object-cover w-full h-full" src={fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                    <div className="grid sm:grid-cols-3" key={leader.sys.id}>
+                                        <div className="relative w-full max-h-full">
+                                            <img className="absolute rounded-full object-cover my-8 w-[100px] h-[100px]" src={fields ?.photograph ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
                                         </div>
                                         <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
                                             <p className="text-lg font-bold">{fields.name}</p>
                                             <p className="mb-4 text-xs text-gray-400 font-bold">{fields.designation}</p>
-                                            <p className="mb-4 text-sm tracking-wide text-gray-400">
+                                            <p className="mb-4 text-sm tracking-wide text-gray-400 max-h-[40px] overflow-hidden">
                                                 {fields.about}
                                             </p>
                                             <div className="flex items-center space-x-3">
@@ -109,22 +109,25 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
             <div className="section bg-gray-200 my-20">
                 <div className="container">
                     <p className="text-4xl pb-5 text-primary">Mentors</p>
+                    <p className="pb-5">
+                        The kindling spark of hope and charity in our Leaderhsip panel, is given a specific direction and momentum with the expertise and cognitive ingenuity of our eminent suite of mentors.
+                    </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 py-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 py-10">
                         {
                             nonElevatedLeaders.map((leader, index) => {
                                 let fields: any = leader.fields
                                 return (
-                                    <div className="grid sm:grid-cols-3 bg-white" key={leader.sys.id}>
-                                        <div className="relative w-full h-48 max-h-full shadow sm:h-56">
-                                            <img className="absolute object-cover w-full h-full" src={fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                    <div className="grid sm:grid-cols-3" key={leader.sys.id}>
+                                        <div className="relative max-h-full">
+                                            <img className="absolute w-[100px] h-[100px] rounded-full object-cover w-full h-full" src={fields ?.photograph ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
                                         </div>
-                                        <div className="flex flex-col justify-center mt-5 sm:mt-0 sm:p-5 sm:col-span-2">
+                                        <div className="flex flex-col justify-center mt-5 sm:p-5 sm:col-span-2">
                                             <p className="text-lg font-bold text-primary">{fields.name}</p>
-                                            <p className="mb-4 text-xs text-gray-800 font-bold">{fields.designation}</p>
-                                            <p className="mb-4 text-sm tracking-wide text-gray-800">
+                                            {/* <p className="mb-4 text-xs text-gray-800 font-bold">{fields.designation}</p> */}
+                                            {/* <p className="mb-4 text-sm tracking-wide text-gray-800">
                                                 {fields.about}
-                                            </p>
+                                            </p> */}
                                             <div className="flex items-center space-x-3">
                                                 {(fields.twittwrLink) ? (
                                                     <a href={fields.twittwrLink} className="text-gray-600  hover:text-gray-800 transition-colors duration-300 hover:text-deep-purple-accent-400">

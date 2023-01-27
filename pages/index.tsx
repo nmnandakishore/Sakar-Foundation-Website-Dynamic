@@ -81,54 +81,30 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
             </div> */}
 
 
+            <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
+                <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
+                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div>
+                    <div className="text-2xl mt-4 animated animateOnce fadeInLeftShort" data-id="2">Fighting for Everyone.</div>
+                </div>
+                <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
+                </div>
+                {/* <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
+                    <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
+                    <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
+                    <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
+                </div > */}
 
-            <Splide
-                options={{
-                    type: 'fade',
-                    focus: 'center',
-                    autoWidth: false,
-                    perPage: 1,
-                    start: 1,
-                    autoplay: true,
-                    height: '500px',
-                    gap: '0px',
-                    rewind: true, //only for type:fade    
-                    speed: 2000
-                }}
-            >
-
-                {programItems.map((programItem) => {
-                    // let lowerCaseCat = 
-                    return (
-
-                        <SplideSlide className="homeslider" key={programItem.sys.id}>
-                            <div className={"w-full absolute h-[500px] bg-" + programItem.fields.category.toLowerCase()}>
-                                <div className="grid sm:grid-cols-1 md:grid-cols-5">
-                                    <div className="w-full h-full sm:hidden md:block"></div>
-                                    {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
-                                    <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-4"
-                                        style={{
-                                            backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
-                                            // boxShadow: "0 0 100px 100px #303247 inset",
-                                            border: 0
-                                        }}
-                                    > </div>
-                                </div>
-                            </div>
-                            <div className={"gradient-overlay-" + programItem.fields.category + "-h w-full h-full absolute hidden sm:block"}></div>
-                            <div className={"gradient-overlay-" + programItem.fields.category + "-v w-full h-full absolute"}></div>
-                            <div className="gradient-overlay-flare w-full h-full absolute"></div>
-                            <div className="b-gray-400 w-full h-full absolute"></div>
-                            <div className="w-full h-full absolute p-24 pt-[250px] animatedParent" data-sequence="300">
-                                <h2 className="h2 text-white heading md:w-2/5 md:whitespace-pre-wrap md:pb-10 pb-5 animated fadeInDownShort" data-id="1">{programItem.fields.programName}</h2>
-                                <p className="text-white md:w-2/5 md:whitespace-pre-wrap animated animateOnce fadeInleftShort" data-id="2">{programItem.fields.description}</p>
-                            </div>
-                            {console.log(programItem.fields)}
-                        </SplideSlide>
-                    )
-                })}
-            </Splide>
-
+                <div className="container grid grid-cols-2 md:gap-3 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
+                    <div className="col-span-2 lg:col-span-1">
+                        <div className='grid grid-cols-3 md:gap-3 animatedParent' data-sequence="300">
+                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80 animated animateOnce fadeInUpShort" data-id="1" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="4">Humans</span></a></Link>
+                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80 animated animateOnce fadeInUpShort" data-id="2" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="5">Animals</span></a></Link>
+                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80 animated animateOnce fadeInUpShort" data-id="3" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="6">Plants</span></a></Link>
+                        </div>
+                    </div>
+                    <div className="col-span-2 lg:col-span-1"></div>
+                </div >
+            </div >
 
 
 
@@ -161,30 +137,71 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
                 </div>
             </div>
 
-            <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
-                <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
-                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div>
-                    <div className="text-2xl mt-4 animated animateOnce fadeInLeftShort" data-id="2">Fighting for Everyone.</div>
-                </div>
-                <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
-                </div>
-                {/* <div className="container grid grid-cols-3 md:gap-3 divide-x-2 divide-solid divide-gray-600 md:divide-x-0 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
-                    <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span>Humans</span></a></Link>
-                    <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span>Animals</span></a></Link>
-                    <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span>Plants</span></a></Link>
-                </div > */}
 
-                <div className="container grid grid-cols-2 md:gap-3 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
-                    <div className="col-span-2 lg:col-span-1">
-                        <div className='grid grid-cols-3 md:gap-3 animatedParent' data-sequence="300">
-                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80 animated animateOnce fadeInUpShort" data-id="1" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="4">Humans</span></a></Link>
-                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80 animated animateOnce fadeInUpShort" data-id="2" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="5">Animals</span></a></Link>
-                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80 animated animateOnce fadeInUpShort" data-id="3" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="6">Plants</span></a></Link>
-                        </div>
-                    </div>
-                    <div className="col-span-2 lg:col-span-1"></div>
-                </div >
-            </div >
+            <div className="section bg-section bg-[#303247]">
+
+                <div className="container">
+                    <p className="heading py-5 text-white text-center">Our Projects</p>
+                </div>
+
+                <div className="pb-8">
+                    <Splide
+                        options={{
+                            type: 'loop',
+                            padding: '15rem',
+                            focus: 'center',
+                            autoWidth: false,
+                            start: 1,
+                            autoplay: true,
+                            height: '500px',
+                            gap: '5rem',
+                            rewind: true, //only for type:fade    
+                            speed: 500,
+                        }}
+                    >
+
+                        {programItems.map((programItem) => {
+                            // let lowerCaseCat = 
+                            return (
+
+                                <SplideSlide className="homeslider min-w-[250px]" key={programItem.sys.id}>
+                                    {/* <div className={"w-full mx-6 absolute h-[500px] bg-" + programItem.fields.category.toLowerCase()}> */}
+                                    <div className={"w-full"}>
+                                        {/* <div className="grid sm:grid-cols-1 md:grid-cols-1"> */}
+                                        {/* <div className="w-full h-full sm:hidden md:block"></div> */}
+                                        {/* <div className="w-full h-full hidden"></div> */}
+                                        {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
+                                        <div className="sliderbg w-full">
+                                            <div className="sliderbg block w-full h-[350px] bg-cover bg-center"
+                                                style={{
+                                                    backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
+                                                    // boxShadow: "0 0 100px 100px #303247 inset",
+                                                    border: 0
+                                                }}
+                                            >
+
+                                            </div>
+                                        </div>
+                                        {/* </div> */}
+                                    </div>
+                                    {/* <div className={"gradient-overlay-" + programItem.fields.category + "-h w-full h-full absolute hidden sm:block"}></div> */}
+
+                                    {/* <div className={"gradient-overlay-" + programItem.fields.category + "-v w-full h-full absolute"}></div> */}
+                                    {/* <div className="gradient-overlay-flare w-full h-full absolute"></div> */}
+                                    {/* <div className="b-gray-400 w-full h-full absolute"></div> */}
+                                    <div className={"h-full animatedParent border-b-2"} data-sequence="300">
+                                        <h2 className={"w-full text-white text-md whitespace-pre-wrap p-5 h-[100px] overflow-hidden	text-center bg-" + programItem.fields.category.toLowerCase()} data-id="1">{programItem.fields.programName}</h2>
+                                        {/* <p className="text-white whitespace-pre-wrap" data-id="2">{programItem.fields.description}</p> */}
+                                    </div>
+                                    {console.log(programItem.fields)}
+                                </SplideSlide>
+                            )
+                        })}
+                    </Splide>
+                </div>
+            </div>
+
+
 
             <div className="section-0 bg-section">
                 <div className="container">
