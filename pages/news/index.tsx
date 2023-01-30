@@ -9,7 +9,7 @@ interface InewsPageProps {
 
 
 const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
-    let newsItems = news?.items ?? [];
+    let newsItems = news ?.items ?? [];
     let highlightedNewsItem = newsItems[0];
 
     console.log({ highlightedNewsItem });
@@ -57,7 +57,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">News</p>
-                    Updates about everything happened in Sākār world.
+                    Stay up to date with all our programs and activities.
                 </div>
             </div>
 
@@ -82,7 +82,7 @@ const newsPage: React.FC<InewsPageProps> = ({ news = null }) => {
                             return (
                                 <Link href={"/news/" + newsItem.fields.slug} key={newsItem.sys.id}>
                                     <div className="bg-gray-100 mt-10 mb-4 cursor-pointer hover:bg-gray-50">
-                                        <div className="w-full h-40" style={{ backgroundImage: `url(${newsItem?.fields?.featuredImage?.fields?.file?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                        <div className="w-full h-40" style={{ backgroundImage: `url(${newsItem ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                             <div className="w-full h-56 p-14 " >
                                                 {/* <div className="title w-full h-44"></div> */}
                                                 {/* <a href="" className="title w-full min-h-max text-2xl text-white">{highlightedNewsItem.fields.title}</a> */}

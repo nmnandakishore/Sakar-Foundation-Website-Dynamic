@@ -87,7 +87,7 @@ const ContactPage: React.FC<{ siteInfo: any }> = ({ siteInfo = null }) => {
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">Contact Us</p>
-                    Your feedback and support is important to us.
+                    Be a part of the Sakar Foundation. Be a part of Hope, Be a part of the change.
                 </div>
             </div>
 

@@ -250,10 +250,7 @@ const PartnerRegistrationPage: React.FC = () => {
         <div className="container animatedParent" data--sequence="300">
           <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Register</p>
           <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-            By volunteering with us, you will become a vital part of our organization and you will make a real difference to the lives
-            of many living beings. An opportunity that will not only develop your inter-personal skills, allow you to meet
-            like-minded people; but will also be the most fulfilling and gratifying phase in your life that will echo with
-            someone&#39;s happiness for years to come.
+            If you are a business, organisation or a govt. firm, you could collaborate with us towards transforming our projects into smiles of reality.  Support can go about in various forms and we can join hands to make work seem to be true! Join us as we surely are looking forward to working with you! Your small help can radiate into a ray of hope and life to several around!
           </p>
         </div>
       </div>

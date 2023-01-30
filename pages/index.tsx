@@ -84,7 +84,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
             <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
                 <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
                     <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div>
-                    <div className="text-2xl mt-4 animated animateOnce fadeInLeftShort" data-id="2">Fighting for Everyone.</div>
+                    <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! <br /> Fighting for Everyone.</div>
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
                 </div>
@@ -205,7 +205,6 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
 
             <div className="section-0 bg-section">
                 <div className="container">
-
                     <div className="grid grid-cols-2 animatedParent" data-sequence="300">
                         <div className="col-span-2 sm:col-span-1 py-10 sm:py-16 ">
                             <div className="heading text-primary animated animateOnce fadeInLeftShort" data-id="2">Global Presence

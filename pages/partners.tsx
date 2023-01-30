@@ -35,7 +35,7 @@ const partnersPage: React.FC<IpartnersPage> = ({ partners = null }) => {
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">Our Partners</p>
-                    If you are a business, organisation or a govt. firm, you could collaborate with us towards transforming our projects into smiles of reality.  Support can go about in various forms and we can join hands to make work seem to be true! Join us as we surely are looking forward to working with you! Your small help can radiate into a ray of hope and life to several around!
+                    A strong system is what we need to give out the wings of reality to any dream! Collaborate with us!
                 </div>
             </div>
 
