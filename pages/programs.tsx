@@ -70,7 +70,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">Programs</p>
-                    Updates about everything happened in Sākār world.
+                    Small Steps to achieving big milestones. Delivering happiness and hope one step at a time.
                 </div>
             </div>
 

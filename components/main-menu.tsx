@@ -193,9 +193,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 </h3>
                             </div>
                             <p className="text-gray-400 text-sm lg:text-base">Sign u p as a volunteer and
-                                help us run fundraiser
-                                campaigns, conduct workshops etc.
-                                This is an opportunity for you to work for the community. </p>
+                            Be the reason to aid the change! Be the change! Join us in our volunteering programs to be the first line of help and care to many in need. </p>
                             <div className="flex items-center py-3">
                                 <Link href="/volunteer-registration">
                                     <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
@@ -234,8 +232,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 <h3 className="text-xl text-white mb-2">Partner with us
                                 </h3>
                             </div>
-                            <p className="text-gray-400 text-sm lg:text-base">If you are a business, govt or an organization, you can
-                                partner with us to collaborate and work on causes you care about.</p>
+                            <p className="text-gray-400 text-sm lg:text-base">A strong system is what we need to give out the wings of reality to any dream! Collaborate with us!</p>
                             <div className="flex items-center py-3">
                                 <Link href="/partner-registration">
                                     <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
@@ -251,11 +248,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                     src="/img/get_involved/donate.svg" alt="" />
                                 <h3 className="text-xl text-white mb-2">Donate</h3>
                             </div>
-                            <p className="text-gray-400 text-sm lg:text-base">You can donate us directly or
-                                to individual
-                                projects.
-                                Either way, your donations help us reach those who&#39;re in need across the
-                                globe.</p>
+                            <p className="text-gray-400 text-sm lg:text-base">Support in any form can make a huge difference! Be that support to us, as we plan out ideas to bring a difference!</p>
                             <div className="py-3">
                                 <Link href="#">
                                     <a

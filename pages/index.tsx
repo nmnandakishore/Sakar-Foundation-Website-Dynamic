@@ -83,8 +83,11 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
 
             <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
                 <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
-                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div>
-                    <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! <br /> Fighting for Everyone.</div>
+                    {/* <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div> */}
+                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">A Hope to Experience Life to all Living!</div>
+
+                    <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! This spark radiates across every living being- Humans, Animals and Plants!</div>
+                    {/* <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! <br /> Fighting for Everyone.</div> */}
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
                 </div>
@@ -120,11 +123,13 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
                     <div className="col-span-2 sm:col-span-1 pl-12">
                         <div className="col-span-2 sm:col-span-1 py-16 sm:py-24 pl-12">
                             <div className="container">
-                                <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">Youth can
-                                    LEAD, <br />
-                                    Youth can CARE.</div>
+                                {/* <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">Youth can LEAD, <br /> Youth can CARE.</div> */}
+                                    <div className="heading text-primary animated animateOnce fadeInRightShort" data-id="1">
+                                    The youth pioneers of today are leaders for tomorrow. 
+                                    </div>
+                                    
                                 <p className="animated animateOnce fadeInRightShort my-5 mt-10" data-id="2">
-                                    Young leadership at Sākār Foundation is an example in itself.
+                                    Sakar Foundation is an organisation that comes from the Youth and aims primarily at uplifting the lives of the younger members of society along with other organisms in the sphere of nature. Putting in the enthusiasm of young hearts and the innovative ideas of young minds to make the world a better place to live in.
                                 </p>
                                 <Link href="/leadership">
                                     <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"
@@ -141,7 +146,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
             <div className="section bg-section bg-[#303247]">
 
                 <div className="container">
-                    <p className="heading py-5 text-white text-center">Our Projects</p>
+                    <p className="heading py-5 text-white text-center">Our Programs</p>
                 </div>
 
                 <div className="pb-8">
@@ -210,8 +215,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
                             <div className="heading text-primary animated animateOnce fadeInLeftShort" data-id="2">Global Presence
                             </div>
                             <p className="animated animateOnce fadeInLeftShort my-5" data-id="2">
-                                We work across the gloab without any political, social or racial boundaries. Currently we are mainly
-                                working in United States, Africa and India
+                            Sakar Foundation takes a bird’s eye view into capturing the world as a global charitable society. Our outreach programs are placed around various destinations around the globe. We are proud to have spread smiles across borders of continents and cannot wait to bring a smile to the face of the planet!
                             </p>
                             <Link href="/about">
                                 <a className="arrow-btn text-primary animated animateOnce fadeInDownShort"

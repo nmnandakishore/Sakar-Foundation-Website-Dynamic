@@ -127,13 +127,12 @@ const ContactPage: React.FC<{ siteInfo: any, region: string }> = ({ siteInfo = n
                         <div className="container animatedParent" data--sequence="300">
                             <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Donate Online</p>
                             <p className="mt-6 animated animateOnce fadeInUpShort" data-id="1">
-                                All your donation will go towards our work to uplift lives of Humans, Animals and Plants that need help.
+                                All your donations will go towards our work to uplift the lives of Humans, Animals and Plants that need help.
+                                You can donate to us directly or to individual projects. Either way, your donations help us reach those who're in need across the globe.    
+                                    
                                 <br /><br />
                                 Alternatively you can donate monthly to sakar foundation. This creates a reliable source of funding year-round to
                                 work on our causes.
-
-                                <br /><br />
-
 
                             </p>
                             <div id="payment-wrapper">
