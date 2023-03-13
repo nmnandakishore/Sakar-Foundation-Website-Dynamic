@@ -233,11 +233,14 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                                 </h3>
                             </div>
                             <p className="text-gray-400 text-sm lg:text-base">A strong system is what we need to give out the wings of reality to any dream! Collaborate with us!</p>
-                            <div className="flex items-center py-3">
+                            <div className="flex items-center py-3 grid col-1">                                                                
+                                <Link href="/partners">
+                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn w-full mb-3" >
+                                        Our Partners</a>
+                                </Link>
                                 <Link href="/partner-registration">
-                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn" >Find
-                                        out
-                                        more</a>
+                                    <a className="text-white bold border-blue-300 hover:text-blue-300 arrow-btn w-full" >
+                                    Register</a>
                                 </Link>
                             </div>
                         </ul>
