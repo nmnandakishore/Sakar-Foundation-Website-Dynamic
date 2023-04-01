@@ -84,9 +84,9 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
             <div className="hero-img lg:pl-5 xl:pl-0" style={{ backgroundImage: "url('/img/hero-new1.jpg')", backgroundColor: "#303247" }}>
                 <div className="hero-text text-white container pt-52 pb-4 animatedParent" data-sequence="300">
                     {/* <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">We&apos;re a Non Profit</div> */}
-                    <div className="text-5xl animated animateOnce fadeInDownShort" data-id="1">A Hope to Experience Life to all Living!</div>
+                    <div className="text-5xl " data-id="1">A Hope to Experience Life to all Living!</div>
 
-                    <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! This spark radiates across every living being- Humans, Animals and Plants!</div>
+                    <div className="mt-6 mb-8 " data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! <br/>This spark radiates across every living being- Humans, Animals and Plants!</div>
                     {/* <div className="mt-6 mb-8 animated animateOnce fadeInLeftShort" data-id="2">Igniting a spark of hope, radiating into a gleam of the difference! <br /> Fighting for Everyone.</div> */}
                 </div>
                 <div className="h-48 w-min-screen  mt-28 2xl:mt-96" style={{ zIndex: 2 }}>
@@ -99,10 +99,10 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
 
                 <div className="container grid grid-cols-2 md:gap-3 overflow-hidden -mt-72 mb-16" style={{ zIndex: 10 }}>
                     <div className="col-span-2 lg:col-span-1">
-                        <div className='grid grid-cols-3 md:gap-3 animatedParent' data-sequence="300">
-                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80 animated animateOnce fadeInUpShort" data-id="1" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="4">Humans</span></a></Link>
-                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80 animated animateOnce fadeInUpShort" data-id="2" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="5">Animals</span></a></Link>
-                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80 animated animateOnce fadeInUpShort" data-id="3" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span className="animated animateOnce fadeInDownShort" data-id="6">Plants</span></a></Link>
+                        <div className='grid grid-cols-3 md:gap-3 ' data-sequence="300">
+                            <Link href="/programs?category=humans"><a className="hero-link bg-humans/80" style={{ backgroundImage: "url('/img/programs/humans.svg')" }}><span className="">Humans</span></a></Link>
+                            <Link href="/programs?category=animals"><a className="hero-link bg-animals/80" style={{ backgroundImage: "url('/img/programs/animals.svg')" }}><span className="">Animals</span></a></Link>
+                            <Link href="/programs?category=plants"><a className="hero-link bg-plants/80" style={{ backgroundImage: "url('/img/programs/plants.svg')" }}><span className="">Plants</span></a></Link>
                         </div>
                     </div>
                     <div className="col-span-2 lg:col-span-1"></div>
@@ -155,7 +155,7 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
                             type: 'loop',
                             padding: '15rem',
                             focus: 'center',
-                            autoWidth: false,
+                            autoWidth: true,
                             start: 1,
                             autoplay: true,
                             height: '500px',
@@ -169,15 +169,15 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
                             // let lowerCaseCat = 
                             return (
 
-                                <SplideSlide className="homeslider min-w-[250px]" key={programItem.sys.id}>
+                                <SplideSlide className="homeslider " key={programItem.sys.id}>
                                     {/* <div className={"w-full mx-6 absolute h-[500px] bg-" + programItem.fields.category.toLowerCase()}> */}
                                     <div className={"w-full"}>
                                         {/* <div className="grid sm:grid-cols-1 md:grid-cols-1"> */}
                                         {/* <div className="w-full h-full sm:hidden md:block"></div> */}
                                         {/* <div className="w-full h-full hidden"></div> */}
                                         {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
-                                        <div className="sliderbg w-full">
-                                            <div className="sliderbg block w-full h-[350px] bg-cover bg-center"
+                                        <div className="sliderbg w-full min-w-[400px]">
+                                            <div className="sliderbg block w-full h-[350px] bg-contain bg-no-repeat bg-center bg-primary"
                                                 style={{
                                                     backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
                                                     // boxShadow: "0 0 100px 100px #303247 inset",
