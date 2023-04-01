@@ -47,10 +47,10 @@ export const Footer: React.FC<{
                                         {/* <a className="text-gray-800 text-sm not-italic" href=`tel:${ }`>+1 (805)
                                 583-6700</a> */}
                                         <nav className="social text-center text-slate-500">
-                                            <Link href={"`${facebookLink ?? '#'}`"}><a><i className="px-3 inline-block relative fab fa-facebook hover:text-slate-300"></i></a></Link>
-                                            <Link href={"`${twitterLink ?? '#'}`"}><a><i className="px-3 inline-block relative fab fa-twitter hover:text-slate-300"></i></a></Link>
-                                            <Link href={"`${instagramLink ?? '#'}`"}><a><i className="px-3 inline-block relative fab fa-instagram hover:text-slate-300"></i></a></Link>
-                                            <Link href={"`${youtubeLink ?? '#'}`"}><a><i className="px-3 inline-block relative fab fa-youtube hover:text-slate-300"></i></a></Link>
+                                            <Link href={`${facebookLink ?? '#'}`}><a><i className="px-3 inline-block relative fab fa-facebook hover:text-slate-300"></i></a></Link>
+                                            <Link href={`${twitterLink ?? '#'}`}><a><i className="px-3 inline-block relative fab fa-twitter hover:text-slate-300"></i></a></Link>
+                                            <Link href={`${instagramLink ?? '#'}`}><a><i className="px-3 inline-block relative fab fa-instagram hover:text-slate-300"></i></a></Link>
+                                            <Link href={`${youtubeLink ?? '#'}`}><a><i className="px-3 inline-block relative fab fa-youtube hover:text-slate-300"></i></a></Link>
                                         </nav>
                                         <div className="block text-center mt-2">
 
