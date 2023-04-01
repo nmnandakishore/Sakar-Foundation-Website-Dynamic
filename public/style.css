@@ -235,3 +235,35 @@ b {
 input {
 	/* @apply h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline; */
 }
+
+/* .fundraiser-inner-back{
+}
+
+.fundraiser-inner-back .fundraiser-inner-back{
+	transition: all 0.6s ease-in-out;
+
+} */
+
+/* .fundraiser{perspective: 1000px; transform-style: preserve-3d;} */
+.fundraiser{perspective: 1000px;}
+.fundraiser-inner:hover .fundraiser-inner-back {transform: rotateY(0deg);}
+.fundraiser-inner:hover .fundraiser-inner-front {transform: rotateY(180deg);}
+
+
+/* .fundraiser-inner {transition: 0.6s; transform-style: preserve-3d;	position: relative;} */
+.fundraiser-inner {transition: 0.6s; position: relative;}
+
+/* hide back of pane during swap */
+.fundraiser-inner-front, .fundraiser-inner-back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.fundraiser-inner-front {z-index: 2;	transform: rotateY(0deg);}
+.fundraiser-inner-back {
+	transform: rotateY(-180deg);
+}
