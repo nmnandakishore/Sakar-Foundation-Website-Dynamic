@@ -12,7 +12,7 @@ const aboutPage: React.FC = () => {
                         <div className=" col-span-2 sm:col-span-1 animatedParent">
                             <p className="text-4xl pb-5 text-slate-100">About Us</p>
                             <p className="mt-6 text-justify">
-                                Sakar, a word in Sanskrit for anything away from abstract. Owing rightly to the parent word, the Sakar Foundation – restores hope in humanity. Housed and registered, in Simi Valley, California, USA, yet rolls out diverse outreach programs across the globe.
+                            Sākār, a word originated from Sanskrit, translates as "Turning Dreams into Reality"  Owing rightly to the parent word, the Sākār Foundation – restores hope in humanity by fulfilling dreams of goodness and welfare in society across domains of life. Housed and registered, in Simi Valley, California, USA, yet rolls out diverse outreach programs across the globe.
                             </p>
                         </div>
                         <div className="text-4xl col-span-2 sm:col-span-1 animatedParent" >
