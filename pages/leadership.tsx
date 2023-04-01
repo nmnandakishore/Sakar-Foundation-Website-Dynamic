@@ -51,7 +51,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <p className="text-4xl pb-5 text-slate-100">Leadership</p>
-                    Sākār is the outcome of a vision based on the experience of its founders, Keithan Pai and Keisha Pai. The Sākār leadership always strives to thrive by uplifting different strata of the society and tackling barriers.
+                    Sākār is the outcome of a vision based on the experience of its founders, Keithan Pai and Keisha Pai. The Sākār leadership always The torchbearer founders of Sākār have their distinct field of focus but are united by the idea of welfare. Together they help in uplifting different strata of society and tackling barriers. 
                 </div>
             </div>
 
@@ -71,7 +71,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                                         <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center lg:text-left">
                                             <p className="text-lg font-bold">{fields.name}</p>
                                             <p className="mb-4 text-xs text-gray-400 font-bold">{fields.designation}</p>
-                                            <p className="mb-4 text-sm tracking-wide text-gray-400 max-h-[40px] overflow-hidden">
+                                            <p className="mb-4 text-sm tracking-wide text-gray-400 max-h-[200px] overflow-hidden">
                                                 {fields.about}
                                             </p>
                                             <div className="text-center lg:text-left lg:mx-auto">
