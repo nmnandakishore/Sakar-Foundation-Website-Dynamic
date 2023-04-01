@@ -76,6 +76,12 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                 </div>
             </li>
 
+            <li className="hover:bg-primary hover:text-white">
+                <div className="wrapper">
+                    <Link href="/fundraisers"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Fundraisers</a></Link>
+                </div>
+            </li>
+
             {/* Programs Mega Menu */}
             {/* <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setProgramsMenuHover(true)} onMouseLeave={() => setProgramsMenuHover(false)}> */}
             {/* <div className="wrapper">
@@ -278,7 +284,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     </Link>
                 </div>
             </li>
-            <li className="hover:bg-humans text-humans hover:text-white">
+            {/* <li className="hover:bg-humans text-humans hover:text-white">
                 <div className="wrapper hover:text-white">
                     <Link href="/donate">
                         <a
@@ -286,7 +292,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                         </a>
                     </Link>
                 </div>
-            </li>
+            </li> */}
         </ul>
 
     );
