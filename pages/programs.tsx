@@ -30,7 +30,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
             ...activeFilters,
             countryFilter: router.query.filter ?? false,
         });
-        setOpenTab((router?.query?.category ? router?.query?.category : 'Humans'));
+        setOpenTab((router?.query?.category ? router?.query?.category ?? 'Humans'));
     }, [programs])
 
     /*useEffect(() => {
