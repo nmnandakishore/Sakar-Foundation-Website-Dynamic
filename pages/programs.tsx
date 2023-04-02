@@ -19,18 +19,22 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
     const [programItems, setProgramItems] = useState([]);
     // const [humanFilters, setHumanFilters] = useState({});    
 
-    const [filters, setFilters] = useState({});
-    const [activeFilters, setActiveFilters] = useState({});
+    const [filters, setFilters] = useState({
+        countries : []
+    });
+    const [activeFilters, setActiveFilters] = useState({
+        countryFilter : []
+    });
     const [openTab, setOpenTab] = useState('');
     const router = useRouter()
 
 
     useEffect(() => {
-        setActiveFilters({
-            ...activeFilters,
-            countryFilter: router.query.filter ?? false,
-        });
-        setOpenTab((router?.query?.category ? router?.query?.category ?? 'Humans'));
+        // setActiveFilters({
+        //     ...activeFilters,
+        //     countryFilter: [router.query.filter] ?? false,
+        // });
+        setOpenTab((router?.query?.category ? router?.query?.category.toString() : 'Humans'));
     }, [programs])
 
     /*useEffect(() => {
@@ -68,9 +72,9 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
     }, [programItems])
 
     useEffect(() => {
-        console.log(activeFilters)
+        // console.log(activeFilters)
         setProgramItems(() => {
-            if(activeFilters?.countryFilter !== false && (Array.isArray(activeFilters?.countryFilter) ?? []).length !== 0){
+            if((Array.isArray(activeFilters?.countryFilter) ? activeFilters?.countryFilter : []).length !== 0){
             return programs?.items
                 .filter(program => program?.fields?.category.toLowerCase() === openTab.toLowerCase())
                 .filter(program =>
@@ -238,7 +242,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                         <div className="p-5 m-0 animatedParent" data--sequence="100">
                                             <b className={`bold block ${!programs.filters[openTab.charAt(0).toUpperCase() + openTab.slice(1)] ? 'hidden' : ''}`}>Filters:</b>
                                             {
-                                                (filters ?.countries ?? []).map((country, index) => {
+                                                (Array.isArray(filters?.countries) ? filters?.countries : []).map((country, index) => {
                                                     return (
                                                         <span
                                                             onClick={e => {
@@ -249,7 +253,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                                     // const index = activeFilters?.countryFilter.indexOf(country);
                                                                     // activeFilters?.countryFilter.splice(index, 1);
                                                                     // countryFilter = activeFilters?.countryFilter;
-                                                                    countryFilter = false;
+                                                                    countryFilter = [];
                                                                 } else {
                                                                     countryFilter = [country];
                                                                 }
