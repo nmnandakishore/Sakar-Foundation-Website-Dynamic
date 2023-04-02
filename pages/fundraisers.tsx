@@ -75,7 +75,7 @@ const fundraisersPage: React.FC<InewsPageProps> = ({ news = null }) => {
                             // }
                             return (
                                 // <Link href={"/news/" + newsItem.fields.slug} key={newsItem.sys.id}>
-                                        <div className={`fundraiser mt-10 h-96 mb-4 cursor-pointer`}>
+                                        <div className={`fundraiser mt-10 h-96 mb-4 cursor-pointer`} key={fundraiser.sys.id}>
                                         <div className={`fundraiser-inner block bg-${fundraiser?.fields?.category.toLowerCase()} `}>
                                             <div className={`fundraiser-inner-front w-full pt-64 border-${fundraiser?.fields?.category.toLowerCase()} border-0 sm:boder-solid`} style={{ backgroundImage: `url(${fundraiser ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                                 <p className={`text-lg text-center text-white p-5 bg-${fundraiser?.fields?.category.toLowerCase()}/80`}>{fundraiser.fields.name}</p>                                                
