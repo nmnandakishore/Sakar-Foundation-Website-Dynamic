@@ -55,7 +55,7 @@ const fundraisersPage: React.FC<InewsPageProps> = ({ news = null }) => {
             <div
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
-                    <p className="text-4xl pb-5 text-slate-100">Funraisers</p>
+                    <p className="text-4xl pb-5 text-slate-100">Fundraisers</p>
                     Our plenty of aspirations to help the diversity in nature grow and nurture can only be fulfilled with monetary aid. Fundraising is one way to help us realise our projects better. When the word "'Fundraising" has "Fun" in it, why not make this a fun process for all?                </div>
             </div>
 
@@ -77,7 +77,7 @@ const fundraisersPage: React.FC<InewsPageProps> = ({ news = null }) => {
                                 // <Link href={"/news/" + newsItem.fields.slug} key={newsItem.sys.id}>
                                         <div className={`fundraiser mt-10 h-96 mb-4 cursor-pointer`} key={fundraiser.sys.id}>
                                         <div className={`fundraiser-inner block bg-${fundraiser?.fields?.category.toLowerCase()} `}>
-                                            <div className={`fundraiser-inner-front w-full pt-64 border-${fundraiser?.fields?.category.toLowerCase()} border-0 sm:boder-solid`} style={{ backgroundImage: `url(${fundraiser ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                            <div className={`fundraiser-inner-front w-full pt-64 bg-center border-${fundraiser?.fields?.category.toLowerCase()} border-0 sm:boder-solid`} style={{ backgroundImage: `url(${fundraiser ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                                 <p className={`text-lg text-center text-white p-5 bg-${fundraiser?.fields?.category.toLowerCase()}/80`}>{fundraiser.fields.name}</p>                                                
                                             </div>
                                             <div className={`fundraiser-inner-back text-center text-white p-6 py-10 h-80 bg-${fundraiser?.fields?.category.toLowerCase()}`}>
