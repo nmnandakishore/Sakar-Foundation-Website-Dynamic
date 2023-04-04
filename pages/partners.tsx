@@ -50,7 +50,7 @@ const partnersPage: React.FC<IpartnersPage> = ({ partners = null }) => {
                                         <div className="m-2 h-32 min-w-max bg-contain bg-no-repeat bg-center" style={{ backgroundImage: `url(${fields.logo.fields.file.url})` }}>
 
                                         </div>
-                                        <h3 className='mx-2 mb-3 text-center font-bold text-primary'>{fields.name}</h3>
+                                        <h3 className='mx-2 mb-3 text-center text-base font-bold text-primary'>{fields.name}</h3>
                                     </div>
                                 );
                             })
