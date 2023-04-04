@@ -148,7 +148,8 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
             [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
                 // console.log({ node });
                 return (
-                    <img src={node.data.target.fields.file.url} alt={node.data.target.fields.title} />
+                    // <img src={node.data.target.fields.file.url} alt={node.data.target.fields.title} />
+                    <span></span>
                 );
             }
         }
@@ -279,13 +280,13 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                     // <Link href={"/programs/" + programsItem.fields.slug} key={programsItem.sys.id}>
                                                     <div className="bg-gray-100 mb-10 cursor-pointer hover:bg-gray-50" data-id={index + 1} key={programsItem.sys.id}>
                                                         <div className="grid grid-cols-12 gap-1">
-                                                            <div className="col-span-12 sm:col-span-4 h-72 sm:h-full bg-center" style={{ backgroundImage: `url(${programsItem ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
+                                                            <div className="col-span-12 sm:col-span-4 h-full bg-center" style={{ backgroundImage: `url(${programsItem ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                                             </div>
                                                             <div className="col-span-12 sm:col-span-8 p-6">
                                                                 <p className="text-lg text-primary">{programsItem.fields.programName}</p>
                                                                 <p className="text-xs text-slate-100  bg-slate-500 p px-2 inline-block">{programsItem.fields.country}</p>
                                                                 <p className={`text-slate-500`}>{programsItem.fields.description}</p>
-                                                                <div className="mt-4 text-sm text-base text-left h-24 whitespace-pre-line overflow-hidden line-clamp-4">
+                                                                <div className="mt-4 text-sm text-base text-left whitespace-pre-line overflow-hidden line-clamp-10">
                                                                     {documentToReactComponents(programsItem.fields.content, options)}
                                                                 </div>
                                                             </div>
