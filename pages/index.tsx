@@ -171,33 +171,37 @@ const HomePage: React.FC<IHomePageProps> = ({ projects = null, stats = null, pro
 
                                 <SplideSlide className="homeslider " key={programItem.sys.id}>
                                     {/* <div className={"w-full mx-6 absolute h-[500px] bg-" + programItem.fields.category.toLowerCase()}> */}
-                                    <div className={"w-full"}>
-                                        {/* <div className="grid sm:grid-cols-1 md:grid-cols-1"> */}
-                                        {/* <div className="w-full h-full sm:hidden md:block"></div> */}
-                                        {/* <div className="w-full h-full hidden"></div> */}
-                                        {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
-                                        <div className="sliderbg w-full min-w-[400px]">
-                                            <div className="sliderbg block w-full h-[350px] bg-contain bg-no-repeat bg-center bg-primary"
-                                                style={{
-                                                    backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
-                                                    // boxShadow: "0 0 100px 100px #303247 inset",
-                                                    border: 0
-                                                }}
-                                            >
+                                    <Link href={`/programs?category=${programItem?.fields?.category.toLowerCase()}`} >
+                                        <a className={"block p-0 w-full"}>
+                                            <div className={"block p-0 m-0 w-full"}>
+                                                {/* <div className="grid sm:grid-cols-1 md:grid-cols-1"> */}
+                                                {/* <div className="w-full h-full sm:hidden md:block"></div> */}
+                                                {/* <div className="w-full h-full hidden"></div> */}
+                                                {/* <div className="sliderbg block w-full h-[500px] bg-primary bg-cover bg-center col-span-3 rounded" */}
+                                                <div className="sliderbg w-full min-w-[400px]">
+                                                    <div className="sliderbg block w-full h-[350px] bg-contain bg-no-repeat bg-center bg-primary"
+                                                        style={{
+                                                            backgroundImage: "url('" + programItem.fields.featuredImage.fields.file.url + "')",
+                                                            // boxShadow: "0 0 100px 100px #303247 inset",
+                                                            border: 0
+                                                        }}
+                                                    >
 
+                                                    </div>
+                                                </div>
+                                                {/* </div> */}
                                             </div>
-                                        </div>
-                                        {/* </div> */}
-                                    </div>
-                                    {/* <div className={"gradient-overlay-" + programItem.fields.category + "-h w-full h-full absolute hidden sm:block"}></div> */}
+                                            {/* <div className={"gradient-overlay-" + programItem.fields.category + "-h w-full h-full absolute hidden sm:block"}></div> */}
 
-                                    {/* <div className={"gradient-overlay-" + programItem.fields.category + "-v w-full h-full absolute"}></div> */}
-                                    {/* <div className="gradient-overlay-flare w-full h-full absolute"></div> */}
-                                    {/* <div className="b-gray-400 w-full h-full absolute"></div> */}
-                                    <div className={"h-full animatedParent border-b-2"} data-sequence="300">
-                                        <h2 className={"w-full text-white text-md whitespace-pre-wrap p-5 h-[100px] overflow-hidden	text-center bg-" + programItem.fields.category.toLowerCase()} data-id="1">{programItem.fields.programName}</h2>
-                                        {/* <p className="text-white whitespace-pre-wrap" data-id="2">{programItem.fields.description}</p> */}
-                                    </div>
+                                            {/* <div className={"gradient-overlay-" + programItem.fields.category + "-v w-full h-full absolute"}></div> */}
+                                            {/* <div className="gradient-overlay-flare w-full h-full absolute"></div> */}
+                                            {/* <div className="b-gray-400 w-full h-full absolute"></div> */}
+                                            <div className={"h-full animatedParent border-b-2"} data-sequence="300">
+                                                <h2 className={"w-full text-white text-md whitespace-pre-wrap p-5 h-[100px] overflow-hidden	text-center bg-" + programItem.fields.category.toLowerCase()} data-id="1">{programItem.fields.programName}</h2>
+                                                {/* <p className="text-white whitespace-pre-wrap" data-id="2">{programItem.fields.description}</p> */}
+                                            </div>
+                                        </a>
+                                    </Link>
                                     {console.log(programItem.fields)}
                                 </SplideSlide>
                             )
