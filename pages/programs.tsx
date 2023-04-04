@@ -279,7 +279,7 @@ const ProgramsPage: React.FC<IprogramsPageProps> = ({ programs = null }) => {
                                                 return (
                                                     // <Link href={"/programs/" + programsItem.fields.slug} key={programsItem.sys.id}>
                                                     <div className="bg-gray-100 mb-10 cursor-pointer hover:bg-gray-50" data-id={index + 1} key={programsItem.sys.id}>
-                                                        <div className="grid grid-cols-12 gap-1">
+                                                        <div className="grid grid-cols-12 gap-1 min-h-[250px]">
                                                             <div className="col-span-12 sm:col-span-4 h-full bg-center" style={{ backgroundImage: `url(${programsItem ?.fields ?.featuredImage ?.fields ?.file ?.url ?? '/img/placeholder.png'})`, backgroundSize: "cover", overflow: "none" }}>
                                                             </div>
                                                             <div className="col-span-12 sm:col-span-8 p-6">
