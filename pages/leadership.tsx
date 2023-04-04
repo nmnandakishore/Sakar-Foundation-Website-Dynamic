@@ -22,10 +22,6 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
         return !(leader.fields.elevated);
     });
 
-    console.log(leadersArr);
-    console.log({ elevatedLeaders })
-    console.log({ nonElevatedLeaders })
-
 
     return (
         <>
@@ -105,7 +101,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                 </div>
             </div>
 
-            <div className="section bg-gray-200 my-20">
+            <div className={`section bg-gray-200 my-20 ${(nonElevatedLeaders.length===0) ? 'hidden' : ''}`}>
                 <div className="container">
                     <p className="text-4xl pb-5 text-primary">Mentors</p>
                     <p className="pb-5">
