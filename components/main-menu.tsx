@@ -176,11 +176,14 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             {/*</div>
                 </div> */}
             {/* </li> */}
-            <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setInvolveMenuHover(true)} onMouseLeave={() => setInvolveMenuHover(false)}>
+            {/* <li className="hoverable hover:bg-primary hover:text-white" onMouseEnter={() => setInvolveMenuHover(true)} onMouseLeave={() => setInvolveMenuHover(false)}> */}
+            <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
+                    <Link href="/get-involved">
                     <a href="#"
-                        onClick={() => setInvolveMenuHover(true)}
+                        // onClick={() => setInvolveMenuHover(true)}
                         className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
+                        </Link>
                 </div>
                 <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={involveMenuHover ? { display: 'block' } : {}}>
                     <div className="container mx-auto w-full flex flex-wrap justify-between mx-2">
