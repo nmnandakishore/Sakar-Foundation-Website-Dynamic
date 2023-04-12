@@ -42,14 +42,17 @@ const aboutPage: React.FC = () => {
             </div> */}
 
             <div className="section mt-16">
-                <div className="container animatedParent" data--sequence="300">
+                <div className="container animatedParent" data-sequence="300">
                     <p className="heading text-primary animated animateOnce fadeInDownShort" data-id="1">Who we are</p>
                     <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="1">
-                        Sākār Foundation is a brainchild of the founders, Keithan Pai and Keisha Pai, and extends out programs and projects to instil a sense of help, charity and belief in different strata of the society. As the quote goes, “Travel makes you view the world through another’s perspective”; Keithan and Keisha, grew a new lens to the worldly challenges as they kept visiting or were visited by relatives and friends across the world. This led them to experience and observe the socio-economic plight of many parts of society and was deeply moved to bring about a change. Coming from a place of volunteering, young minds set out to build a platform to help the world in need.
-
+                        Sākār Foundation is a brainchild of the founders, Keithan Pai and Keisha Pai, and extends out programs and projects to instil a sense of help, charity and belief in different strata of the society. As the quote goes, “Travel makes you view the world through another’s perspective”; Keithan and Keisha, grew a new lens to the worldly challenges as they kept visiting or were visited by relatives and friends across the world. This led them to experience and observe the socio-economic plight of many parts of society and was deeply moved to bring about a change.
                     </p>
-
-
+                    <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="2">
+                        The team marked unanimous passion and zeal as Angel Eva D'Souza, a like-minded, young change-maker joined in. Her ideas and thoughts on welfare to life radiates volumes of optimism for the society to be a better place for every element of nature.                        
+                    </p>
+                    <p className="mt-6 text-justify animated animateOnce fadeInUpShort" data-id="3">
+                        Coming from a place of volunteering, young minds set out to build a platform to help the world in need.
+                    </p>
                 </div>
             </div>
 
