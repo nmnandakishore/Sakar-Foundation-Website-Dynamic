@@ -25,7 +25,7 @@ b {
 }
 
 .prose {
-	@apply max-w-full
+	@apply max-w-full;
 }
 
 .container {
@@ -39,6 +39,8 @@ b {
 }
 
 .sticky {
+	@apply bg-white text-white;
+
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -50,7 +52,6 @@ b {
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
 		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	
-		@apply bg-white text-white
 }
 
 @media screen and (max-width: 640px) {
@@ -180,7 +181,7 @@ background-blend-mode: screen;
 
 .page-body {
 	min-height: 100vh;
-	@apply text-slate-800 text-left;
+	@apply text-slate-500 leading-loose text-left text-base;
 }
 
 .section {
@@ -394,3 +395,55 @@ input, [type='text'], [type='email'], [type='url'], [type='password'], [type='nu
  .paypal-buttons-context-iframe {
 	z-index: 0;
  }
+
+ /* Beyond schools page*/
+.slide-color-slate{
+background-color: #64748b;
+color: #64748b;
+}
+
+.slide-color-amber{
+background-color: #f59e0b;
+color: #f59e0b;
+}
+
+.slide-color-red{
+background-color: #dc2626;
+color: #dc2626;
+}
+
+.slide-color-yellow{
+background-color: #facc15;
+color: #facc15;
+}
+
+.slide-color-emerald{
+background-color: #10b981;
+color: #10b981;	
+}
+
+.slide-color-cyan{
+background-color: #06b6d4;
+color:  #06b6d4;
+}
+
+.slide-color-blue{
+background-color: #1d4ed8;
+color: #1d4ed8;
+}
+
+
+.slide-color-indigo{
+background-color: #3730a3;
+color: #3730a3;
+}
+
+.slide-color-violet{
+background-color: #5b21b6;
+color: #5b21b6;	
+}
+
+.slide-color-rose{
+background-color: #e11d48;
+color: #e11d48;
+}
