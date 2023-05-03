@@ -74,8 +74,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                 <div className="wrapper">
                     <Link href="/programs"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Programs</a></Link>
                 </div>
-            </li>
-
+            </li>    
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <Link href="/fundraisers"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Fundraisers</a></Link>
@@ -286,7 +285,12 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                         <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact</a>
                     </Link>
                 </div>
-            </li>
+            </li>            
+            <li className="group hover:bg-primary hover:text-white">
+                <div className="wrapper">
+                    <Link href="/beyond-schools"><a className="relative block px-2 lg:px-4 text-sm lg:text-base min-w-[200px] h-full bg-contain bg-center bg-no-repeat mx-5 bg-[url('/img/beyond-schools-logo-color.png')] group-hover:bg-[url('/img/beyond-schools-logo.png')]" ></a></Link>
+                </div>
+            </li>        
             {/* <li className="hover:bg-humans text-humans hover:text-white">
                 <div className="wrapper hover:text-white">
                     <Link href="/donate">
