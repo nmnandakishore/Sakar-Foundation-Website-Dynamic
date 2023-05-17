@@ -145,11 +145,12 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
                 </div>
             </div>
 
+
             <div className="section bg-section bg-teal-800">
                 <div className="container py-5 text-center">
                     <img src="/img/beyond-schools-logo.png" className='max-w-[300px] mb-10 mx-auto' alt="" />
                     {/* <div className="text-2xl relative inline-block text-white py-2 px-4">Checkout Beyond Schools content</div> */}
-                    <Link href="#"><a className='bg-white text-teal-600 py-2 px-4'>Join Now</a></Link>
+                    <Link href="https://beyondschools.sakarfoundation.org/sign_up"><a className='bg-white text-teal-600 py-2 px-4'>Join Now</a></Link>
                 </div>
             </div>
 
