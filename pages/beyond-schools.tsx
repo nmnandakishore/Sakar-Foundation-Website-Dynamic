@@ -38,7 +38,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
                             <div className="inline-block bg-slate-700 text-white rounded-full py-2 px-4">Inclusive Education</div>
                             <h1 className="pt-4 py-2 text-4xl text-white">A Holistic Lens <br /> to Steer Your Life with Progress</h1>
                             <h2 className="pt-4 py-2 text-light text-white">We bring you Life and the Real World, Beyond the Bindings of your Coursebook</h2>
-                            <a className="inline-block text-white bg-humans py-2 mt-4 px-4 bg-secondary" href="#">Join Now</a>
+                            <a className="inline-block text-white bg-humans py-2 mt-4 px-4 bg-secondary" href="https://beyondschools.sakarfoundation.org/sign_up">Join Now</a>
                         </div>
                     </div>
                 </div>
