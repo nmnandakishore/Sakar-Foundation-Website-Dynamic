@@ -61,23 +61,23 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             {/* <!--Regular Link--> */}
             <li className="hover:bg-primary hover:text-white border-none">
                 <div className="wrapper">
-                    <Link href="/about"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">About</a></Link>
+                    <Link href="/about"><a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base">About</a></Link>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/leadership"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Leadership</a></Link>
+                    <Link href="/leadership"><a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base">Leadership</a></Link>
                 </div>
             </li>
 
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/programs"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Programs</a></Link>
+                    <Link href="/programs"><a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base">Programs</a></Link>
                 </div>
             </li>    
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/fundraisers"><a className="relative block px-2 lg:px-4 text-sm lg:text-base">Fundraisers</a></Link>
+                    <Link href="/fundraisers"><a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base">Fundraisers</a></Link>
                 </div>
             </li>
 
@@ -86,7 +86,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             {/* <div className="wrapper">
                     <label
                         onClick={() => setProgramsMenuHover(true)}
-                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
+                        className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base hover:bg-primary hover:text-white">Programs</label>
                 </div> */}
 
 
@@ -181,7 +181,7 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
                     <Link href="/get-involved">
                     <a href="#"
                         // onClick={() => setInvolveMenuHover(true)}
-                        className="relative block px-2 lg:px-4 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
+                        className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base hover:bg-primary hover:text-white">Get Involved</a>
                         </Link>
                 </div>
                 <div className="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-primary" style={involveMenuHover ? { display: 'block' } : {}}>
@@ -275,27 +275,27 @@ export const MainMenu: React.FC<{ programs: Array<any> }> = ({ programs = [] }) 
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <Link href="/news">
-                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">News</a>
+                        <a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base ">News</a>
                     </Link>
                 </div>
             </li>
             <li className="hover:bg-primary hover:text-white">
                 <div className="wrapper">
                     <Link href="/contact">
-                        <a className="relative block px-2 lg:px-4 text-sm lg:text-base ">Contact</a>
+                        <a className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base ">Contact</a>
                     </Link>
                 </div>
             </li>            
             <li className="group hover:bg-primary hover:text-white">
                 <div className="wrapper">
-                    <Link href="/beyond-schools"><a className="relative block px-2 lg:px-4 text-sm lg:text-base min-w-[200px] h-full bg-contain bg-center bg-no-repeat mx-5 bg-[url('/img/beyond-schools-logo-color.png')] group-hover:bg-[url('/img/beyond-schools-logo.png')]" ></a></Link>
+                    <Link href="/beyond-schools"><a className="relative block pt-[57px] pb-[58px] px-2 lg:px-3 text-sm lg:text-base min-w-[180px] h-full bg-contain bg-center bg-no-repeat mx-5 bg-[url('/img/beyond-schools-logo-color.png')] group-hover:bg-[url('/img/beyond-schools-logo.png')]" ></a></Link>
                 </div>
             </li>        
             {/* <li className="hover:bg-humans text-humans hover:text-white">
                 <div className="wrapper hover:text-white">
                     <Link href="/donate">
                         <a
-                            className="relative block px-2 lg:px-4 text-sm lg:text-base hover:text-white font-bold">Donate
+                            className="relative block py-12 px-2 lg:px-3 text-sm lg:text-base hover:text-white font-bold">Donate
                         </a>
                     </Link>
                 </div>
