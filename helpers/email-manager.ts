@@ -48,10 +48,12 @@ export const sendFormEmail = async (options: ISendFormEmail) => {
             }]
         });
     } catch (e) {
-        console.log('error while sending internal email at email manager');
-        console.log(e);
+        // console.log('error while sending internal email at email manager');
+        // console.log(e);
         throw e;
     }
+
+    
 
     // Send Email to the visitor if visitorEmail is provided.
     if (options.visitorEmail) {
@@ -71,8 +73,9 @@ export const sendFormEmail = async (options: ISendFormEmail) => {
                 }]
             });
         } catch (e) {
-            console.log('error while sending visitor email at email manager');
-            console.log(e);
+            // console.log('error while sending visitor email at email manager');
+            // console.log(e);
+            throw e;
         }
         console.log("Inside visiter Email");
 
