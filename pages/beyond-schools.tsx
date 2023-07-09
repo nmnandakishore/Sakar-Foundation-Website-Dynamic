@@ -1,5 +1,7 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import * as React from 'react';
 import Link from 'next/link';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
@@ -9,22 +11,49 @@ import { client } from '../helpers/data-fetcher';
 
 interface IHomePageProps {
     topics: any,
+    events: any,
+    partners: any,
+    resources: any
 }
 
-const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
+const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null, partners = null, resources = null }) => {
+
     // stats = stats?.items[0]?.fields ?? {};
-    let topicItems = topics?.items ?? [];
+    let topicItems = topics ?.items ?? [];
+    let eventItems = events ?.items ?? [];
+    let partnerItems = partners ?.items ?? [];
+    let resourceItems = resources ?.items ?? [];
+
+
+
+    // const options = {
+    //     type: 'loop',
+    //     gap: '1rem',
+    //     autoplay: true,
+    //     pauseOnHover: false,
+    //     resetProgress: false,
+    //     height: '15rem',
+    // };
 
 
     const options = {
-        type: 'loop',
-        gap: '1rem',
-        autoplay: true,
-        pauseOnHover: false,
-        resetProgress: false,
-        height: '15rem',
-    };
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+                // console.log({ node });
+                return (
+                    // <img src={node.data.target.fields.file.url} alt={node.data.target.fields.title} />
+                    <span></span>
+                );
+            }
+        }
+    }
+
     console.log({ topicItems });
+    console.log({ eventItems });
+    console.log({ partnerItems });
+
+
+
 
     return (
         <>
@@ -70,14 +99,14 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
                         {
                             topicItems.map((topic, index) => {
                                 return (
-                                    <SplideSlide key={topic.sys.id} className={`inline-block slide h-72 slide-color-${(Array.isArray(topic?.fields?.color) && topic?.fields?.color.length !== 0) ? topic?.fields?.color[0].toLowerCase() : 'slate'} p-5 text-center`}>
+                                    <SplideSlide key={topic.sys.id} className={`inline-block slide h-72 slide-color-${(Array.isArray(topic ?.fields ?.color) && topic ?.fields ?.color.length !== 0) ? topic ?.fields ?.color[0].toLowerCase() : 'slate'} p-5 text-center`}>
                                         <div className="icon w-46 h-46 mx-auto p-12  bg-no-repeat bg-center" style={{ backgroundImage: `url("/img/beyond-schools-slider-bg.png")` }}>
-                                            <i className={`text-5xl text-${(Array.isArray(topic?.fields?.color) && topic?.fields?.color[0].length !== 0) ? topic?.fields?.color[0].toLowerCase() : 'slate'}-500 text-lg fa-${topic?.fields?.iconType ? topic?.fields?.iconType[0].toLowerCase() : 'solid'} fa-${topic?.fields?.iconName ? topic?.fields?.iconName?.toLowerCase() : 'book-open'}`}></i>
+                                            <i className={`text-5xl text-${(Array.isArray(topic ?.fields ?.color) && topic ?.fields ?.color[0].length !== 0) ? topic ?.fields ?.color[0].toLowerCase() : 'slate'}-500 text-lg fa-${topic ?.fields ?.iconType ? topic ?.fields ?.iconType[0].toLowerCase() : 'solid'} fa-${topic ?.fields ?.iconName ? topic ?.fields ?.iconName ?.toLowerCase() : 'book-open'}`}></i>
                                         </div>
                                         <div className="text-center text-white font-bold">
-                                            {topic?.fields?.topicName}
+                                            {topic ?.fields ?.topicName}
                                         </div>
-                                        <Link href={topic?.fields?.link}>
+                                        <Link href={topic ?.fields ?.link}>
                                             <a className='block w-12 h-12 p-2 mt-8 bg-white/20 hover:bg-white/50 rounded-full mx-auto text-lg'>
                                                 <i className="text-white text-lg fa-solid fa-arrow-right"></i>
                                             </a>
@@ -92,11 +121,11 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
             </div>
 
 
-            <div className="section mt-28">
-                <div className="container py-20">
+            <div className="section mt-0">
+                <div className="container">
                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 pt-10">
                         <div className='sm: py-20' >
-                            <img src="https://solverwp.com/demo/html/edumint/assets/img/about/3.png" alt="" />
+                            <img src="/img/beyond-schools-hero-2.png" alt="" />
                         </div>
                         <div className='sm:py-20'>
                             <div className="heading text-primary" data-id="2">A New Outlook Towards Knowledge - Beyond Schools</div>
@@ -107,9 +136,9 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
                             <div className="grid grid-cols-1 sm:grid-cols-5 sm:gap-10 pt-5">
                                 <div className='py-6 text-center'>
                                     {/* <span className="fa-stack text- text-4xl align-sub"> */}
-                                        {/* <i className="fa-solid fa-square text-teal-600 fa-stack-2x"></i> */}
-                                        {/* <i className="fa-solid fa-filter fa-inverse fa-stack-1x text-white"></i> */}
-                                        <i className="text-5xl fa-solid fa-chalkboard-user text-teal-600"></i>
+                                    {/* <i className="fa-solid fa-square text-teal-600 fa-stack-2x"></i> */}
+                                    {/* <i className="fa-solid fa-filter fa-inverse fa-stack-1x text-white"></i> */}
+                                    <i className="text-5xl fa-solid fa-chalkboard-user text-teal-600"></i>
                                     {/* </span> */}
                                 </div>
                                 <div className='sm:col-span-4'>
@@ -146,6 +175,190 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
             </div>
 
 
+
+            {/*----------Resourse people-----------*/}
+
+            <div className="section bg-section bg-slate-200 relativse min-h-20 z-100">
+                <div className="container ">
+                    <div className="heading text-primary text-center" data-id="2">Resource people</div>
+                    <p className="mt-5 mb-12 text-center" data-id="2">
+                    Indulge in learning curated by the industry experts. <br/> We bring to you an ecosystem of knowledge and skills with our eminent resource prople.
+                </p>
+
+                    <Splide
+                        options={{
+                            type: 'slide',
+                            snap: true,
+                            focus: 1,
+                            trimSpace: true,
+                            perPage: 4,
+                            perMove: 1,
+                            autoWidth: false,
+                            start: 1,
+                            autoplay: true,
+                            pagination: false,
+                            // height: '500px',
+                            gap: '2rem',
+                            rewind: true, //only for type:fade    
+                            speed: 300,
+                        }}
+                    // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    >
+                        {
+                            
+                            resourceItems.map((resource, index) => {
+                                return (
+                                    <SplideSlide key={resource.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
+                                        <div className="py-6 lg:py-0 text-center">
+                                            <div className="text-center">
+                                                <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src={resource.fields ?.photograph ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                            </div>
+                                            <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                                                <p className="text-sm font-bold">{resource.fields.name}</p>
+                                                <p className="text-sm">{resource.fields.designation}</p>
+                                                {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                                            </div>
+                                        </div>
+                                    </SplideSlide>
+                                )
+                            })
+                        }
+                    </Splide>
+
+
+                </div>
+            </div>
+
+
+
+            {/*----------Events-----------*/}
+
+
+            <div className="section bg-section relative min-h-20 z-100 bg-teal-700">
+                <div className="container text-white">
+
+                    <div className="heading text-white text-center mb-5" data-id="2">Events</div>
+                    <p className="mt-5 mb-12 text-center text-teal-100" data-id="2">
+                        Beyond Schools is on a trailblazing mission towards creating a wave of change in learning!
+                </p>
+
+                    <Splide
+                        options={{
+                            type: 'slide',
+                            snap: true,
+                            focus: 1,
+                            trimSpace: true,
+                            perPage: 1,
+                            perMove: 1,
+                            autoWidth: false,
+                            start: 1,
+                            autoplay: true,
+                            pagination: false,
+                            // height: '500px',
+                            gap: '0rem',
+                            rewind: true, //only for type:fade    
+                            speed: 300,
+                        }}
+                    // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    >
+                        {
+                            eventItems.map((event, index) => {
+                                return (
+                                    <SplideSlide key={event.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2">
+                                            <div className="px-5">
+                                                <div className="inline-block w-full h-[350px] bg-cover bg-no-repeat bg-center"
+                                                    style={{
+                                                        backgroundImage: "url('" + event.fields.eventPhotograph.fields.file.url + "')",
+                                                        // boxShadow: "0 0 100px 100px #303247 inset",
+                                                        border: 0
+                                                    }}>
+                                                </div>
+                                            </div>
+                                            <div className="px-5 text-center text-white sm:text-left">
+                                                <div className="text-xl mb-5">{event ?.fields ?.eventName}</div>
+                                                <div className="h-46 text-sm">
+                                                    <i className={`pr-2 inline fa-solid fa-location-dot`}></i>
+                                                    {event ?.fields ?.venue}
+                                                </div>
+                                                <div className="mt-2 h-46 text-sm">
+                                                    <i className={`pr-2 inline fa-solid fa-calendar`}></i>
+                                                    {event ?.fields ?.eventDate}
+                                                </div>
+                                                <div className="mt-5 text-white text-sm h-max-[200px] overflow-hidden sm:text-justify">
+                                                    {event ?.fields ?.eventDescription}
+                                                    {/* {documentToReactComponents(event?.fields?.eventDescription, options)} */}
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </SplideSlide>
+                                )
+                            })                            
+                        }
+                        <SplideSlide key="empty" className={`inline-block slide min-h-96 p-5 text-center`}>
+                        </SplideSlide>
+                    </Splide>
+
+
+                </div>
+            </div>
+
+
+
+            {/*----------Partner schools-----------*/}
+
+            <div className="section relative mt-12 min-h-20 z-100">
+                <div className="container ">
+
+                    <div className="heading text-primary text-center" data-id="2">Partners</div>
+                    {/* <p className="mt-5 mb-12 text-center" data-id="2">
+                  
+                    </p> */}
+
+                    <Splide
+                        options={{
+                            type: 'slide',
+                            snap: true,
+                            focus: 1,
+                            trimSpace: true,
+                            perPage: 4,
+                            perMove: 1,
+                            autoWidth: false,
+                            start: 1,
+                            autoplay: true,
+                            pagination: false,
+                            // height: '500px',
+                            gap: '2rem',
+                            rewind: true, //only for type:fade    
+                            speed: 300,
+                        }}
+                    // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    >
+                        {
+                            partnerItems.map((partner, index) => {
+                                return (
+                                    <SplideSlide key={partner.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
+                                        <div className="py-6 lg:py-0">
+                                            <div className="text-center">
+                                                <img className="object-cover mx-auto lg:my-2 w-24 h-24 lg:w-36 lg:h-36" src={partner.fields ?.schoolLogo ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                            </div>
+                                            <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center lg:text-left">
+                                                <p className="text-sm text-center">{partner.fields.schoolName}</p>
+                                                {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                                            </div>
+                                        </div>
+                                    </SplideSlide>
+                                )
+                            })
+                        }
+                    </Splide>
+
+
+                </div>
+            </div>
+
             <div className="section bg-section bg-teal-800">
                 <div className="container py-5 text-center">
                     <img src="/img/beyond-schools-logo.png" className='max-w-[300px] mb-10 mx-auto' alt="" />
@@ -153,6 +366,8 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null }) => {
                     <Link href="https://beyondschools.sakarfoundation.org/sign_up"><a className='bg-white text-teal-600 py-2 px-4'>Join Now</a></Link>
                 </div>
             </div>
+
+
 
         </>
 
@@ -170,9 +385,21 @@ export async function getServerSideProps() {
         content_type: 'beyondSchools'
     });
 
+    const events: any = await clientObj.getEntries({
+        content_type: 'beyondSchoolsEvents'
+    });
+
+    const partners: any = await clientObj.getEntries({
+        content_type: 'beyondSchoolsSchoolPartners'
+    });
+
+    const resources: any = await clientObj.getEntries({
+        content_type: 'beyondSchoolsSchoolResource'
+    });
+
     console.log(topics);
 
     return {
-        props: { topics }
+        props: { topics, events, partners, resources }
     }
 }
