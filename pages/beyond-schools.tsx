@@ -271,7 +271,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                     
                     <div className="py-6 lg:py-0 text-center">
                         <div className="text-center">
-                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/veeda.jpeg" alt="   " />
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/nandakishore.jpg" alt="   " />
                         </div>
                         <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
                             <p className="text-sm font-bold">Nandakishore</p>
