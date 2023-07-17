@@ -17,20 +17,36 @@ var options = {
 window.onscroll = function () {
 	// console.log("stickyTop:", stickyTop)
 	// console.log("pageYOffset:", window.pageYOffset)
-	toggleSticky();
+console.log('scroll track working');
+
+	// toggleSticky();
 };
 
 var headerElem = document.getElementById("header");
 var topMenuElem = document.getElementById("top-menu");
+
+// var secondaryMenuElem = document.querySelector(".secondary-menu");
+
 var sticky = headerElem.offsetTop + headerElem.offsetHeight;
 // stickyTop = 90;
 // var stickyTop = headerElem.offsetTop;
-var stickyTop = topMenuElem.offsetTop + topMenuElem.offsetHeight;;
-var pageContentElem;
+var stickyTop = topMenuElem.offsetTop + topMenuElem.offsetHeight;
+
+// var secondarySticky = secondaryMenuElem.offsetTop + secondaryMenuElem.offsetHeight - topMenuElem.offsetHeight;
+// var secondaryStickyTop = 
 
 
+// var pageContentElem;
+
+console.log('working');
 
 function toggleSticky() {
+	console.log(secondaryMenuElem)
+	console.log (window.pageYOffset);
+	console.log ({secondarySticky});
+	console.log ("----------------------------");
+
+
 	if (
 		window.pageYOffset >= sticky &&
 		!headerElem.classList.contains("sticky")
@@ -44,7 +60,28 @@ function toggleSticky() {
 		headerElem.classList.remove("animate__fadeInDown");
 		headerElem.classList.remove("sticky");
 	}
+
+	// if (secondaryMenuElem){
+	// 	if (
+	// 		window.pageYOffset >= secondarySticky &&
+	// 		!secondaryMenuElem.classList.contains("sticky")
+	// 	) {
+	// 		secondaryMenuElem.classList.add("sticky");
+	// 		secondaryMenuElem.classList.add("animate__fadeInDown");
+	// 	} else if (
+	// 		window.pageYOffset < secondarySticky &&
+	// 		secondaryMenuElem.classList.contains("sticky")
+	// 	) {
+	// 		secondaryMenuElem.classList.remove("animate__fadeInDown");
+	// 		secondaryMenuElem.classList.remove("sticky");
+	// 	}
+	// }
 }
+
+
+
+var secondaryMenuItemElems = document.querySelectorAll(".menu-item>a");
+
 
 /*-------------------Scroll Animations------------------ */
 

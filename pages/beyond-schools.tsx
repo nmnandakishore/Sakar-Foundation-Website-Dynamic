@@ -6,23 +6,29 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 import { client } from '../helpers/data-fetcher';
+import { element } from 'prop-types';
 
 
 
 interface IHomePageProps {
     topics: any,
+    resources: any,
     events: any,
     partners: any,
-    resources: any
+    schools: any
 }
 
-const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null, partners = null, resources = null }) => {
+
+// props: { topics, resources, events, partners, schools }
+
+const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
 
     // stats = stats?.items[0]?.fields ?? {};
     let topicItems = topics ?.items ?? [];
+    let resourceItems = resources ?.items ?? [];
     let eventItems = events ?.items ?? [];
     let partnerItems = partners ?.items ?? [];
-    let resourceItems = resources ?.items ?? [];
+    let schoolItems = schools ?.items ?? [];
 
 
 
@@ -48,9 +54,9 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
         }
     }
 
-    console.log({ topicItems });
-    console.log({ eventItems });
-    console.log({ partnerItems });
+    // console.log({ topicItems });
+    // console.log({ eventItems });
+    // console.log({ partnerItems });
 
 
 
@@ -67,7 +73,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
                             <div className="inline-block bg-slate-700 text-white rounded-full py-2 px-4">Inclusive Education</div>
                             <h1 className="pt-4 py-2 text-4xl text-white">A Holistic Lens <br /> to Steer Your Life with Progress</h1>
                             <h2 className="pt-4 py-2 text-light text-white">We bring you Life and the Real World, Beyond the Bindings of your Coursebook</h2>
-                            <a className="inline-block text-white bg-humans py-2 mt-4 px-4 bg-secondary" href="https://beyondschools.sakarfoundation.org/sign_up">Join Now</a>
+                            {/* <a className="inline-block text-white bg-humans py-2 mt-4 px-4 bg-secondary" href="https://beyondschools.sakarfoundation.org/sign_up">Join Now</a> */}
                         </div>
                     </div>
                 </div>
@@ -175,12 +181,116 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
             </div>
 
 
+            <div id="secondary-menu" className="animate__animated animate__faster h-100 bg-slate-100">
+                <div className="container py-o m-0 z-50 nav menu grid grid-cols-5 p-o m-o">
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="teamMembers" >Team Members</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="resources" >Resourses</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="events" >Events</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="partners" >Partners</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer" href="#" target-id="schools" >Schools</a></div>
+                    {/* <div className="menu-item p-0 sm:px-10 text-center hover:border-b-2 border-teal-700 border-solid"><a href="#" ></a></div> */}
+                </div>
+            </div>
+
+
+            {/*----------Team Members-----------*/}
+
+
+            <div className="section bg-section bg-teal-700 relativse min-h-20 z-100 text-white" id="teamMembers">
+                <div className="heading text-white text-center" data-id="1">Team Members</div>
+                <div className="grid grid-cols-3">
+
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/keithan.jpg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Keithan Pai</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/keisha.jpg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Keisha Pai</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/Angel_Eva_D-Souza.jpg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Angel Eva D'Souza</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className="grid grid-cols-4">
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/veeda.jpeg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Veeda Almeida</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/ashel.png" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Ashel Castelino</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/rashmi.jpg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Rashmi Mallya</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+                    
+                    <div className="py-6 lg:py-0 text-center">
+                        <div className="text-center">
+                            <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/veeda.jpeg" alt="   " />
+                        </div>
+                        <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center">
+                            <p className="text-sm font-bold">Nandakishore</p>
+                            <p className="text-sm"></p>
+                            {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
 
             {/*----------Resourse people-----------*/}
 
-            <div className="section bg-section bg-slate-200 relativse min-h-20 z-100">
-                <div className="container ">
-                    <div className="heading text-primary text-center" data-id="2">Resource people</div>
+            <div className="section bg-section bg-slate-200 relativse min-h-20 z-100" id="resources">
+                <div className="container">
+                    <div className="heading text-primary text-center" data-id="2">Resources</div>
                     <p className="mt-5 mb-12 text-center" data-id="2">
                     Indulge in learning curated by the industry experts. <br/> We bring to you an ecosystem of knowledge and skills with our eminent resource prople.
                 </p>
@@ -234,7 +344,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
             {/*----------Events-----------*/}
 
 
-            <div className="section bg-section relative min-h-20 z-100 bg-teal-700">
+            <div className="section bg-section relative min-h-20 z-100 bg-teal-700" id="events">
                 <div className="container text-white">
 
                     <div className="heading text-white text-center mb-5" data-id="2">Events</div>
@@ -307,9 +417,9 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
 
 
 
-            {/*----------Partner schools-----------*/}
+            {/*----------Partners-----------*/}
 
-            <div className="section relative mt-12 min-h-20 z-100">
+            <div className="section relative mt-12 min-h-20 z-100" id="partners">
                 <div className="container ">
 
                     <div className="heading text-primary text-center" data-id="2">Partners</div>
@@ -342,10 +452,10 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
                                     <SplideSlide key={partner.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
                                         <div className="py-6 lg:py-0">
                                             <div className="text-center">
-                                                <img className="object-cover mx-auto lg:my-2 w-24 h-24 lg:w-36 lg:h-36" src={partner.fields ?.schoolLogo ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                                <img className="object-cover mx-auto lg:my-2 w-24 h-24 lg:w-36 lg:h-36" src={partner.fields ?.partnerLogo ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
                                             </div>
                                             <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center lg:text-left">
-                                                <p className="text-sm text-center">{partner.fields.schoolName}</p>
+                                                <p className="text-sm text-center">{partner.fields.partnerName}</p>
                                                 {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
                                             </div>
                                         </div>
@@ -359,13 +469,82 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, events = null
                 </div>
             </div>
 
+
+
+            {/*----------Schools-----------*/}
+
+            <div className="section relative bg-section bg-slate-200 mt-12 min-h-20 z-100" id="schools">
+                <div className="container ">
+
+                    <div className="heading text-primary text-center" data-id="2">Schools</div>
+                    {/* <p className="mt-5 mb-12 text-center" data-id="2">
+                  
+                    </p> */}
+
+                    <Splide
+                        options={{
+                            type: 'slide',
+                            snap: true,
+                            focus: 1,
+                            trimSpace: true,
+                            perPage: 4,
+                            perMove: 1,
+                            autoWidth: false,
+                            start: 1,
+                            autoplay: true,
+                            pagination: false,
+                            // height: '500px',
+                            gap: '2rem',
+                            rewind: true, //only for type:fade    
+                            speed: 300,
+                        }}
+                    // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    >
+                        {
+                            schoolItems.map((school, index) => {
+                                return (
+                                    <SplideSlide key={school.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
+                                        <div className="py-6 lg:py-0">
+                                            <div className="text-center">
+                                                <img className="object-cover mx-auto lg:my-2 w-24 h-24 lg:w-36 lg:h-36" src={school.fields ?.schoolLogo ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                            </div>
+                                            <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center lg:text-left">
+                                                <p className="text-sm text-center">{school.fields.schoolName}</p>
+                                                {/* <p className="mb-4 text-xs text-gray-400 font-bold">{school.fields.designation}</p> */}
+                                            </div>
+                                        </div>
+                                    </SplideSlide>
+                                )
+                            })
+                        }
+                    </Splide>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
             <div className="section bg-section bg-teal-800">
                 <div className="container py-5 text-center">
                     <img src="/img/beyond-schools-logo.png" className='max-w-[300px] mb-10 mx-auto' alt="" />
                     {/* <div className="text-2xl relative inline-block text-white py-2 px-4">Checkout Beyond Schools content</div> */}
-                    <Link href="https://beyondschools.sakarfoundation.org/sign_up"><a className='bg-white text-teal-600 py-2 px-4'>Join Now</a></Link>
+                    {/* <Link href="https://beyondschools.sakarfoundation.org/sign_up"><a className='bg-white text-teal-600 py-2 px-4'> Now</a></Link> */}
                 </div>
             </div>
+
+            <script>
+               
+{/* 
+                array.forEach.call(secondaryMenuItemElems, function(elem){
+                    // elem.addEventListener(event)
+                }) */}
+            </script>
 
 
 
@@ -389,17 +568,22 @@ export async function getServerSideProps() {
         content_type: 'beyondSchoolsEvents'
     });
 
-    const partners: any = await clientObj.getEntries({
+    const schools: any = await clientObj.getEntries({
         content_type: 'beyondSchoolsSchoolPartners'
     });
+
+    const partners: any = await clientObj.getEntries({
+        content_type: 'beyondSchoolsPartners'
+    });
+
 
     const resources: any = await clientObj.getEntries({
         content_type: 'beyondSchoolsSchoolResource'
     });
 
-    console.log(topics);
+    // console.log(topics);
 
     return {
-        props: { topics, events, partners, resources }
+        props: { topics, resources, events, partners, schools }
     }
 }

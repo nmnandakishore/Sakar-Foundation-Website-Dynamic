@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { MainMenu } from "./main-menu";
+import { array, element } from "prop-types";
 
 export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) => {
 
@@ -32,11 +33,20 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
 
         var headerElem = document.getElementById("header");
         var topMenuElem = document.getElementById("top-menu");
+        var secondaryMenuElem = document.getElementById("secondary-menu");
+
         var sticky = headerElem.offsetTop + headerElem.offsetHeight;
+        if(secondaryMenuElem){
+            var secondarySticky = secondaryMenuElem.offsetTop + secondaryMenuElem.offsetHeight - headerElem.offsetHeight;
+            var secondaryStickyTop = secondaryMenuElem.offsetTop - headerElem.offsetHeight;
+        }
         // stickyTop = 90;
         // var stickyTop = headerElem.offsetTop;
-        var stickyTop = topMenuElem.offsetTop + topMenuElem.offsetHeight;;
+        var stickyTop = topMenuElem.offsetTop + topMenuElem.offsetHeight;
+        // var secondary;
         var pageContentElem;
+
+
 
 
 
@@ -54,8 +64,51 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
                 headerElem.classList.remove("animate__fadeInDown");
                 headerElem.classList.remove("sticky");
             }
-        }
 
+
+            if(secondaryMenuElem){
+                var firstTargetElem = document.getElementById(secondaryMenuElem.querySelectorAll('.menu-item a')[0].getAttribute("target-id"));
+
+                if(
+                    window.pageYOffset >= secondaryStickyTop &&
+                    !secondaryMenuElem.classList.contains("sticky")
+                ) {
+                    secondaryMenuElem.style.top = (String) (sticky)
+                    secondaryMenuElem.classList.add("sticky");
+                    // secondaryMenuElem.classList.add("animate__fadeInDown");
+                    firstTargetElem.setAttribute('style', 'margin-top: ' + secondaryMenuElem.offsetHeight + 'px');                   
+                } else if(
+                    window.pageYOffset < secondaryStickyTop &&
+                    secondaryMenuElem.classList.contains("sticky")
+                ) {
+                    // secondaryMenuElem.classList.remove("animate_fadeInDown")
+                    secondaryMenuElem.classList.remove("sticky");
+                    firstTargetElem.setAttribute('style', 'margin-top: 0');
+                }
+            }
+        }
+        
+        if(secondaryMenuElem){
+            var secondaryMenuItemElems = secondaryMenuElem.querySelectorAll('.menu-item a');
+
+            secondaryMenuItemElems.forEach(function(secondaryMenuItemElem, index){
+                secondaryMenuItemElem.addEventListener("click", function(event){
+                    event.preventDefault();
+                    var tartgetId = event.srcElement.getAttribute("target-id");
+                    console.log(tartgetId);
+                    var targetElem = document.getElementById(tartgetId);
+                    console.log({targetElem});
+                    var targetElemTop = targetElem.offsetTop-(headerElem.offsetHeight + secondaryMenuElem.offsetHeight - 20);
+                    console.log({index});
+                    if(index === 0){
+                        // targetElemTop = targetElemTop + secondaryMenuElem.offsetHeight + 50;
+                    }
+                    // getBoundingClientRect().top + window.scrollY
+                    window.scrollTo({ top: targetElemTop, behavior: 'smooth'});
+                    // targetElem.scrollIntoView();
+                })
+            })
+        }
     })
 
     return (

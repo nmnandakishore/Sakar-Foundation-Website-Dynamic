@@ -54,6 +54,23 @@ b {
 	
 }
 
+
+#secondary-menu.sticky {
+	@apply bg-slate-100 text-teal-700;
+	position: fixed;
+	top: 100px;
+	width: 100%;
+	z-index: 1000;
+	transition: opacity 1s ease-in-out;
+
+	/* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
+		rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+	
+}
+
 @media screen and (max-width: 640px) {
 	.header.sticky .header-logo-wrapper {
 		display: none;
