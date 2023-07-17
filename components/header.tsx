@@ -95,11 +95,8 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
                 secondaryMenuItemElem.addEventListener("click", function(event){
                     event.preventDefault();
                     var tartgetId = (event.srcElement as HTMLElement).getAttribute("target-id");
-                    console.log(tartgetId);
                     var targetElem = document.getElementById(tartgetId);
-                    console.log({targetElem});
                     var targetElemTop = targetElem.offsetTop-(headerElem.offsetHeight + secondaryMenuElem.offsetHeight - 20);
-                    console.log({index});
                     if(index === 0){
                         // targetElemTop = targetElemTop + secondaryMenuElem.offsetHeight + 50;
                     }
