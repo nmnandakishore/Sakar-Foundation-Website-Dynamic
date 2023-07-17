@@ -94,7 +94,7 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
             secondaryMenuItemElems.forEach(function(secondaryMenuItemElem, index){
                 secondaryMenuItemElem.addEventListener("click", function(event){
                     event.preventDefault();
-                    var tartgetId = event.srcElement.getAttribute("target-id");
+                    var tartgetId = (event.srcElement as HTMLElement).getAttribute("target-id");
                     console.log(tartgetId);
                     var targetElem = document.getElementById(tartgetId);
                     console.log({targetElem});
