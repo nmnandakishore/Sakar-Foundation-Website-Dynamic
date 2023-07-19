@@ -28,8 +28,6 @@ export default function Layout({ pageTitle = undefined, pageBody = undefined, ch
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-
-
                 <meta />
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 

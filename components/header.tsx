@@ -36,10 +36,7 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
         var secondaryMenuElem = document.getElementById("secondary-menu");
 
         var sticky = headerElem.offsetTop + headerElem.offsetHeight;
-        if(secondaryMenuElem){
-            var secondarySticky = secondaryMenuElem.offsetTop + secondaryMenuElem.offsetHeight - headerElem.offsetHeight;
-            var secondaryStickyTop = secondaryMenuElem.offsetTop - headerElem.offsetHeight;
-        }
+
         // stickyTop = 90;
         // var stickyTop = headerElem.offsetTop;
         var stickyTop = topMenuElem.offsetTop + topMenuElem.offsetHeight;
@@ -47,6 +44,40 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
         var pageContentElem;
 
 
+        if (secondaryMenuElem) {
+            var secondaryMenuItemElems
+            var activeTargetElemIndex;
+            var currentActiveSecondaryMenuItem;
+            var secondarySticky = secondaryMenuElem.offsetTop + secondaryMenuElem.offsetHeight - headerElem.offsetHeight;
+            var secondaryStickyTop = secondaryMenuElem.offsetTop - headerElem.offsetHeight;
+
+            var tartgetIds = [];
+            var targetElems = [];
+            var targetElemTops = [];
+
+
+            secondaryMenuItemElems = secondaryMenuElem.querySelectorAll('.menu-item a');
+
+            secondaryMenuItemElems.forEach(function (secondaryMenuItemElem, index) {
+                var targetElem = document.getElementById(secondaryMenuItemElem.getAttribute("target-id"));
+                var targetElemTop = targetElem.offsetTop - (headerElem.offsetHeight + secondaryMenuElem.offsetHeight - 20);
+
+                tartgetIds.push(secondaryMenuItemElem.getAttribute("target-id"));
+                targetElems.push(targetElem);
+                targetElemTops.push(targetElemTop);
+                // targetElemTops = targetElemTops.filter((value, index, array) => array.indexOf(value) === index);
+
+
+
+                secondaryMenuItemElem.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    var tartgetId = (event.srcElement as HTMLElement).getAttribute("target-id");
+                    // getBoundingClientRect().top + window.scrollY
+                    window.scrollTo({ top: targetElemTop, behavior: 'smooth' });
+                    // targetElem.scrollIntoView();
+                })
+            })
+        }
 
 
 
@@ -66,18 +97,18 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
             }
 
 
-            if(secondaryMenuElem){
+            if (secondaryMenuElem) {
                 var firstTargetElem = document.getElementById(secondaryMenuElem.querySelectorAll('.menu-item a')[0].getAttribute("target-id"));
 
-                if(
+                if (
                     window.pageYOffset >= secondaryStickyTop &&
                     !secondaryMenuElem.classList.contains("sticky")
                 ) {
-                    secondaryMenuElem.style.top = (String) (sticky)
+                    secondaryMenuElem.style.top = (String)(sticky)
                     secondaryMenuElem.classList.add("sticky");
                     // secondaryMenuElem.classList.add("animate__fadeInDown");
-                    firstTargetElem.setAttribute('style', 'margin-top: ' + secondaryMenuElem.offsetHeight + 'px');                   
-                } else if(
+                    firstTargetElem.setAttribute('style', 'margin-top: ' + secondaryMenuElem.offsetHeight + 'px');
+                } else if (
                     window.pageYOffset < secondaryStickyTop &&
                     secondaryMenuElem.classList.contains("sticky")
                 ) {
@@ -85,27 +116,32 @@ export const Header: React.FC<{ programs: Array<any> }> = ({ programs = [] }) =>
                     secondaryMenuElem.classList.remove("sticky");
                     firstTargetElem.setAttribute('style', 'margin-top: 0');
                 }
+
+                if(scrollY < targetElemTops[0]){
+                    activeTargetElemIndex = null;
+                }
+
+                targetElemTops.forEach((top, index) => {
+                    if (window.scrollY > top - 40) {
+                        activeTargetElemIndex = index;
+                    }
+                })
+
+
+                secondaryMenuItemElems.forEach(function (secondaryMenuItemElem, index) {
+                        secondaryMenuItemElem.classList.remove('bg-slate-200');
+                });
+
+                if (activeTargetElemIndex || activeTargetElemIndex === 0) {
+                    if(secondaryMenuItemElems[activeTargetElemIndex]){
+                        secondaryMenuItemElems[activeTargetElemIndex].classList.add('bg-slate-200');
+                    }
+                }
+
             }
         }
-        
-        if(secondaryMenuElem){
-            var secondaryMenuItemElems = secondaryMenuElem.querySelectorAll('.menu-item a');
 
-            secondaryMenuItemElems.forEach(function(secondaryMenuItemElem, index){
-                secondaryMenuItemElem.addEventListener("click", function(event){
-                    event.preventDefault();
-                    var tartgetId = (event.srcElement as HTMLElement).getAttribute("target-id");
-                    var targetElem = document.getElementById(tartgetId);
-                    var targetElemTop = targetElem.offsetTop-(headerElem.offsetHeight + secondaryMenuElem.offsetHeight - 20);
-                    if(index === 0){
-                        // targetElemTop = targetElemTop + secondaryMenuElem.offsetHeight + 50;
-                    }
-                    // getBoundingClientRect().top + window.scrollY
-                    window.scrollTo({ top: targetElemTop, behavior: 'smooth'});
-                    // targetElem.scrollIntoView();
-                })
-            })
-        }
+
     })
 
     return (

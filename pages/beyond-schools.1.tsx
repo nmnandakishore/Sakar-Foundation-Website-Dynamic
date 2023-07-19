@@ -7,9 +7,6 @@ import '@splidejs/splide/dist/css/splide.min.css';
 
 import { client } from '../helpers/data-fetcher';
 import { element } from 'prop-types';
-import { TopicsList } from '../components/topics-list';
-import Plyr from 'plyr';
-
 
 
 
@@ -57,56 +54,6 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
         }
     }
 
-
-    // const useEventListener = (
-    //     eventName: 'keydown' | 'keyup',
-    //     handler: ({ key }: KeyboardEvent) => void,
-    // ) => {
-    //     const savedHandler = React.useRef<({ key }: KeyboardEvent) => void>(handler)
-
-    //     React.useEffect(() => {
-    //         savedHandler.current = handler
-    //     }, [handler])
-
-    //     React.useEffect(() => {
-    //         const eventListener = (event: KeyboardEvent) => savedHandler.current(event)
-
-    //         window.addEventListener(eventName, eventListener);
-
-    //         return () => {
-    //             window.removeEventListener(eventName, eventListener)
-    //         }
-    //     }, [eventName])
-    // }
-
-
-    React.useEffect(() => {
-        window.addEventListener("load", (event) => {
-            const player = new Plyr('#introPlayer', {
-                hideControls: true,
-                controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
-                youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, origin: 'www.sakarfoundation.org' }
-            });
-
-
-            document.querySelector('#modalTrigger').addEventListener('click', () => {
-                document.querySelector('#modal').classList.remove('hidden');
-            })
-
-            document.querySelector('#modal').addEventListener('click', (event) => {
-                (event.srcElement as HTMLElement).classList.add('hidden');
-                player.stop();
-            })
-
-            document.querySelector('#modal #closeBtn').addEventListener('click', (event) => {
-                document.querySelector('#modal').classList.add('hidden');
-                player.stop();
-            })
-
-
-        });
-    })
-
     // console.log({ topicItems });
     // console.log({ eventItems });
     // console.log({ partnerItems });
@@ -116,12 +63,11 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
     return (
         <>
-            <div className="page-header relative z-0 pt-14 pb-0 bg-teal-700 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
+            <div className="page-header relative z-0 pt-14 pb-0 bg-teal-700 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
                     <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 pt-10 pb-32">
-                        <div className="bg-[url('/img/beyond-schools-hero.png')] bg-contain bg-no-repeat bg-center flex justify-center items-center align-middle">
-                            {/* <img src="/img/beyond-schools-hero.png" alt="img" /> */}
-                            <span id="modalTrigger" className="block w-20 h-20 hover:w-24 hover:h-24 transition-all bg-[url('/img/icon-play.svg')] cursor-pointer rounded-full bg-contain ng-no-repeat ng-center]"> </span>
+                        <div>
+                            <img src="/img/beyond-schools-hero.png" alt="img" />
                         </div>
                         <div className="lg:py-16">
                             <div className="inline-block bg-slate-700 text-white rounded-full py-2 px-4">Inclusive Education</div>
@@ -133,7 +79,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                 </div>
             </div>
 
-            {/* <div className="section relative mt-16 min-h-20 sm:-mt-32 z-100">
+            <div className="section relative mt-16 min-h-20 sm:-mt-32 z-100">
                 <div className="container -mb-24">
 
 
@@ -178,13 +124,13 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
 
                 </div>
-            </div> */}
+            </div>
 
 
-            <div className="section bg-section bg-slate-200 mt-0">
+            <div className="section mt-0">
                 <div className="container">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
-                        <div className='sm: pb-10' >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 pt-10">
+                        <div className='sm: py-20' >
                             <img src="/img/beyond-schools-hero-2.png" alt="" />
                         </div>
                         <div className='sm:py-20'>
@@ -234,22 +180,14 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                 </div>
             </div>
 
-            <div className="section bg-section mt-0">
-                <div className="container">
-                    <div className="heading text-primary text-center" data-id="1">Topics</div>
-                    <div className="py-14">
-                        <TopicsList></TopicsList>
-                    </div>
-                </div>
-            </div>
 
             <div id="secondary-menu" className="animate__animated animate__faster h-100 bg-slate-100">
-                <div className="container py-o m-0 z-[] nav menu grid grid-cols-5 p-o m-o">
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="teamMembers" >Team Members</a></div>
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="resources" >Resourses</a></div>
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="events" >Events</a></div>
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="partners" >Partners</a></div>
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer" href="#" target-id="schools" >Schools</a></div>
+                <div className="container py-o m-0 z-50 nav menu grid grid-cols-5 p-o m-o">
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="teamMembers" >Team Members</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="resources" >Resourses</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="events" >Events</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="partners" >Partners</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block border-b-2 border-white hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer" href="#" target-id="schools" >Schools</a></div>
                     {/* <div className="menu-item p-0 sm:px-10 text-center hover:border-b-2 border-teal-700 border-solid"><a href="#" ></a></div> */}
                 </div>
             </div>
@@ -258,7 +196,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
             {/*----------Team Members-----------*/}
 
 
-            <div className="section bg-section bg-teal-700 relativse min-h-20 text-white" id="teamMembers">
+            <div className="section bg-section bg-teal-700 relativse min-h-20 z-100 text-white" id="teamMembers">
                 <div className="heading text-white text-center" data-id="1">Team Members</div>
                 <div className="grid grid-cols-3">
 
@@ -330,7 +268,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                             {/* <p className="mb-4 text-xs text-gray-400 font-bold">{partner.fields.designation}</p> */}
                         </div>
                     </div>
-
+                    
                     <div className="py-6 lg:py-0 text-center">
                         <div className="text-center">
                             <img className="rounded-full object-cover mx-auto w-24 h-24 lg:w-28 lg:h-28" src="/img/beyond-schools/team/nandakishore.jpg" alt="   " />
@@ -350,11 +288,11 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
             {/*----------Resourse people-----------*/}
 
-            <div className="section bg-section bg-slate-200 relativse min-h-20" id="resources">
+            <div className="section bg-section bg-slate-200 relativse min-h-20 z-100" id="resources">
                 <div className="container">
                     <div className="heading text-primary text-center" data-id="2">Resources</div>
                     <p className="mt-5 mb-12 text-center" data-id="2">
-                        Indulge in learning curated by the industry experts. <br /> We bring to you an ecosystem of knowledge and skills with our eminent resource prople.
+                    Indulge in learning curated by the industry experts. <br/> We bring to you an ecosystem of knowledge and skills with our eminent resource prople.
                 </p>
 
                     <Splide
@@ -377,7 +315,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                     // className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
                     >
                         {
-
+                            
                             resourceItems.map((resource, index) => {
                                 return (
                                     <SplideSlide key={resource.sys.id} className={`inline-block slide min-h-96 p-5 text-center`}>
@@ -406,7 +344,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
             {/*----------Events-----------*/}
 
 
-            <div className="section bg-section relative min-h-20 bg-teal-700" id="events">
+            <div className="section bg-section relative min-h-20 z-100 bg-teal-700" id="events">
                 <div className="container text-white">
 
                     <div className="heading text-white text-center mb-5" data-id="2">Events</div>
@@ -467,7 +405,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
                                     </SplideSlide>
                                 )
-                            })
+                            })                            
                         }
                         <SplideSlide key="empty" className={`inline-block slide min-h-96 p-5 text-center`}>
                         </SplideSlide>
@@ -481,7 +419,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
             {/*----------Partners-----------*/}
 
-            <div className="section relative mt-12 min-h-20" id="partners">
+            <div className="section relative mt-12 min-h-20 z-100" id="partners">
                 <div className="container ">
 
                     <div className="heading text-primary text-center" data-id="2">Partners</div>
@@ -535,7 +473,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
 
             {/*----------Schools-----------*/}
 
-            <div className="section relative bg-section bg-slate-200 mt-12 min-h-20" id="schools">
+            <div className="section relative bg-section bg-slate-200 mt-12 min-h-20 z-100" id="schools">
                 <div className="container ">
 
                     <div className="heading text-primary text-center" data-id="2">Schools</div>
@@ -600,41 +538,9 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
                 </div>
             </div>
 
-
-            <div id="modal" className="fixed block flex justify-center items-center align-middle h-full v-full bg-black/90 top-0 left-0 right-0 bottom-0 z-50 hidden">
-                <div className="fixed block w-full m-0 sm:w-10/12 md:w-8/12 lg:w-6/12 h-6/12 md:h-10/12 lg:h-6/12 bg-white">
-                    <div className="modal-header block w-full text-right">
-                        <div id="closeBtn" className="inline-block close-btn px-4 py-2 hover:bg-slate-200 hover:text-teal-700 cursor-pointer font-bold">X</div>
-                    </div>
-                    <div className="modal-body w-full text-center overflow-hidden">
-
-                        <div className="plyr__video-embed" id="introPlayer">
-                            <iframe
-                                src="https://www.youtube.com/watch?v=3M5_6rUzos0?origin=https://www.sakarfoundation.org&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;widget_referrer=https%3A%2F%2Fsakarfoundation.org%2F&amp;cc_load_policy=1&amp;cc_lang_pref=auto&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.sakarfoundation.org"
-                                allowFullScreen
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-                            </iframe>
-                        </div>
-
-                        {/*<div className="plyr__video-embed" id="introPlayer">
-                        <iframe 
-                            id="youtube-9767" 
-                            frameBorder="0" 
-                            allowFullScreen="1" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            title="Player for " src="https://www.youtube.com/embed/3M5_6rUzos0?autoplay=0&amp;controls=0&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;disablekb=1&amp;playsinline=1&amp;widget_referrer=https%3A%2F%2Fsakarfoundation.org%2F&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fsakarfoundation.org&amp;widgetid=1">
-                        </iframe>
-                    </div>*/}
-
-
-                    </div>
-                </div>
-            </div>
-
             <script>
-
-                {/* 
+               
+{/* 
                 array.forEach.call(secondaryMenuItemElems, function(elem){
                     // elem.addEventListener(event)
                 }) */}
