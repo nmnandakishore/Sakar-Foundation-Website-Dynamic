@@ -27,6 +27,8 @@ export default function Layout({ pageTitle = undefined, pageBody = undefined, ch
                     href="https://cdnjs.cloudflare.com/ajax/libs/css3-animate-it/1.0.3/css/animations.min.css" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
 
                 <meta />
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />

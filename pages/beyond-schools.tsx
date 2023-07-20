@@ -24,7 +24,7 @@ interface IHomePageProps {
 
 // props: { topics, resources, events, partners, schools }
 
-const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
+const beyondSchoolsPage: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
 
     // stats = stats?.items[0]?.fields ?? {};
     let topicItems = topics ?.items ?? [];
@@ -85,7 +85,7 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
             const player = new Plyr('#introPlayer', {
                 hideControls: true,
                 controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
-                youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, origin: 'www.sakarfoundation.org' }
+                youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, origin: 'localhost' } //www.sakarfoundation.org
             });
 
 
@@ -647,8 +647,8 @@ const emptyComponent: React.FC<IHomePageProps> = ({ topics = null, resources = n
     )
 }
 
-emptyComponent.displayName = "Empty Component";
-export default emptyComponent;
+beyondSchoolsPage.displayName = "Empty Component";
+export default beyondSchoolsPage;
 
 
 export async function getServerSideProps() {
