@@ -21,7 +21,7 @@ interface IHomePageProps {
 
 // props: { topics, resources, events, partners, schools }
 
-const beyondSchools: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
+const BeyondSchools: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
 
     // stats = stats?.items[0]?.fields ?? {};
     let topicItems = topics ?.items ?? [];
@@ -553,8 +553,8 @@ const beyondSchools: React.FC<IHomePageProps> = ({ topics = null, resources = nu
     )
 }
 
-beyondSchools.displayName = "Empty Component";
-export default beyondSchools;
+BeyondSchools.displayName = "Empty Component";
+export default BeyondSchools;
 
 
 export async function getServerSideProps() {
