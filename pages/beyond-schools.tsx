@@ -234,22 +234,16 @@ const BeyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, r
                 </div>
             </div>
 
-            <div className="section bg-section mt-0">
-                <div className="container">
-                    <div className="heading text-primary text-center" data-id="1">Topics</div>
-                    <div className="py-14">
-                        <TopicsList></TopicsList>
-                    </div>
-                </div>
-            </div>
+
 
             <div id="secondary-menu" className="animate__animated animate__faster h-100 bg-slate-100">
-                <div className="container py-o m-0 z-[] nav menu grid grid-cols-5 p-o m-o">
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="teamMembers" >Team Members</a></div>
+                <div className="container py-o m-0 z-[] nav menu grid grid-cols-6 p-o m-o">
+                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="teamMembers" >Team</a></div>
                     <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="resources" >Resourses</a></div>
                     <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="events" >Events</a></div>
                     <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="partners" >Partners</a></div>
-                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer" href="#" target-id="schools" >Schools</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer border-r border-r-gray-300" href="#" target-id="schools" >Schools</a></div>
+                    <div className="menu-item p-0 text-center"><a className="block hover:bg-slate-100 hover:bg-slate-200 border-solid py-2 sm:px-10 cursor-pointer" href="#" target-id="topics" >Topics</a></div>
                     {/* <div className="menu-item p-0 sm:px-10 text-center hover:border-b-2 border-teal-700 border-solid"><a href="#" ></a></div> */}
                 </div>
             </div>
@@ -586,6 +580,16 @@ const BeyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, r
             </div>
 
 
+            {/*----------Topics-----------*/}
+
+            <div className="section" id="topics">
+                <div className="container">
+                    <div className="heading text-primary text-center" data-id="1">Topics</div>
+                    <div className="py-14">
+                        <TopicsList></TopicsList>
+                    </div>
+                </div>
+            </div>
 
 
 
