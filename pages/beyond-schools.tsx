@@ -85,7 +85,7 @@ const BeyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, r
             const player = new Plyr('#introPlayer', {
                 hideControls: true,
                 controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'captions', 'settings', 'pip', 'airplay', 'fullscreen'],
-                youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, origin: 'localhost' } //www.sakarfoundation.org
+                youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1, origin: process.env.CONTENTFUL_SPACE_ID} //www.sakarfoundation.org
             });
 
 
@@ -610,7 +610,7 @@ const BeyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, r
 
                         <div className="plyr__video-embed" id="introPlayer">
                             <iframe
-                                src="https://www.youtube.com/watch?v=3M5_6rUzos0?origin=https://www.sakarfoundation.org&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;widget_referrer=https%3A%2F%2Fsakarfoundation.org%2F&amp;cc_load_policy=1&amp;cc_lang_pref=auto&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.sakarfoundation.org"
+                                src={`https://www.youtube.com/watch?v=3M5_6rUzos0?origin=${process.env.CONTENTFUL_SPACE_ID}&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;controls=1&amp;showinfo=0&amp;rel=0&amp;widget_referrer=https%3A%2F%2Fsakarfoundation.org%2F&amp;cc_load_policy=1&amp;cc_lang_pref=auto&amp;enablejsapi=1&amp;}`}
                                 allowFullScreen
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
