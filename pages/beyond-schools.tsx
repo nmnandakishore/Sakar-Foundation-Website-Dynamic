@@ -105,7 +105,7 @@ const BeyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, r
 
 
         });
-    }, [])
+    })
 
     // console.log({ topicItems });
     // console.log({ eventItems });
