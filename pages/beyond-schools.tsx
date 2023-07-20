@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -13,7 +13,7 @@ import Plyr from 'plyr';
 
 
 
-interface IHomePageProps {
+interface IBeyondSchoolsPageProps {
     topics: any,
     resources: any,
     events: any,
@@ -24,7 +24,7 @@ interface IHomePageProps {
 
 // props: { topics, resources, events, partners, schools }
 
-const beyondSchoolsPage: React.FC<IHomePageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
+const beyondSchoolsPage: React.FC<IBeyondSchoolsPageProps> = ({ topics = null, resources = null, events = null, partners = null, schools = null }) => {
 
     // stats = stats?.items[0]?.fields ?? {};
     let topicItems = topics ?.items ?? [];
@@ -80,7 +80,7 @@ const beyondSchoolsPage: React.FC<IHomePageProps> = ({ topics = null, resources 
     // }
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener("load", (event) => {
             const player = new Plyr('#introPlayer', {
                 hideControls: true,
@@ -105,7 +105,7 @@ const beyondSchoolsPage: React.FC<IHomePageProps> = ({ topics = null, resources 
 
 
         });
-    })
+    }, [])
 
     // console.log({ topicItems });
     // console.log({ eventItems });
