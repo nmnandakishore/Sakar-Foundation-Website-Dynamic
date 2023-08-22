@@ -9,7 +9,7 @@ interface IleadershipPage {
 
 const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
 
-    let leadersArr: Array<any> = leaders ?.items ?? [];
+    let leadersArr: Array<any> = leaders?.items ?? [];
 
 
     let elevatedLeaders, nonElevatedLeaders = [];
@@ -46,8 +46,15 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
             <div
                 className="page-header py-14 bg-slate-600 mb-10 text-slate-400 bg-fixed bg-center bg-cover bg-blend-color-burn shadow-gray-500 drop-shadow-lg ">
                 <div className="container">
-                    <p className="text-4xl pb-5 text-slate-100">Leadership</p>
-                    Sākār is the outcome of a vision based on the experience of its founders, Keithan Pai and Keisha Pai. The Sākār leadership always The torchbearer founders of Sākār have their distinct field of focus but are united by the idea of welfare. Together they help in uplifting different strata of society and tackling barriers. 
+                    <div className="grid grid-cols-2 sm:gap-10">
+                        <div className=" col-span-2 sm:col-span-1 animatedParent">
+                            <p className="text-4xl pb-5 text-slate-100">Leadership</p>
+                            Sākār is the outcome of a vision based on the experience of its founders, Keithan Pai and Keisha Pai. The Sākār leadership always The torchbearer founders of Sākār have their distinct field of focus but are united by the idea of welfare. Together they help in uplifting different strata of society and tackling barriers.
+                        </div>
+                        <div className="text-4xl col-span-2 sm:col-span-1 animatedParent" >
+                            <img className="border-8 border-white" src="/img/leadership.jpg" alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -62,7 +69,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                                 return (
                                     <div className="grid grid-cols-1 py-6 lg:py-0 lg:grid-cols-4" key={leader.sys.id}>
                                         <div className="text-center">
-                                            <img className="rounded-full object-cover mx-auto lg:my-9 w-24 h-24 lg:w-20 lg:h-20" src={fields ?.photograph ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                            <img className="rounded-full object-cover mx-auto lg:my-9 w-24 h-24 lg:w-20 lg:h-20" src={fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'} alt="   " />
                                         </div>
                                         <div className="justify-center mt-5 sm:mt-0 sm:p-5 lg:col-span-3 text-center lg:text-left">
                                             <p className="text-lg font-bold">{fields.name}</p>
@@ -101,7 +108,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                 </div>
             </div>
 
-            <div className={`section bg-gray-200 my-20 ${(nonElevatedLeaders.length===0) ? 'hidden' : ''}`}>
+            <div className={`section bg-gray-200 my-20 ${(nonElevatedLeaders.length === 0) ? 'hidden' : ''}`}>
                 <div className="container">
                     <p className="text-4xl pb-5 text-primary">Mentors</p>
                     <p className="pb-5">
@@ -115,7 +122,7 @@ const leadershipPage: React.FC<IleadershipPage> = ({ leaders = null }) => {
                                 return (
                                     <div className="grid grid-cols-4 sm:grid-cols-3 my-3 sm:my-0" key={leader.sys.id}>
                                         <div className="relative max-h-full text-center">
-                                            <img className="w-20 h-20 rounded-full object-cover" src={fields ?.photograph ?.fields ?.file ?.url ?? '/img/placeholder.jpg'} alt="   " />
+                                            <img className="w-20 h-20 rounded-full object-cover" src={fields?.photograph?.fields?.file?.url ?? '/img/placeholder.jpg'} alt="   " />
                                         </div>
                                         <div className="justify-center mt-1 p-5 col-span-3 sm:col-span-2">
                                             <p className="text-lg font-bold text-primary">{fields.name}</p>
